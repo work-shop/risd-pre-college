@@ -1,0 +1,5 @@
+{% spaceless %}
+    {% if section.section_title %}
+        id="{{ section.section_title|lower|replace({' ' : '-', "." : "-", "," : "-"})}}"
+    {% endif %}
+{% endspaceless %}

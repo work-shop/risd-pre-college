@@ -1,0 +1,17 @@
+
+<section {% include "partials/components/section-id.twig" %} class="section-content rich-text">
+
+    {% include "partials/components/section-title.twig" %}
+
+    <div class="content image">
+
+        <div class="full-bleed-image">
+            <img src="{{ TimberImage( section.image_field.id )}}" />
+            {% if section.caption %}
+                <caption>{{ section.caption }}</caption>
+            {% endif %}
+        </div>
+
+    </div>
+
+</section>

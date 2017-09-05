@@ -1,0 +1,19 @@
+
+<section {% include "partials/components/section-id.twig" %} class="section-content rich-text">
+
+    {% include "partials/components/section-title.twig" %}
+
+    <div class="content collapsible-subsections">
+        {% for subsection in section.collapsible_subsections %}
+            <div class="subsection">
+                <div class="subsection-header">
+                    <h3>{{ subsection.subsection_header }}</h3>
+                </div>
+                <div class="subsection-content wysiwyg">
+                    {{ subsection.subsection_content }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</section>

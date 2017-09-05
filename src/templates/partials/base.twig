@@ -1,0 +1,48 @@
+{#-  BASE TEMPLATE -#}
+
+
+<!DOCTYPE html>
+<html class="no-js" {{ site.language_attributes }}>
+    <head>
+        <meta charset="{{ site.charset }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+
+        <title>{% spaceless %}
+            {% if wp_title %}
+                {{ wp_title }} | {{ site.name }}
+            {% else %}
+                {{ site.name }}
+            {% endif %}
+        {% endspaceless %}</title>
+
+        <!-- Facebook Open Graph data -->
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:type" content="website" />
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" value="">
+
+        <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/public/images/favicon-96x96.png">
+        <link rel="apple-touch-icon" href="/public/images/apple-icon.png">
+
+        {{ wp_head }}
+
+    </head>
+    <body class="{{ body_class }}">
+        {% include "partials/ie.twig" %}
+        {% include "partials/header.twig" %}
+
+        {% block content %}{% endblock %}
+
+        {% include "partials/footer.twig" %}
+
+        {{ wp_footer }}
+    </body>
+</html>
