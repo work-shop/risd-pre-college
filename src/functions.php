@@ -89,6 +89,9 @@
 
         public function add_to_context($context) {
             $context["menu"] = new TimberMenu();
+            $context["home"] = array(
+                "home_page_slideshow" => get_field("field_59b14b20ca46f", "option")
+            );
             return $context;
         }
 
