@@ -21,6 +21,7 @@
 
             add_action("init", array($this, "remove_comment_support"));
             add_action("init", array($this, "deactiveate_posts"));
+            add_action("acf/init", array($this, "add_options_pages"));
             add_action("admin_menu", array($this, "remove_menu_items"));
             add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
             add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
@@ -28,6 +29,18 @@
 
             add_filter("timber_context", array($this, "add_to_context"));
 
+        }
+
+        /** add options page to the site. */
+        public function add_options_pages() {
+            if ( function_exists('acf_add_options_page') ) {
+                acf_add_options_page(array(
+                    "page_title" => "Home Page",
+                    "capability" => "edit_posts",
+                    "position" => 5,
+                    "icon_url" => "dashicons-admin-home"
+                ));
+            }
         }
 
         /** remove comment support for pages and posts. */
