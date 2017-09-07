@@ -74,7 +74,7 @@
 
             $main_src = get_template_directory_uri() . $main;
             $main_ver = filemtime(get_template_directory() . $main);
-            wp_enqueue_style("main", $main_src, array("base"), $main_ver);
+            wp_enqueue_style("main", $main_src, array(), $main_ver);
 
         }
 
