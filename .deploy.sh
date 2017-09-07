@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#npm run build
+npm run build
 
 source ./.env
 
@@ -13,8 +13,12 @@ scp -r ./dist/wp-content/themes/custom root@$DROPLET_IP:/var/www/html/wp-content
 scp -r ./dist/wp-content/plugins root@$DROPLET_IP:/var/www/html/wp-content/
 scp -r ./dist/wp-content/uploads root@$DROPLET_IP:/var/www/html/wp-content/
 scp ./dist/migration.sql root@$DROPLET_IP:/root
+scp ./.remote.deploy.sh root@$DROPLET_IP:/root
 
-rm -rf ./dist/uploads
+#ssh root@$DROPLET_IP 'cd /root ; chmod +x ./.remote.deploy.sh ; ./.remote.deploy.sh'
+
+rm -rf ./dist/wp-content/uploads
 rm ./dist/migration.sql
+
 
 # TODO: Add a hook to migrate and string-replace the database.
