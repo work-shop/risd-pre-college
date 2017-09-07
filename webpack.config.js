@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const webpack = require('webpack');
 
 const paths = {
     src: "./src",
@@ -56,6 +57,18 @@ const style = {
             },
             { loader: "resolve-url-loader" },
             {
+                loader: "postcss-loader",
+                options: {
+                    plugins: function() {
+                        return [
+                            require('precss'),
+                            require('autoprefixer')
+                        ];
+                    },
+                    sourceMap: true
+                }
+            },
+            {
                 loader: "sass-loader",
                 options: {
                     sourceMap: true,
@@ -92,6 +105,32 @@ const image = {
     ]
 };
 
+const plugins = [
+    new CleanWebpackPlugin( paths.dest ),
+    new CopyWebpackPlugin([
+        {
+            from: "style.css"
+        },
+        {
+            from: "**/*.{php,twig}"
+        }
+    ]),
+    new ExtractTextPlugin("[name]"),
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+        Popper: ['popper.js', 'default'],
+    }),
+    new BrowserSyncPlugin({
+        proxy: "localhost:8080",
+        port: 3000,
+        ui: {
+            port: 3001
+        }
+    })
+];
+
 const config = {
     entry: {
         "scripts/bundle.js": "./scripts/main.js",
@@ -116,25 +155,7 @@ const config = {
     externals: {
         jquery: "jQuery"
     },
-    plugins: [
-        new CleanWebpackPlugin( paths.dest ),
-        new CopyWebpackPlugin([
-            {
-                from: "style.css"
-            },
-            {
-                from: "**/*.{php,twig}"
-            }
-        ]),
-        new ExtractTextPlugin("[name]"),
-        new BrowserSyncPlugin({
-            proxy: "localhost:8080",
-            port: 3000,
-            ui: {
-                port: 3001
-            }
-        })
-    ]
+    plugins: plugins
 };
 
 module.exports = config;
