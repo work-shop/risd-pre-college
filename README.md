@@ -4,6 +4,8 @@
 
 1. Install [Docker](https://docs.docker.com/engine/installation/)
 
+2. The deploy script for this repository necessitates the use of `wget` – you can install it with `brew install wget`.
+
 2. Clone this repository locally.
 
 3. Run `npm install` to get the dependencies for this project.
