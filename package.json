@@ -16,7 +16,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "build": "webpack -p",
-    "deploy": "./.deploy.sh"
+    "deploy": "./.deploy.sh",
+    "push-database": "./.push-database.sh",
+    "pull-database": "./.pull-database.sh"
   },
   "devDependencies": {
     "ajv": "^5.2.2",

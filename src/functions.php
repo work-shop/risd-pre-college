@@ -26,8 +26,8 @@
             add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
             add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
             add_action("wp_enqueue_scripts", array($this, "enqueue_styles"));
-
             add_filter("timber_context", array($this, "add_to_context"));
+            add_filter('show_admin_bar', '__return_false');
 
         }
 
@@ -89,8 +89,9 @@
 
         public function add_to_context($context) {
             $context["menu"] = new TimberMenu();
-            $context["home"] = array(
-                "home_page_slideshow" => get_field("field_59b14b20ca46f", "option")
+            $context["options"] = array(
+                "home_page_slideshow" => get_field("home_page_slideshow", "option"),
+                "home_page_callout_text" => get_field("home_page_callout_text", "option")
             );
             return $context;
         }
