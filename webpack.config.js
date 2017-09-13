@@ -72,7 +72,7 @@ const style = {
                 loader: "sass-loader",
                 options: {
                     sourceMap: true,
-                    includePaths: [ require("bourbon").includePaths ]
+                    includePaths: [ require("bourbon").includePaths, require("bourbon-neat").includePaths ]
                 }
             }
         ]
@@ -101,7 +101,7 @@ const image = {
                 name: "images/[hash].[ext]"
             }
         },
-        "image-webpack-loader"
+        { loader: "image-webpack-loader" }
     ]
 };
 
