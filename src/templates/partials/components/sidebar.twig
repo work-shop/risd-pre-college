@@ -6,14 +6,14 @@
 
                 {% for child in item.get_children %}
                     <li class="nav-item sidebar-parent-nav-item">
-                        <a href="{{ item.get_url }}"><h5 class="{% if child.slug == page.slug %}active{% endif %} nav-type">{{ child.title }}</h5></a>
+                        <a href="{{ child.link }}"><h5 class="{% if child.slug == page.slug %}active{% endif %} sidebar-type sidebar-parent-type">{{ child.title }}</h5></a>
                         {% if child.slug == page.slug %}
 
                         <ul class="nav-item-submenu">
                             {% for section in page.get_field("sections") %}
                                 {% if section.show_in_menu %}
                                     <li class="sidebar-child-nav-item">
-                                        <a href="">{{ section.section_title }}</a>
+                                        <h6 class="sidebar-child-type sidebar-type "><a href="#{% include "partials/components/section-id.twig" %}">{{ section.section_title }}</a></h6>
                                     </li>
                                 {% endif %}
                                 <script type="text/javascript">console.log({{ section|json_encode }})</script>

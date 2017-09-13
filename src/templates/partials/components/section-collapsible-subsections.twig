@@ -1,5 +1,5 @@
 
-<section {% include "partials/components/section-id.twig" %} class="section-content collapsible-subsections">
+<section id="{% include "partials/components/section-id.twig" %}" class="section-content collapsible-subsections">
 
     {% include "partials/components/section-title.twig" %}
 
@@ -7,7 +7,7 @@
         {% for subsection in section.collapsible_subsections %}
             <div class="subsection">
                 <div class="subsection-header">
-                    <h3>{{ subsection.subsection_header }}</h3>
+                    <h5>{{ subsection.subsection_header }}</h5>
                 </div>
                 <div class="subsection-content wysiwyg">
                     {{ subsection.subsection_content }}
