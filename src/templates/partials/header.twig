@@ -1,1 +1,22 @@
-<header></header>
+<header class="{% if not post %}home{% elseif post and post.slug != "search" %}page{% elseif post.slug == "search" %}search{% endif %}">
+
+
+    <div class="logo">
+    </div>
+
+    <div class="nav">
+        <button class="menu-button nav-button nav-type">
+            <span> Menu </span><span class="pictogram">Í</span>
+        </button>
+        <button class="search-button nav-button nav-type">
+            <span class="pictogram">s</span>
+        </button>
+        <button class="apply-button nav-button nav-type brand-white">
+            <a href="{{ options.apply_link }}">
+                Apply
+            </a>
+        </button>
+    </div>
+
+
+</header>

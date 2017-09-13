@@ -17,11 +17,12 @@
             {% endif %}
         {% endspaceless %}</title>
 
+
         <!-- Facebook Open Graph data -->
-        <meta property="og:title" content="" />
-        <meta property="og:description" content="" />
+        <meta property="og:title" content="{% spaceless %}{% if wp_title %}{{ wp_title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}{% endspaceless %}" />
+        <meta property="og:description" content="{{ site.description }}" />
         <meta property="og:image" content="" />
-        <meta property="og:url" content="" />
+        <meta property="og:url" content="{{ site.url }}" />
         <meta property="og:type" content="website" />
 
         <!-- Twitter Card data -->
@@ -50,5 +51,8 @@
     </body>
     <script>
         console.log({{ options|json_encode }});
+        console.log({{ menu|json_encode }});
+        console.log({{ post|json_encode }});
+        console.log({{ parent|json_encode }});
     </script>
 </html>

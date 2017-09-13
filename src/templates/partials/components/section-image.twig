@@ -1,5 +1,5 @@
 
-<section {% include "partials/components/section-id.twig" %} class="section-content rich-text">
+<section {% include "partials/components/section-id.twig" %} class="section-content image">
 
     {% include "partials/components/section-title.twig" %}
 
@@ -7,10 +7,12 @@
 
         <div class="full-bleed-image">
             <img src="{{ TimberImage( section.image_field.id )}}" />
-            {% if section.caption %}
-                <caption>{{ section.caption }}</caption>
-            {% endif %}
+
         </div>
+
+        {% if section.caption %}
+            <div class="caption">{{ section.caption }}</div>
+        {% endif %}
 
     </div>
 

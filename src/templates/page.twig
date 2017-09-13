@@ -1,21 +1,27 @@
-
-
 {% extends "partials/base.twig" %}
 
 {% import "partials/components/section.twig" as sections %}
 
+{% import "partials/components/sidebar.twig" as sidebar %}
+
 {% block content %}
 
-    <h1>Page</h1>
+        <div class="container">
 
-    {{ section_inner_h_tag }}
+            {{ sidebar.dispatch( menu, post, parent ) }}
 
-    {% for section in post.get_field('sections') %}
+            <div id="content" class="content-section">
 
-        {{ sections.dispatch( section ) }}
+                <h1 class="page-title">{{post.title}}</h1>
 
-        <script type="text/javascript">console.log({{ section|json_encode }})</script>
+                {% for section in post.get_field('sections') %}
 
-    {% endfor %}
+                    {{ sections.dispatch( section ) }}
+
+                {% endfor %}
+
+            </div>
+
+        </div>
 
 {% endblock %}

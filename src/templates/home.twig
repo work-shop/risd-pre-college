@@ -1,10 +1,15 @@
 {% extends "partials/base.twig" %}
 
+{% import "home/home-macros.twig" as home_macros %}
 
 {% block content %}
-<section id="home-page-slideshow" class="eighty-percent">
+
+<section class="home-page-slideshow">
+    {{ home_macros.slideshow( options.home_page_slideshow ) }}
 </section>
 
-<section id="home-page-callouts" class="twenty-percent">
+<section class="home-page-quicklinks">
+    {{ home_macros.slideshow( options.home_page_slideshow ) }}
 </section>
+
 {% endblock %}
