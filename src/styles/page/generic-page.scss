@@ -1,0 +1,12 @@
+#content {
+
+    padding-top: $header-padding;
+
+    @include span-columns( 9 of 12 );
+    background-color: $pre-college-white;
+}
+
+.page-title {
+    @include shift( 1 of 9 );
+    @include span-columns( 7 of 9 );
+}

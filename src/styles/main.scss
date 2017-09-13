@@ -1,4 +1,22 @@
+@import "bourbon";
+@import "neat";
 @import "parameters";
 @import "reset";
+@import "base";
+@import "spacing";
 @import "typography";
-@import "home";
+
+@import "partials/header";
+@import "partials/footer";
+@import "partials/sidebar";
+@import "partials/slideshows";
+
+@import "partials/section-rich-text";
+@import "partials/section-image";
+@import "partials/section-collapsible";
+@import "partials/section-labelled-list";
+@import "partials/section-schedule";
+
+@import "page/home";
+@import "page/generic-page";
+@import "page/search";

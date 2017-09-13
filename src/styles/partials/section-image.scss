@@ -1,0 +1,18 @@
+.section-content.image {
+    @include span-columns( 9 of 9 );
+
+    .overview-title {
+        @include shift( 1 of 9 );
+        @include span-columns( 7 of 9 );
+
+    }
+
+    .full-bleed-image img {
+        width:100%;
+    }
+
+    .caption {
+        @include shift( 1 of 9 );
+        @include span-columns( 7 of 9 );
+    }
+}

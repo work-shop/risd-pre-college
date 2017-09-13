@@ -1,48 +1,88 @@
 @import 'parameters';
+@import 'brand';
 
 html {
-    font-family: "Cabrito Sans Norm Bold", sans-serif;
+    font-family: $norm-book, sans-serif;
+    color: $pre-college-dark-gray;
     font-size: 16px;
+    letter-spacing: .025em;
+}
+
+.bold {
+    font-family: $norm-bold, sans-serif;
+}
+
+.medium {
+    font-family: $norm-medium, sans-serif;
+}
+
+.book {
+    font-family: $norm-book, sans-serif;
 }
 
 h1, .h1 {
-    font-family: "Cabrito Sans Norm Bold", sans-serif;
-    font-size: 4em;
+    @extend .bold;
+    @extend .brand-orange;
+
+    font-size: 3.25em;
+    line-height: 2em;
+    margin-bottom: 1em;
 }
 
 h2, .h2 {
-    font-family: "Cabrito Sans Norm Bold", sans-serif;
+    @extend .bold;
+    @extend .brand-orange;
+
     font-size: 2.5em;
+    margin-bottom: 1em;
 }
 
 h3, .h3 {
-    font-size: 4em;
+    @extend .bold;
+    @extend .brand-orange;
+
+    font-size: 2em;
+    margin-bottom: 1em;
 }
 
 h4, .h4 {
-    font-size: 4em;
+    @extend .bold;
+    @extend .brand-orange;
+
+    font-size: 1.75em;
+    margin-bottom: 1em;
 }
 
 h5, .h5 {
-    font-size: 4em;
+    @extend .bold;
+    @extend .brand-orange;
+
+    font-size: 1.25em;
+    margin-bottom: 1em;
 }
 
 h6, .h6 {
-    font-size: 4em;
+    @extend .bold;
+    @extend .brand-orange;
+
+    font-size: 1.25em;
+    margin-bottom: 1em;
 }
 
-.brand-orange {
-    color: $pre-college-orange;
+p {
+    font-size: 1em;
+    margin-bottom: 2em;
 }
 
-.brand-dark-blue {
-    color: $pre-college-dark-blue;
+.nav-type {
+    @extend .medium;
+    text-transform:uppercase;
 }
 
-.brand-light-blue {
-    color: $pre-college-light-blue;
+.caption {
+    font-size: .75em;
 }
 
-.brand-green {
-    color: $pre-college-green;
+.active {
+    font-family: $norm-bold;
 }

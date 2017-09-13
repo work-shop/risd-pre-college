@@ -1,0 +1,17 @@
+
+
+body {
+    padding-top: $header-height;
+}
+
+main {
+    position: relative;
+}
+
+.container {
+    @include outer-container(100%);
+}
+
+.top-element {
+    padding-top: $header-padding;
+}

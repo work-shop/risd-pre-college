@@ -1,0 +1,29 @@
+#sidebar {
+    @include span-columns( 3 of 12 );
+
+
+    padding: (2em + $header-padding) 2em 2em 2em;
+
+    &.sidebar-program {
+        background-color: $pre-college-dark-blue;
+        color:$pre-college-white;
+
+        .nav-type {
+            color:$pre-college-white;
+        }
+    }
+
+    &.sidebar-info {
+        background-color: $pre-college-light-gray;
+        color:$pre-college-dark-gray;
+
+        .nav-type {
+            color:$pre-college-dark-gray;
+        }
+
+    }
+}
+
+.nav-type.active {
+    font-family: $norm-bold;
+}

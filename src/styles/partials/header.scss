@@ -1,0 +1,62 @@
+@import "parameters";
+
+header {
+
+    height: $header-height;
+
+    position: fixed;
+    top:0px;
+    left:0px;
+
+    width: 100%;
+
+    &.page {
+        background-color: $pre-college-light-gray;
+    }
+
+    &.home {
+        background-color: $pre-college-white;
+    }
+
+    &.search {
+        background-color: $pre-college-white;
+    }
+
+}
+
+.logo {
+    display: inline-block;
+    width:120px;
+    height: $header-height;
+    background-image: url('../images/logo-sticky.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.nav {
+    display: inline-block;
+    height: $header-height;
+    float:right;
+}
+
+.nav-button {
+    padding: 1em;
+    margin: 0px;
+}
+
+
+.menu-button {
+    height: $header-height;
+    background-color: $pre-college-light-gray;
+}
+
+.search-button {
+    height: $header-height;
+    background-color: $pre-college-light-gray;
+}
+
+.apply-button {
+    height: $header-height;
+    background-color: $pre-college-orange;
+}
