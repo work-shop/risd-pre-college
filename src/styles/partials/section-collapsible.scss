@@ -1,0 +1,4 @@
+.section-content.collapsible-subsections {
+    @include shift(1 of 9);
+    @include span-columns( 7 of 9 );
+}

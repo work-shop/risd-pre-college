@@ -11,6 +11,8 @@ header {
 
     width: 100%;
 
+    z-index:1000;
+
     &.page {
         background-color: $pre-college-light-gray;
     }
@@ -29,27 +31,40 @@ header {
     display: inline-block;
     width:120px;
     height: $header-height;
+    margin-left: 1em;
+    float:left;
+
     background-image: url('../images/logo-sticky.png');
     background-position: center;
     background-repeat: no-repeat;
+
 }
 
 
 .nav {
-    display: inline-block;
-    height: $header-height;
     float:right;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+    align-self: flex-end;
 }
 
 .nav-button {
-    padding: 1em;
-    margin: 0px;
+    display: inline-block;
     cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    line-height: $header-height;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 
 .menu-button {
     height: $header-height;
+    width:auto;
     background-color: $pre-college-light-gray;
 
     &:hover {
@@ -71,6 +86,7 @@ header {
 
 .search-button {
     height: $header-height;
+    width:auto;
     background-color: $pre-college-light-gray;
 
     &:hover {
@@ -86,10 +102,24 @@ header {
 
 
 .apply-button {
+
+
     height: $header-height;
+    width:auto;
     background-color: $pre-college-orange;
 
     &:hover {
         background-color: $pre-college-orange-active;
+    }
+}
+
+.apply-button-text {
+    @extend .bold;
+}
+
+@include sm-and-below-query() {
+    .nav-button {
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }

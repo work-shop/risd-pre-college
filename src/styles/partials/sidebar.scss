@@ -1,14 +1,15 @@
 #sidebar {
     @include span-columns( 3 of 12 );
 
+    position: fixed;
+    height: calc( 100vh - 60px );
 
     padding: (2em + $header-padding) 2em 2em 2em;
 
     &.sidebar-program {
         background-color: $pre-college-dark-blue;
-        color:$pre-college-white;
 
-        .nav-type {
+        .sidebar-type {
             color:$pre-college-white;
         }
     }
@@ -17,13 +18,59 @@
         background-color: $pre-college-light-gray;
         color:$pre-college-dark-gray;
 
-        .nav-type {
+        .sidebar-type {
+
             color:$pre-college-dark-gray;
         }
 
     }
 }
 
+.sidebar-type {
+    @extend .book;
+}
+
+.sidebar-parent-type {
+    text-transform: uppercase;
+}
+
+.sidebar-child-type {
+
+}
+
+
+.nav-item-submenu {
+    margin-left: 2em;
+    margin-bottom: 2em;
+
+    .sidebar-type {
+        @extend .medium;
+
+    }
+}
+
+
+
+
 .nav-type.active {
     font-family: $norm-bold;
+}
+
+@include sm-and-below-query() {
+    #sidebar {
+        @include span-columns(6 of 12);
+
+        cursor: pointer;
+        position: fixed;
+
+        -webkit-transform: translateX(-90%);
+        transform: translateX(-90%);
+        transition: transform $transition-duration;
+
+        &.open {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+            transition: transform $transition-duration;
+        }
+    }
 }

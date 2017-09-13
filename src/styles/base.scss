@@ -2,6 +2,7 @@
 
 body {
     padding-top: $header-height;
+    @include transition(all, $transition-duration, linear );
 }
 
 main {
