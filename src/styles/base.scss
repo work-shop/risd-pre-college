@@ -15,3 +15,9 @@ main {
 .top-element {
     padding-top: $header-padding;
 }
+
+.vertical-center {
+    position: relative;
+    top:50%;
+    @include transform( translateY(-50%) );
+}

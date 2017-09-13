@@ -6,6 +6,15 @@ $pre-college-dark-gray: #414143;
 $pre-college-light-gray: #E7E8EA;
 $pre-college-white: white;
 
+$active-hover-darkening-factor: 10%;
+
+$pre-college-light-blue-active: darken( #A7DCE8, $active-hover-darkening-factor);
+$pre-college-dark-blue-active: darken( #3593D0, $active-hover-darkening-factor);
+$pre-college-orange-active: darken( #E65129, $active-hover-darkening-factor);
+$pre-college-green-active: darken( #D1DE57, $active-hover-darkening-factor);
+$pre-college-dark-gray-active: darken( #414143, $active-hover-darkening-factor);
+$pre-college-light-gray-active: darken( #E7E8EA, $active-hover-darkening-factor);
+$pre-college-white-active: darken( white, $active-hover-darkening-factor);
 
 $norm-book: CabritoSans-NorBoo;
 $norm-book-italic: CabritoSans-NorBooIt;
