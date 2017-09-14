@@ -1,3 +1,5 @@
+"use strict";
+
 function toggleClass( config ) {
     console.log('toggle-class.js loaded');
 

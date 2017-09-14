@@ -1,0 +1,19 @@
+.wysiwyg {
+
+    h1 {
+        @extend .h3;
+    }
+
+    h2 {
+        @extend .h4;
+    }
+
+    h3 {
+        @extend .h5;
+    }
+
+    h4, h5, h6 {
+        @extend .h6;
+    }
+
+}
