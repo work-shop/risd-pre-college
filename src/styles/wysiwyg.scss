@@ -1,19 +1,130 @@
 .wysiwyg {
 
+    blockquote {
+        @extend .h3;
+        @extend .bold;
+        color:$pre-college-dark-blue;
+        margin-top:2em;
+        margin-bottom:2em;
+    }
+
     h1 {
         @extend .h3;
+        margin-top:1em;
     }
 
     h2 {
         @extend .h4;
+        margin-top:2em;
     }
 
     h3 {
         @extend .h5;
+        margin-top:2em;
     }
 
     h4, h5, h6 {
         @extend .h6;
+        margin-top:1.5em;
+    }
+
+    strong {
+        @extend .bold;
+    }
+
+    em {
+        @extend .italic;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        margin-bottom: 1em;
+    }
+
+    ul {
+        li::before {
+            @extend .brand-orange;
+            @extend .bold;
+
+            display: inline-block;
+
+            content: "–";
+
+            vertical-align: baseline;
+
+            font-size: 1.5em;
+            margin-right: 2em;
+
+            transition: transform $transition-duration;
+        }
+
+        li {
+            margin-bottom: 1em;
+        }
+
+        margin-bottom: 2em;
+    }
+
+    ol {
+        counter-reset: list;
+
+        li::before {
+            @extend .brand-orange;
+            @extend .bold;
+
+            counter-increment: list;
+
+            display: inline-block;
+
+            content: counter(list)"." ;
+
+            vertical-align: baseline;
+
+            font-size: 1em;
+            margin-right: 3em;
+
+            transition: transform $transition-duration;
+        }
+
+        li {
+            margin-bottom: 1.5em;
+        }
+
+        margin-bottom: 2em;
+    }
+
+    img {
+        margin-bottom: 2%;
+    }
+
+    img.alignleft {
+        width:31%;
+        height:auto;
+        margin-right: 2%;
+        display: inline-block;
+        float: left;
+        clear: left;
+    }
+
+    img.aligncenter {
+        width:31%;
+        height:auto;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    img.alignright {
+        width:31%;
+        height:auto;
+        margin-left: 2%;
+        display: inline-block;
+        float: right;
+        clear: right;
+    }
+
+    img.alignnone {
+        width: 100%;
+        clear: both;
     }
 
 }

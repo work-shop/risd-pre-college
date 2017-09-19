@@ -5,6 +5,10 @@ body {
     @include transition(all, $transition-duration, linear );
 }
 
+body.home {
+    padding-top: 0;
+}
+
 main {
     position: relative;
 }

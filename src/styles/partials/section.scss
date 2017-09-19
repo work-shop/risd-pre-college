@@ -1,0 +1,9 @@
+.section-content {
+    margin-bottom: $section-margin-bottom;
+}
+
+.caption {
+    @include shift( 1 of 9 );
+    @include span-columns( 7 of 9 );
+    color: $pre-college-dark-gray;
+}

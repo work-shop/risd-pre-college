@@ -29,7 +29,12 @@ $norm-medium: CabritoSans-NorMed;
 $norm-medium-italic: CabritoSans-NorMedIt;
 
 $header-height: 60px;
-$header-padding: 2em;
+$header-padding: 4em; // sorry, it's got to be in ems.
+$section-margin-bottom: 1.5em;
+$home-slideshow-height: 60vh; // should be in viewport units.
+$home-slideshow-max-height:800px;
+$home-page-pre-college-type-viewport-factor:5; // should be unitless
+$home-page-pre-college-type-aperture-factor:9.5; // should be unitless
 $transition-duration: 0.35s;
 
 // breakpoints
@@ -38,39 +43,7 @@ $sm: 767px;
 $md: 991px;
 $lg: 1199px;
 
-
-@mixin xs-query() {
-    @media screen and (max-width: $xs) {
-            @content;
-    }
-}
-
-@mixin sm-query() {
-    @media screen and (max-width: $sm) and (min-width: $xs) {
-            @content;
-    }
-}
-
-@mixin sm-and-below-query() {
-    @media screen and (max-width: $sm) {
-            @content;
-    }
-}
-
-@mixin md-query() {
-    @media screen and (min-width: $sm) and (max-width: $md) {
-            @content;
-    }
-}
-
-@mixin lg-query() {
-    @media screen and (min-width: $md) and (max-width: $lg) {
-            @content;
-    }
-}
-
-@mixin xl-query() {
-    @media screen and (min-width: $lg) {
-            @content;
-    }
-}
+$full-bleed-left-margin: -3.1%;
+$full-bleed-right-margin: 0%;
+$sm-full-bleed-left-margin: -3.1%;
+$sm-full-bleed-right-margin: -10.25%;

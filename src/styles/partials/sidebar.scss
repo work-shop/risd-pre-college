@@ -3,8 +3,10 @@
 
     position: fixed;
     height: calc( 100vh - 60px );
+    font-size: 16px;
+    z-index:500;
 
-    padding: (2em + $header-padding) 2em 2em 2em;
+    padding: (1em+$header-padding) 2em 2em 2em;
 
     &.sidebar-program {
         background-color: $pre-college-dark-blue;
@@ -41,10 +43,13 @@
 
 .nav-item-submenu {
     margin-left: 2em;
-    margin-bottom: 2em;
 
     .sidebar-type {
         @extend .medium;
+
+        &:hover {
+            @extend .bold;
+        }
 
     }
 }
@@ -58,7 +63,7 @@
 
 @include sm-and-below-query() {
     #sidebar {
-        @include span-columns(6 of 12);
+        @include span-columns(9 of 12);
 
         cursor: pointer;
         position: fixed;
@@ -68,8 +73,8 @@
         transition: transform $transition-duration;
 
         &.open {
-            -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+            -webkit-transform: translateX(1.25%);
+            transform: translateX(1.25%);
             transition: transform $transition-duration;
         }
     }

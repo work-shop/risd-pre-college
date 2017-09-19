@@ -1,0 +1,33 @@
+a {
+    border-bottom: 2px solid $pre-college-orange;
+
+    &:hover {
+        color:$pre-college-orange;
+    }
+
+}
+
+a.nav-link {
+    border-bottom: none;
+
+}
+
+a.sidebar-link {
+    border-bottom: none;
+
+    &:hover {
+        color:inherit;
+        @extend .bold;
+    }
+
+}
+
+a.menu-link {
+    border-bottom: none;
+
+}
+
+a.footer-link {
+    border-bottom: none;
+
+}

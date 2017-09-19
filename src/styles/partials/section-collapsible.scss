@@ -2,3 +2,48 @@
     @include shift(1 of 9);
     @include span-columns( 7 of 9 );
 }
+
+.subsection-content {
+    display: none;
+}
+
+.subsection-columns-2 {
+    @include span-columns(3 of 7);
+}
+
+.subsection-header::before {
+    @extend .pictogram;
+    @extend .brand-orange;
+
+    display: inline-block;
+
+    content: "‹";
+
+    position:relative;
+    left:-10%;
+    top:29px;
+
+    font-size: 2em;
+
+    transition: transform $transition-duration;
+}
+
+.subsection-header.subsection-closed::before {
+
+}
+
+.subsection-header.subsection-open::before {
+
+
+    @include transform( rotate(90deg) );
+
+}
+
+
+@include sm-and-below-query() {
+    .subsection-header::before {
+
+        top:22px;
+
+    }
+}

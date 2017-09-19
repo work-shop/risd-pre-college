@@ -1,0 +1,34 @@
+.section-content.labelled-list {
+    @include shift(1 of 9);
+    @include span-columns( 7 of 9 );
+}
+
+.labelled-list-list {
+    @include span-columns( 7 of 7 );
+}
+
+.labelled-list-list .list-row {
+    @include span-columns( 7 of 7 );
+    margin-bottom: 1.5em;
+}
+
+.list-item-label {
+    @include span-columns( 2 of 7 );
+    padding-top:.5%;
+
+}
+
+.list-item-content {
+    @include span-columns( 5 of 7 );
+}
+
+@include sm-and-below-query() {
+    .list-item-label {
+        @include span-columns( 7 of 7 );
+        padding-top:0;
+    }
+
+    .list-item-content {
+        @include span-columns( 7 of 7 );
+    }
+}

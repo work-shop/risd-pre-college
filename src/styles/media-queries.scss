@@ -1,0 +1,35 @@
+@mixin xs-query() {
+    @media screen and (max-width: $xs) {
+            @content;
+    }
+}
+
+@mixin sm-query() {
+    @media screen and (max-width: $sm) and (min-width: $xs) {
+            @content;
+    }
+}
+
+@mixin sm-and-below-query() {
+    @media screen and (max-width: $sm) {
+            @content;
+    }
+}
+
+@mixin md-query() {
+    @media screen and (min-width: $sm) and (max-width: $md) {
+            @content;
+    }
+}
+
+@mixin lg-query() {
+    @media screen and (min-width: $md) and (max-width: $lg) {
+            @content;
+    }
+}
+
+@mixin xl-query() {
+    @media screen and (min-width: $lg) {
+            @content;
+    }
+}
