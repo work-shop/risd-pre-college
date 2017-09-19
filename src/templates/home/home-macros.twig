@@ -1,5 +1,50 @@
 {% macro slideshow( slides ) %}
+
+    <div class="pre-college-corner-stamp">
+        <div class="aperture">
+        </div>
+        <div class="stamp-text">
+            <div class="upper-row text-row">
+                <span class="corner-stamp-RISD">RISD</span>
+                <span class="corner-stamp-pre">Pre</span>
+            </div>
+            <div class="lower-row text-row">
+                <span class="corner-stamp-college">College</span>
+            </div>
+        </div>
+    </div>
+
+    <ul class="slides">
+        {% for slide in slides %}
+            {% if slide.slide_type == "image" %}
+            <li data-overlay-box-color="{{ slide.overlay_box_color }}" class="slide {% if slide.image.width > slide.image.height %}landscape{% else %}portrait{% endif %}" style="background-image:url('{{ slide.image.url }}');">
+
+                    {% if slide.caption %}
+                        <!-- <div class="home-caption">{{ slide.caption }}</div> -->
+                    {% endif %}
+
+            </li>
+            <script type="text/javascript"> console.log({{ slide|json_encode }})</script>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+
+
 {% endmacro %}
 
-{% macro quicklinks( program_overview_text, info_text ) %}
+{% macro quicklinks( program_overview_text, info_text, callout_text ) %}
+    <div class="program-overview-box">
+        <h4>Program Overview</h4>
+        <p class="text">{{ program_overview_text }}</p>
+        <a class="nav-link brand-dark-blue bold" href="{{ site_url }}/program">Explore the program &rarr;</a>
+    </div>
+    <div class="info-box">
+        <h4>Info</h4>
+        <p class="text">{{ info_text }}</p>
+        <a class="nav-link brand-dark-blue bold" href="{{ site_url }}/info">Read the details &rarr;</a>
+    </div>
+    <div class="pre-college-overlay-box">
+        <h2>{{ callout_text }}</h2>
+    </div>
 {% endmacro %}

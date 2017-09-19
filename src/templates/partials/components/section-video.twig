@@ -1,0 +1,17 @@
+
+<section id="{% include "partials/components/section-id.twig" %}" class="section-content video">
+
+    <div class="content image">
+
+        <div class="full-bleed-video">
+            <!-- video embed here -->
+            <iframe width="420" height="315" class="section-video-frame" src="https://www.youtube.com/embed/{{ section.youtube_video_id }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        {% if section.caption %}
+            <div class="caption">{{ section.caption }}</div>
+        {% endif %}
+
+    </div>
+
+</section>

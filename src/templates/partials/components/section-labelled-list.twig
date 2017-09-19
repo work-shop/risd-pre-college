@@ -1,12 +1,12 @@
 
 <section id="{% include "partials/components/section-id.twig" %}" class="section-content labelled-list">
 
-    <div class="content labelled-list">
-        <ul class="labelled-list">
+    <div class="content labelled-list-container">
+        <ul class="labelled-list-list">
             {% for li in section.labelled_list_items %}
-                <li>
+                <li class="list-row">
                     <div class="list-item-label">
-                        <h3>{{ li.list_item_label }}</h3>
+                        <h6>{{ li.list_item_label }}</h6>
                     </div>
                     <div class="list-item-content wysiwyg">
                         {{ li.list_item_content }}

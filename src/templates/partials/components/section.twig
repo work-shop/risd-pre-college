@@ -1,25 +1,29 @@
-{% macro dispatch( section ) %}
+{% macro dispatch( section, index ) %}
+
 
     {% if section.section_type == "rich_text" %}
 
-        {% include "partials/components/section-rich-text.twig" %}
+        {% include "partials/components/section-rich-text.twig" with { 'section_index' : index } %}
 
     {% elseif section.section_type == "image" %}
 
-        {% include "partials/components/section-image.twig" %}
+        {% include "partials/components/section-image.twig" with { 'section_index' : index } %}
 
     {% elseif section.section_type == "video" %}
+
+        {% include "partials/components/section-video.twig" with { 'section_index' : index } %}
+
     {% elseif section.section_type == "collapsible" %}
 
-        {% include "partials/components/section-collapsible-subsections.twig" %}
+        {% include "partials/components/section-collapsible-subsections.twig" with { 'section_index' : index } %}
 
     {% elseif section.section_type == "labelled" %}
 
-        {% include "partials/components/section-labelled-list.twig" %}
+        {% include "partials/components/section-labelled-list.twig" with { 'section_index' : index } %}
 
     {% elseif section.section_type == "schedule" %}
 
-        {% include "partials/components/section-schedule.twig" %}
+        {% include "partials/components/section-schedule.twig" with { 'section_index' : index } %}
 
     {% else %}
 

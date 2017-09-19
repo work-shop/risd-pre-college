@@ -4,12 +4,14 @@
     <div class="content image">
 
         <div class="full-bleed-image">
-            <img src="{{ TimberImage( section.image_field.id )}}" />
+            <img src="{{ TimberImage( section.image_field.id )}}" alt="{{ section.image_field.alt }}" />
 
         </div>
 
         {% if section.caption %}
             <div class="caption">{{ section.caption }}</div>
+        {% elseif section.image_field.caption %}
+            <div class="caption">{{ section.image_field.caption }}</div>
         {% endif %}
 
     </div>

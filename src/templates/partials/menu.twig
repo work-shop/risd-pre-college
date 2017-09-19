@@ -7,9 +7,9 @@
         {% for item in menu.get_items %}
             {% if item.slug == "program" %}
             <ul class="program-submenu-list submenu-list">
-                <li class="submenu-header"><a href="{{ item.link }}"><h5 class="nav-type uppercase brand-white bold">{{ item.name }}</h5></a></li>
+                <li class="submenu-header"><a class="menu-link" href="{{ item.link }}"><h5 class="nav-type uppercase brand-white bold">{{ item.name }}</h5></a></li>
                 {% for menu_item in item.get_children %}
-                    <li class="submenu-item"><a href="{{ menu_item.link }}"><h6 class="brand-white book">{{ menu_item.name }}</h6></a></li>
+                    <li class="submenu-item"><a class="menu-link" href="{{ menu_item.link }}"><h6 class="brand-white book">{{ menu_item.name }}</h6></a></li>
                 {% endfor %}
             </ul>
             {% endif %}
@@ -20,9 +20,9 @@
         {% for item in menu.get_items %}
             {% if item.slug == "info" %}
             <ul class="info-submenu-list submenu-list">
-                <li class="submenu-header"><a href="{{ item.link }}"><h5 class="nav-type uppercase brand-dark-gray">{{ item.name }}</h5></a></li>
+                <li class="submenu-header"><a class="menu-link" href="{{ item.link }}"><h5 class="nav-type uppercase brand-dark-gray">{{ item.name }}</h5></a></li>
                 {% for menu_item in item.get_children %}
-                    <li class="submenu-item"><a href="{{ menu_item.link }}"><h6 class="brand-dark-gray book">{{ menu_item.name }}</h6></a></li>
+                    <li class="submenu-item"><a class="menu-link" href="{{ menu_item.link }}"><h6 class="brand-dark-gray book">{{ menu_item.name }}</h6></a></li>
                 {% endfor %}
             </ul>
             {% endif %}

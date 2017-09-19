@@ -3,11 +3,11 @@
 
     <div class="content collapsible-subsections">
         {% for subsection in section.collapsible_subsections %}
-            <div class="subsection">
-                <div class="subsection-header">
+            <div class="subsection subsection-columns-{{ section.subsection_columns }}" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
+                <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
                     <h5>{{ subsection.subsection_header }}</h5>
                 </div>
-                <div class="subsection-content wysiwyg">
+                <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
                     {{ subsection.subsection_content }}
                 </div>
             </div>

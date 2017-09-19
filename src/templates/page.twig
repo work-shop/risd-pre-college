@@ -16,7 +16,7 @@
 
                 {% for section in post.get_field('sections') %}
 
-                    {{ sections.dispatch( section ) }}
+                    {{ sections.dispatch( section, loop.index ) }}
 
                 {% endfor %}
 
