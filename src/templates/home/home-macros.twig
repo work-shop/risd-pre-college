@@ -18,11 +18,10 @@
         {% for slide in slides %}
             {% if slide.slide_type == "image" %}
             <li data-overlay-box-color="{{ slide.overlay_box_color }}" class="slide {% if slide.image.width > slide.image.height %}landscape{% else %}portrait{% endif %}" style="background-image:url('{{ slide.image.url }}');">
-
+                <div class="slide-overlay"></div>
                     {% if slide.caption %}
                         <!-- <div class="home-caption">{{ slide.caption }}</div> -->
                     {% endif %}
-
             </li>
             <script type="text/javascript"> console.log({{ slide|json_encode }})</script>
             {% endif %}
@@ -40,11 +39,11 @@
         <a class="nav-link brand-dark-blue bold" href="{{ site_url }}/program">Explore the program &rarr;</a>
     </div>
     <div class="info-box">
-        <h4>Info</h4>
+        <h4>Application Information</h4>
         <p class="text">{{ info_text }}</p>
         <a class="nav-link brand-dark-blue bold" href="{{ site_url }}/info">Read the details &rarr;</a>
     </div>
     <div class="pre-college-overlay-box">
-        <h2>{{ callout_text }}</h2>
+        <h3>{{ callout_text }}</h3>
     </div>
 {% endmacro %}

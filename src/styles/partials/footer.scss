@@ -1,0 +1,151 @@
+footer {
+    position: relative;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    z-index: 650;
+    background-color: $pre-college-white;
+}
+
+.header-row h5 {
+    text-transform: uppercase;
+}
+
+.header-row, .content-row, .affiliates-row, .copyright-row {
+    @include span-columns( 8 of 12 );
+    @include shift( 2 of 12 );
+    @include omega();
+    padding-bottom: 2em;
+}
+
+.header-row {
+    padding-bottom: 1em;
+}
+
+.buttons-column {
+    @include span-columns( 4 of 8 );
+
+    .footer-button {
+        width: 100%;
+        text-align: center;
+        padding:1em;
+        margin-bottom: 1em;
+    }
+
+    .footer-apply-button {
+
+        background-color: $pre-college-light-gray;
+
+        span {
+            @extend .bold;
+            color:$pre-college-dark-gray;
+        }
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    .footer-apply-button.applications_are_open {
+        background-color: $pre-college-orange;
+
+        span {
+            color:$pre-college-white;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: $pre-college-orange-active;
+        }
+    }
+
+    .footer-more-info-button {
+        background-color: $pre-college-green;
+
+        span {
+            @extend .bold;
+            color: $pre-college-dark-gray;
+        }
+    }
+
+
+}
+
+
+
+.contact-column {
+    @include span-columns( 4 of 8 );
+
+    .contact-header {
+        text-transform: uppercase;
+    }
+
+    .contact-telephone {
+        @include span-columns(4 of 4);
+        margin-bottom: 1em;
+
+        .label {
+            @extend .bold;
+            @include span-columns(2 of 4);
+
+        }
+
+        .phone-number {
+            @include span-columns(2 of 4);
+        }
+
+    }
+
+    .social-media {
+        @include span-columns( 4 of 4 );
+        padding-top:1em;
+
+        .social-link {
+            @include span-columns( 1 of 4 );
+            font-weight: normal;
+            text-align: left;
+
+            .social-icon {
+                cursor: pointer;
+                text-align: center;
+                background-color: $pre-college-dark-blue;
+                color:$pre-college-white;
+                font-size: 1.5em;
+                padding:.5em;
+                width:60px;
+
+                &:hover {
+                    background-color:$pre-college-dark-blue-active;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.affiliates-list {
+    @include span-columns( 8 of 8 );
+
+    .footer-link {
+        @include span-columns(1.6 of 8);
+
+    }
+
+}
+
+
+@include sm-and-below-query() {
+    .contact-column, .buttons-column {
+        @include span-columns(8 of 8);
+    }
+
+    .contact-header {
+        margin-top: 1em;
+    }
+
+    .affiliates-row {
+        display: none;
+    }
+}

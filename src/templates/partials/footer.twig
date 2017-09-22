@@ -1,1 +1,37 @@
-<footer></footer>
+{% import "partials/components/application-button.twig" as button %}
+
+<footer class="container">
+        <div class="header-row">
+            <h5 class="footer-type uppercase bold brand-dark-gray">RISD Pre-College</h5>
+        </div>
+        <div class="content-row">
+            <div class="buttons-column">
+
+                {{ button.footer_apply_button( options ) }}
+
+                <div class="footer-more-info-button footer-button">
+                    <span class="more-info-button-text"><span class="hidden-sm">Need More </span>Information?</span>
+                </div>
+            </div>
+            <div class="contact-column">
+                <div class="contact-telephone"><p class="uppercase small"><span class="label">Local</span> <a class="phone-number footer-link" href="tel:4014546200">401 454-6200</a></p></div>
+                    <div class="contact-telephone"><p class="uppercase small"><span class="label">International</span> <a class="phone-number footer-link" href="tel:180036474732">+1 800 364-7473  ext. 2</a></p></div>
+                <div class="social-media">
+                    <div class="social-link pictogram"><a class="footer-link" target="_blank" href="http://facebook.com/risdprecollege"><div class="social-icon">F</div></a></div>
+                    <div class="social-link pictogram hidden"><a class="footer-link" target="_blank" href=""><div class="social-icon">t</div></a></div>
+                    <div class="social-link pictogram"><a class="footer-link" target="_blank" href="https://instagram.com/risd_precollege"><div class="social-icon">I</div></a></div>
+                    <div class="social-link pictogram hidden"><a class="footer-link" target="_blank" href=""><div class="social-icon">m</div></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="affiliates-row hidden-sm">
+            <ul class="affiliates-list">
+                <li class="footer-link"><a class="footer-link" target="_blank" href="http://risd.edu">RISD</a></li>
+                <li class="footer-link"><a class="footer-link" target="_blank" href="http://summer.risd.edu">RISD Summer Programs</a></li>
+                <li class="footer-link"><a class="footer-link" target="_blank" href="http://ce.risd.edu">RISD Continuing Education</a></li>
+                <li class="footer-link"><a class="footer-link" target="_blank" href="http://exed.risd.edu">RISD Executive Education</a></li>
+                <li class="footer-link"><a class="footer-link" target="_blank" href="http://global.risd.edu">RISD Global</a></li>
+            </ul>
+        </div>
+        <div class="copyright-row"><p class="tiny">Copyright {{ "now"|date("Y") }} – The Rhode Island School of Design Pre-College Program</p></div>
+</footer>

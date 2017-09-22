@@ -2,16 +2,54 @@
 <section id="{% include "partials/components/section-id.twig" %}" class="section-content collapsible-subsections">
 
     <div class="content collapsible-subsections">
-        {% for subsection in section.collapsible_subsections %}
-            <div class="subsection subsection-columns-{{ section.subsection_columns }}" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
-                <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
-                    <h5>{{ subsection.subsection_header }}</h5>
-                </div>
-                <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
-                    {{ subsection.subsection_content }}
-                </div>
+        {% if section.subsection_columns == 2 %}
+
+            <div class="subsection-columns-2 left">
+                {% set length = Math.floor( section.collapsible_subsections.length / 2 ) %}
+                {% for subsection in section.collapsible_subsections[0:length] %}
+                {% if (loop.index - 1) % 2 == 0 %}
+                    <div class="subsection" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
+                        <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
+                            <h5>{{ subsection.subsection_header }}</h5>
+                        </div>
+                        <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
+                            {{ subsection.subsection_content }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
             </div>
-        {% endfor %}
+            <div class="subsection-columns-2 right">
+                {% for subsection in section.collapsible_subsections[:section.collapsible_subsections.length] %}
+                {% if (loop.index - 1) % 2 == 1 %}
+                    <div class="subsection" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
+                        <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
+                            <h5>{{ subsection.subsection_header }}</h5>
+                        </div>
+                        <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
+                            {{ subsection.subsection_content }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+        {% else %}
+
+            <div class="subsection-columns-1">
+            {% for subsection in section.collapsible_subsections %}
+                <div class="subsection subsection-columns-{{ section.subsection_columns }}" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
+                    <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
+                        <h5>{{ subsection.subsection_header }}</h5>
+                    </div>
+                    <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
+                        {{ subsection.subsection_content }}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+
+        {% endif %}
     </div>
 
 </section>

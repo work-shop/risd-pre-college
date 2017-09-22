@@ -32,6 +32,7 @@ header {
 
         .search-button {
             background-color: transparent;
+            text-transform: lowercase;
 
             &:hover {
                 background-color: $pre-college-light-gray;
@@ -107,16 +108,18 @@ header {
 
 
 
-
 .search-button {
-    width:20%;
+    width:50%;
     height: $header-height;
     background-color: $pre-college-light-gray;
 
     &:hover {
         background-color: $pre-college-light-gray-active;
     }
+}
 
+.search-button.applications_are_open {
+    width:20%;
 }
 
 .search-button-icon {
@@ -174,10 +177,18 @@ header {
     }
 
     .menu-button {
+        width:50%;
+    }
+
+    .menu-button.applications_are_open {
         width:30%;
     }
 
     .search-button {
+        width:50%;
+    }
+
+    .search-button.applications_are_open {
         width:20%;
     }
 

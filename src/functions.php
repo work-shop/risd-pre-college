@@ -15,6 +15,7 @@
     Timber::$dirname = "templates";
 
     class RISDPreCollege extends TimberSite {
+
         function __construct() {
             add_theme_support("post-formats");
             add_theme_support("menus");
@@ -91,8 +92,14 @@
             $context["menu"] = new TimberMenu();
             $context["options"] = array(
                 "home_page_slideshow" => get_field("home_page_slideshow", "option"),
-                "home_page_callout_text" => get_field("home_page_callout_text", "option")
-            );
+                "home_page_callout_text" => get_field("home_page_callout_text", "option"),
+                "home_page_program_overview_text" => get_field("home_page_program_overview_text", "option"),
+                "home_page_info_text" => get_field("home_page_info_text", "option"),
+                "applications_are_open" => get_field("applications_are_open", "option"),
+                "application_link" => get_field("application_link", "option"),
+                "open_applications_footer_text" => get_field("open_applications_footer_text", "option"),
+                "closed_applications_footer_text" => get_field("closed_applications_footer_text", "option")
+             );
             return $context;
         }
 
