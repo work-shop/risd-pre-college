@@ -1,0 +1,83 @@
+.query {
+    @include shift( 2 of 12 );
+    @include span-columns( 8 of 12 );
+}
+
+.page-search-input-text {
+    @include span-columns(9 of 10);
+
+    input {
+        @extend .h3;
+        @extend .brand-dark-gray;
+        @include span-columns(9 of 9);
+
+        outline:0;
+        padding-top:1em;
+        padding-bottom: .25em;
+        border:0;
+        border-bottom: 2px solid $pre-college-dark-gray;
+    }
+
+}
+
+.page-search-input-submit {
+    @include span-columns(1 of 10);
+    input {
+        @include span-columns(1 of 1);
+        @include omega();
+
+        @extend .h3;
+        @extend .pictogram;
+
+        cursor:pointer;
+
+        border:0;
+        outline:0;
+        padding:1em;
+
+        vertical-align: baseline;
+
+        background-color: $pre-college-white;
+        color:$pre-college-light-gray;
+
+        &:hover {
+            color:$pre-college-dark-gray;
+        }
+    }
+}
+
+.results {
+    @include shift(1 of 12);
+    @include span-columns(10 of 12);
+
+    .results-list {
+        @include span-columns(10 of 10);
+    }
+}
+
+.search-result {
+    @include span-columns( 5 of 10 );
+    @include omega(2n);
+
+    margin-bottom: 2em;
+}
+
+.no-results {
+    @include span-columns(10 of 10);
+    text-align:center;
+}
+
+.search-home-link {
+    @include span-columns(10 of 10);
+    text-align: center;
+}
+
+@include sm-and-below-query() {
+    .search-result {
+        @include span-columns( 10 of 10 );
+        @include omega();
+
+        margin-bottom: 1.5em;
+
+    }
+}

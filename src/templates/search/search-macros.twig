@@ -1,0 +1,58 @@
+{% macro query( q, r ) %}
+
+    <div class="query">
+        <form role="search" method="get" id="page-searchform" action="/">
+            <h6 class="brand-dark-gray">You searched for</h2>
+            <div class="page-search-input-text">
+                <input type="text" value="" name="s" id="page-s" placeholder="'{{ q }}'" />
+            </div>
+            <div class="page-search-input-submit">
+                <input type="submit" value=">" class="search-input-button pictogram" id="page-searchsubmit" />
+            </div>
+        </form>
+    </div>
+
+{% endmacro %}
+
+{% macro results( q, r ) %}
+
+<script type="text/javascript">console.log({{ r|json_encode }})</script>
+
+<div class="results mb2">
+    {% if r|length > 0 %}
+        <ul class="results-list">
+            {% for result in r %}
+
+                <li class="search-result">
+                    <a class="search-link" href="{{ result.link }}">
+                        <h4 class="result-title">{{ result.title }}</h4>
+                        <p class="result-excerpt">{{ result.get_field('summary') }}
+                        {% set sections = result.get_field('sections') %}
+                        {% if sections|length > 0 %}
+                            <p class="result-sections">
+                                {% for section in sections %}
+                                    {% if section.show_in_menu %}
+
+                                    <a class="search-subsection-link" href="{{ result.link }}#{% include "partials/components/section-id.twig" %}">{{ section.section_title }}</a>{% if loop.index != sections|length %}, {% if loop.index == sections|length - 1 %}and{% endif %}{% endif %}
+
+                                    {% endif %}
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                        <a class="nav-link brand-dark-blue bold" href="{{ result.link }}">Read More &rarr;</a>
+                    </a>
+                </li>
+
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="no-results mt2">
+            <h2>Your search didn't turn up anything.</h2>
+        </div>
+    {% endif %}
+
+</div>
+<div class="search-home-link">
+    <a class="nav-link brand-dark-blue bold" href="/">&larr; Head back Home</a>
+</div>
+{% endmacro %}

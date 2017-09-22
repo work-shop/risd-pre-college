@@ -1,11 +1,11 @@
 .wysiwyg {
 
     blockquote {
-        @extend .h3;
+        @extend .h4;
         @extend .bold;
         color:$pre-college-dark-blue;
         margin-top:2em;
-        margin-bottom:2em;
+        margin-bottom:1em;
     }
 
     h1 {
@@ -126,5 +126,12 @@
         width: 100%;
         clear: both;
     }
+
+    @include sm-and-below-query() {
+        img.alignleft, img.aligncenter, img.alignright, img.alignnone {
+            width: 100%;
+            clear:both;
+        }
+    };
 
 }

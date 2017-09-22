@@ -11,8 +11,8 @@
 }
 
 
-#menu-overlay {
-    z-index: 50;
+#menu-overlay, #search-overlay {
+    z-index: 800;
     display: none;
 
     width: 100vw;

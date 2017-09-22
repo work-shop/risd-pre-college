@@ -3,9 +3,10 @@
     @extend .bold;
 
     text-transform: uppercase;
-    position: fixed;
+    position: absolute;
     top:12vh;
     left:10vw;
+    z-index: 450;
 
     font-size:calc((#{$home-page-pre-college-type-viewport-factor}vh + #{$home-page-pre-college-type-viewport-factor}vw) / 2);
 }

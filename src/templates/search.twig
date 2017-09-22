@@ -1,0 +1,15 @@
+{% extends "partials/base.twig" %}
+
+{% import "search/search-macros.twig" as search %}
+
+{% block content %}
+
+        <div id="search-results" class="container top-element">
+
+            {{ search.query( query, results ) }}
+
+            {{ search.results( query, results ) }}
+
+        </div>
+
+{% endblock %}

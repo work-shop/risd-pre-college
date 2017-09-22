@@ -11,6 +11,7 @@ body.home {
 
 main {
     position: relative;
+    min-height: calc( 80vh - #{$header-height} );
 }
 
 .container {
@@ -21,8 +22,27 @@ main {
     padding-top: $header-padding;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .vertical-center {
     position: relative;
     top:50%;
     @include transform( translateY(-50%) );
+}
+
+@include sm-and-below-query() {
+    .hidden-sm {
+        display: none;
+    }
+}
+
+
+
+@mixin linear-gradient( $rot, $start, $end ) {
+    background: -webkit-linear-gradient( $rot, $start, $end );
+    background: -moz-linear-gradient( $rot, $start, $end );
+    background: linear-gradient( $rot, $start, $end );
+    //filter: progid.DXImageTransform.Microsoft.gradient( startColorstr='#{$start}', endColorStr='#{$end}', GradientType="#{$rot}" );
 }

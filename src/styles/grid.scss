@@ -1,0 +1,23 @@
+$total: 12;
+
+@for $i from 1 to $total {
+    @for $j from 1 to $i {
+
+        .span-#{$j}-of-#{$i} {
+            @include span-columns( #{$j} of #{$i} );
+        }
+
+        .shift-#{$j}-of-#{$i} {
+            @include shift( #{$j} of #{$i} );
+        }
+
+    }
+
+    .omega-#{i}n {
+        @include omega( #{i}n );
+    }
+}
+
+.omega {
+    @include omega();
+}

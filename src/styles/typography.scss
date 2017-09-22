@@ -5,6 +5,14 @@ html, body {
     letter-spacing: .025em;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
 .bold {
     font-family: $norm-bold, sans-serif;
 }
@@ -120,6 +128,14 @@ p {
     html, body {
         font-size: 16px;
     }
+}
+
+.small {
+    font-size: .8em;
+}
+
+.tiny {
+    font-size: .6em;
 }
 
 @include sm-query() {
