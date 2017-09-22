@@ -3,41 +3,48 @@
     blockquote {
         @extend .h4;
         @extend .bold;
+        @extend .italic;
         color:$pre-college-dark-blue;
-        margin-top:2em;
-        margin-bottom:1em;
+        margin-top:.75em;
+        margin-bottom:.75em;
     }
 
     h1 {
         @extend .h3;
-        margin-top:1em;
+        margin-bottom:1em;
     }
 
     h2 {
-        @extend .h4;
-        margin-top:2em;
+        @extend .h5;
+        @extend .brand-dark-gray;
+        margin-top: 2em;
+        margin-bottom:2em;
     }
 
     h3 {
-        @extend .h5;
-        margin-top:2em;
+        @extend .h6;
+        @extend .brand-dark-gray;
+        margin-top: 1em;
+        margin-bottom:1em;
+        text-transform: uppercase;
     }
 
     h4, h5, h6 {
         @extend .h6;
-        margin-top:1.5em;
+        @extend .brand-dark-gray;
+        margin-top:1em;
     }
 
     strong {
         @extend .bold;
     }
 
-    em {
+    em, i {
         @extend .italic;
     }
 
     h1, h2, h3, h4, h5, h6, p {
-        margin-bottom: 1em;
+        margin-bottom: .5em;
     }
 
     ul {
@@ -94,6 +101,7 @@
 
     img {
         margin-bottom: 2%;
+        height:auto;
     }
 
     img.alignleft {

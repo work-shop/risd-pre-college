@@ -1,5 +1,9 @@
 .section-content {
     margin-bottom: $section-margin-bottom;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .caption {
