@@ -1,0 +1,106 @@
+.content {
+    @include span-columns( 8 of 8 );
+}
+
+.schedule-row {
+    @include span-columns( 8 of 8 );
+
+}
+
+.header-column {
+    @include span-columns( 3 of 8 );
+    text-align: right;
+}
+
+.header-column h2::after {
+    @extend .pictogram;
+
+    content: "…";
+
+
+    position: relative;
+    top:0;
+    left:12.2%;
+
+    width:2px;
+    height:2px;
+    color: $pre-college-orange;
+}
+
+.details-column {
+    @include span-columns( 5 of 8 );
+    border-left:1px solid $pre-college-dark-gray;
+    padding-bottom:3.25em;
+    padding-left:1em;
+}
+
+.details-column.schedule-end {
+    padding-bottom: 0;
+}
+
+.schedule-subitem {
+    @include span-columns( 5 of 5 );
+
+}
+
+.subitem-label {
+    @include span-columns( 2 of 5 );
+}
+
+.subitem-text {
+    @include span-columns( 3 of 5 );
+
+    &.no-label {
+        @include shift( 2 of 5 );
+    }
+}
+
+
+.schedule-item-label {
+    @extend .h5;
+    @extend .brand-dark-gray;
+    margin-bottom:.25em;
+}
+
+@include sm-query() {
+        .header-column h2::after { left:12.4%; }
+}
+
+@include xs-query() {
+    .schedule-row {
+        margin-bottom: 2em;
+    }
+
+    .header-column {
+        @include span-columns( 6 of 8 );
+        @include shift( 1 of 8 );
+        text-align: left;
+        margin-bottom: .5em;
+    }
+
+    .details-column {
+        @include span-columns( 6 of 8 );
+        @include shift( 1 of 8 );
+        border:0;
+        padding:0;
+        padding-bottom: .5em;
+    }
+
+    .subitem-label {
+        @include span-columns( 2 of 6 );
+        font-size: .75em;
+    }
+
+    .subitem-text {
+        @include span-columns( 4 of 6 );
+        @include shift( 0 of 6 );
+
+        &.no-label {
+            @include span-columns( 6 of 6 );
+            @include shift( 0 of 6 );
+        }
+    }
+
+    .header-column h2::after { display:none; }
+
+}

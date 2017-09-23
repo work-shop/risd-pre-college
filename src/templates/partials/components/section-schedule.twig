@@ -2,6 +2,48 @@
 <section id="{% include "partials/components/section-id.twig" %}" class="section-content schedule">
 
     <div class="content schedule">
+        <div class="schedule-row hidden-xs">
+            <div class="header-column">
+                <h2 class="brand-orange h5 schedule-start uppercase hidden-xs">Start</h2>
+            </div>
+            <div class="details-column"><ol>
+                <li class="schedule-subitem">
+                    <div class="no-label subitem-text wysiwyg">Program Starts</div>
+                </li>
+            </ol></div>
+        </div>
+
+        {% for item in section.schedule_items %}
+            <div class="schedule-row">
+                <div class="header-column internal-item">
+                    <h2 class="brand-orange schedule-item-label">{{ item.schedule_item_label }}</h2>
+                    {% if item.schedule_item_label_caption %}
+                    <p class="schedule-item-label-caption italic">{{ item.schedule_item_label_caption }}</p>
+                    {% endif %}
+                </div>
+                <div class="details-column"><ol>
+                    {% for subitem in item.schedule_item_subitems %}
+                        <li class="schedule-subitem">
+                            {% if subitem.schedule_subitem_label %}
+                                <div class="subitem-label"><p class="brand-dark-blue">{{ subitem.schedule_subitem_label }}</p></div>
+                            {% endif %}
+                            <div class="{% if not subitem.schedule_subitem_label %}no-label{% endif %} subitem-text wysiwyg">{{ subitem.schedule_subitem_text }}</div>
+                        </li>
+                    {% endfor %}
+                </ol></div>
+            </div>
+        {% endfor %}
+
+        <div class="schedule-row hidden-xs">
+            <div class="header-column schedule-end">
+                <h2 class="brand-orange h5 schedule-end uppercase hidden-xs">End</h2>
+            </div>
+            <div class="details-column schedule-end"><ol>
+                <li class="schedule-subitem">
+                    <div class="no-label subitem-text wysiwyg">Program Ends</div>
+                </li>
+            </ol></div>
+        </div>
 
     </div>
 
