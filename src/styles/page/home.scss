@@ -1,24 +1,34 @@
+.home-page-slideshow {
+    padding-top: $header-height;
+}
 
+.home-page-quicklinks {
+    position: relative;
+    z-index:100;
+}
 
 .slides {
     width: 100vw;
     height: $home-slideshow-height;
     max-height: $home-slideshow-max-height;
+    overflow: hidden;
+    position: relative;
 
     .slide {
         width: 100vw;
-        max-height: $home-slideshow-max-height;
+        height: $home-slideshow-height;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
 
         &.landscape {
-            background-size: 100% auto;
-            height: $home-slideshow-height;
+            //background-size: 100% auto;
+            //height: $home-slideshow-height;
         }
 
         &.portrait {
-            background-size: auto 100%;
-            height: $home-slideshow-height / 1.5;
+            //background-size: auto 100%;
+            //height: $home-slideshow-height / 1.5;
         }
 
     }
@@ -42,9 +52,12 @@
 }
 
 
+
+
 .program-overview-box {
     @include shift( 1 of 11 );
     @include span-columns(3 of 11);
+    z-index: 100;
 }
 
 .info-box {
@@ -64,20 +77,82 @@
     }
 }
 
+.home-page-direction-nav {
+    @include shift( 1 of 12 );
+    @include span-columns( 10 of 12 );
+
+    position: absolute;
+    bottom:10%;
+    z-index: 150;
+    vertical-align: middle;
+    @include transform( translateY(51%) );
+
+    .home-page-nav-prev {
+        @extend .pictogram;
+        @extend .h1;
+        margin: 0;
+
+        position: relative;
+        left: -2vw;
+        float: left;
+
+        a {
+            border:0;
+            @include text-shadow();
+
+            &:hover {
+                color:$pre-college-white;
+            }
+        }
+
+    }
+
+    .home-page-nav-next {
+        @extend .pictogram;
+        @extend .h1;
+        margin: 0;
+
+        position: relative;
+        right: -2vw;
+        float:right;
+
+        a {
+            border:0;
+            @include text-shadow();
+
+            &:hover {
+                color:$pre-college-white;
+            }
+        }
+    }
+}
+
+@include md-query() {
+    // .home-page-direction-nav {
+    //     bottom:27%;
+    // }
+}
+
 @include sm-and-below-query() {
     .slides {
-        height: $home-slideshow-height / 1.4;
+        height: $home-slideshow-height / 1.5;
     }
 
     .slides .slide {
         height: $home-slideshow-height / 1.5;
     }
 
+    // .home-page-direction-nav {
+    //     bottom:40%;
+    // }
+
     .pre-college-overlay-box {
-        position: static;
-        margin-top: 2em;
         @include shift(1 of 12);
         @include span-columns( 10 of 12 );
+        @include box-shadow();
+
+        position: static;
+        margin-top: 2em;
     }
 
     .program-overview-box {
@@ -89,4 +164,10 @@
         @include span-columns(5 of 12);
 
     }
+}
+
+@include xs-query() {
+    // .home-page-direction-nav {
+    //     bottom:45%;
+    // }
 }

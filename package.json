@@ -25,7 +25,7 @@
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
-    "babel-plugin-transform-async-to-genrator": "^6.24.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "bootstrap": "^3.3.7",
@@ -48,5 +48,9 @@
     "tachyons": "^4.7.4",
     "tachyons-skins-pseudo": "^1.0.4",
     "webpack": "^3.4.1"
+  },
+  "dependencies": {
+    "flexslider": "^2.6.4",
+    "tinycolor2": "^1.4.1"
   }
 }

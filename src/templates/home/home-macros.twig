@@ -1,5 +1,5 @@
 {% macro slideshow( slides ) %}
-
+<!--
     <div class="pre-college-corner-stamp">
         <div class="aperture">
         </div>
@@ -12,19 +12,16 @@
                 <span class="corner-stamp-college">College</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <ul class="slides">
+    <ul class="slides flexslider">
         {% for slide in slides %}
-            {% if slide.slide_type == "image" %}
             <li data-overlay-box-color="{{ slide.overlay_box_color }}" class="slide {% if slide.image.width > slide.image.height %}landscape{% else %}portrait{% endif %}" style="background-image:url('{{ slide.image.url }}');">
-                <div class="slide-overlay"></div>
-                    {% if slide.caption %}
-                        <!-- <div class="home-caption">{{ slide.caption }}</div> -->
-                    {% endif %}
+                {% if slide.caption %}
+                    <!-- <div class="home-caption">{{ slide.caption }}</div> -->
+                {% endif %}
             </li>
             <script type="text/javascript"> console.log({{ slide|json_encode }})</script>
-            {% endif %}
         {% endfor %}
     </ul>
 
