@@ -19,7 +19,14 @@ header {
         background-color: $pre-college-white;
 
         .logo {
-            display: none;
+            @include transform( translateY(-47%) );
+
+            position: relative;
+            margin-top: $header-height;
+            top:0%;
+
+            left:3.5%;
+            width:30%;
         }
 
         .menu-button {
@@ -49,15 +56,14 @@ header {
 }
 
 .logo {
-    display: inline-block;
-    width:120px;
-    height: $header-height;
-    margin-left: 1em;
-    float:left;
+    @include shift(1 of 12);
+    @include span-columns( 1 of 12 );
 
-    background-image: url('../images/logo-sticky.png');
-    background-position: center;
-    background-repeat: no-repeat;
+    display: block;
+    width:130px;
+
+    margin-left:10px;
+    margin-top: 10px;
 
 }
 
@@ -169,6 +175,14 @@ header {
         display: flex;
         align-self: flex-end;
         font-size: 12px;
+    }
+
+    header.home .logo {
+        position: relative;
+        width:40%;
+        top:0%;
+        @include transform( translateY(-45%) );
+        left:5%;
     }
 
     .nav-button {

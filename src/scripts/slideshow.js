@@ -48,6 +48,8 @@ function colorNavElements( slider, index ) {
 
     $('.pre-college-overlay-box').css({'background-color': targetColor.toHexString()   });
 
+    $('path.logo-aperture').css({'fill': targetColor.toHexString() });
+
 
     $('.home-page-nav-prev').css({'color': targetColor.toHexString() });
     $('.home-page-nav-prev a').mouseover(function() { console.log('hover'); $(this).css({'color': hoverColor.toHexString() }); });
@@ -60,6 +62,7 @@ function colorNavElements( slider, index ) {
     $('.apply-button').css({'background-color': targetColor.toHexString() });
     $('.apply-button').mouseover(function() { $(this).css({'background-color': hoverColor.toHexString() }); });
     $('.apply-button').mouseout(function() { $(this).css({'background-color': targetColor.toHexString() }); });
+
 }
 
 export { slideshow };

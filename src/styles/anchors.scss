@@ -24,7 +24,9 @@ a.sidebar-link {
 
 a.menu-link {
     border-bottom: none;
-
+    &:hover * {
+        font-family: $norm-medium;
+    }
 
 }
 
