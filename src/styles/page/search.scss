@@ -1,6 +1,7 @@
 .query {
     @include shift( 2 of 12 );
     @include span-columns( 8 of 12 );
+    margin-top: 4em;
 }
 
 .page-search-input-text {
