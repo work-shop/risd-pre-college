@@ -155,7 +155,13 @@ const config = {
     externals: {
         jquery: "jQuery"
     },
-    plugins: plugins
+    plugins: plugins,
+    resolve: {
+        alias: {
+            "masonry": "masonry-layout",
+            "isotope": "isotope-layout"
+        }
+    }
 };
 
 module.exports = config;

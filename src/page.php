@@ -13,7 +13,7 @@
     }
 
     $context["post"] = $post;
-    $context["parent"] = $parent;
+    $context["parent"] = ($parent) ? $parent : $post;
 
     $templates = array( "page-$post->post_name.twig", "page.twig" );
 
