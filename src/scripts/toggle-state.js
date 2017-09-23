@@ -21,9 +21,9 @@ function toggleState( config ) {
                 .toggleClass( namespaceClassName("closed") )
                 .toggleClass( namespaceClassName("open") );
 
-            config.openCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("open") ).filter( ":not(html,body)" ) );
+            config.openCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("open") ).filter( ":not(html,body)" ), $( namespaceClassSelector("toggle")+namespaceClassSelector("open") ).filter( ":not(html,body)" ) );
 
-            config.closedCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("closed") ).filter( ":not(html,body)" ) );
+            config.closedCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("closed") ).filter( ":not(html,body)" ), $( namespaceClassSelector("toggle")+namespaceClassSelector("closed") ).filter( ":not(html,body)" ) );
 
             $( "html,body" )
                 .toggleClass( namespaceClassName("closed") )

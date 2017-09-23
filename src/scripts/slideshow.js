@@ -5,6 +5,8 @@ var tinycolor = require('tinycolor2');
 
 function slideshow( config ) {
     console.log('slideshow.js loaded.')
+
+
     $(document).ready( function() {
 
         console.log( config );
