@@ -1,0 +1,23 @@
+{% extends "partials/base.twig" %}
+
+{% import "partials/components/section-student-work.twig" as sections %}
+
+{% import "partials/components/sidebar.twig" as sidebar %}
+
+{% block content %}
+
+        <div class="container student-work">
+
+            {{ sidebar.dispatch( menu, post, parent ) }}
+
+            <div id="content" class="content-section student-work">
+
+                <h1 class="page-title">{{post.title}}</h1>
+
+                {{ sections.student_work( post.get_field("student_work_images") ) }}
+
+            </div>
+
+        </div>
+
+{% endblock %}

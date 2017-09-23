@@ -1,10 +1,17 @@
 "use strict";
 
+var ImagesLoaded = require('imagesloaded');
+var jQueryBridget = require('jquery-bridget');
+
 function overlay( config ) {
     console.log("overlay.js loaded");
 
+    jQueryBridget("imagesLoaded", ImagesLoaded, $ );
+
     $(document).ready( function() {
-        $("#loading-overlay").fadeOut( config.transitionDuration );
+        $(document).imagesLoaded( function() {
+            $("#loading-overlay").fadeOut( config.transitionDuration );
+        });
     })
 
 

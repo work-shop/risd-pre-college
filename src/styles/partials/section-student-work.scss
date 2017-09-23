@@ -1,0 +1,62 @@
+.content-section.student-work {
+    margin-bottom: 6em;
+}
+
+.student-work-images {
+    top:6em;
+    left:-5%;
+    width:105%;
+    height: auto;
+    position: static;
+}
+
+.student-work-image-item {
+    width:50%;
+    height:auto;
+}
+
+.student-work-image-item .loading-overlay {
+    width:100%;
+    height:100%;
+    background-color: $pre-college-white;
+    position: relative;
+    top:0;
+    left:0;
+    z-index: 200;
+}
+
+.student-work-meta {
+    display: none;
+    position: absolute;
+    top:2%;
+    left:2%;
+    width:96%;
+    height:96%;
+    z-index:50;
+    padding:1em;
+    background-color: $pre-college-white;
+    opacity: .75;
+
+    * {
+        opacity: 1;
+    }
+}
+
+.work-image {
+    display: block;
+    width:100%;
+    height: auto;
+}
+
+@include sm-and-below-query() {
+    .student-work-images {
+        top:8em;
+        left:-1%;
+        width:111.5%;
+    }
+
+    .student-work-image-item {
+        width: 100%;
+    }
+
+}

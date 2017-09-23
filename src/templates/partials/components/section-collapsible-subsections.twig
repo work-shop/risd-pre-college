@@ -10,7 +10,7 @@
                 {% if (loop.index - 1) % 2 == 0 %}
                     <div class="subsection" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
                         <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
-                            <h5>{{ subsection.subsection_header }}</h5>
+                            <h5 class="brand-dark-gray">{{ subsection.subsection_header }}</h5>
                         </div>
                         <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
                             {{ subsection.subsection_content }}
@@ -24,7 +24,7 @@
                 {% if (loop.index - 1) % 2 == 1 %}
                     <div class="subsection" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
                         <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
-                            <h5>{{ subsection.subsection_header }}</h5>
+                            <h5 class="brand-dark-gray">{{ subsection.subsection_header }}</h5>
                         </div>
                         <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
                             {{ subsection.subsection_content }}
@@ -40,7 +40,7 @@
             {% for subsection in section.collapsible_subsections %}
                 <div class="subsection subsection-columns-{{ section.subsection_columns }}" data-toggle-namespace="subsection-{{ section_index }}-{{ loop.index }}">
                     <div class="subsection-header subsection-closed subsection-{{ section_index }}-{{loop.index}}-closed subsection-{{ section_index }}-{{loop.index}}-toggle">
-                        <h5>{{ subsection.subsection_header }}</h5>
+                        <h5 class="brand-dark-gray">{{ subsection.subsection_header }}</h5>
                     </div>
                     <div class="subsection-content subsection-closed subsection-{{ section_index }}-{{loop.index}}-toggle-target subsection-{{ section_index }}-{{loop.index}}-closed wysiwyg">
                         {{ subsection.subsection_content }}

@@ -7,6 +7,7 @@ import { overlay } from "./overlay.js";
 import { collapsibleSubsections } from "./collapsible-subsections.js";
 import { orientation } from "./orientation.js";
 import { slideshow } from "./slideshow.js";
+import { student_work_grid } from "./student-work-grid.js";
 
 console.log('main.js loaded');
 
@@ -61,6 +62,9 @@ var config = {
         transitionDuration: 1500,
         slideDuration: 7000,
         namespace: "home-page-"
+    },
+    student_work_grid: {
+
     }
 };
 
@@ -74,6 +78,7 @@ jumpLinks( config.jumpLinks );
 overlay( config.overlay );
 
 slideshow( config.slideshow );
+student_work_grid( config.student_work_grid );
 
 collapsibleSubsections( config.collapsibleSubsections );
 
