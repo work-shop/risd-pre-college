@@ -1,0 +1,22 @@
+{% extends "partials/base.twig" %}
+
+{% block content %}
+
+<script>console.log({{ error_image|json_encode }})</script>
+
+<section class="error-page top-element" >
+    <div class="error-field" style="background-image:url('{{error_image.sizes.student_work}}')" >
+        <div class="image-overlay"></div>
+        <h2 class="title-404"><div class="rotated-forward">Looks like</div> <div class="rotated-down">you took a</div> <div class="rotated-back">wrong turn!</div></h2>
+        <p class="text-404">We couldn't find what you were looking for. Maybe you'd like to <span class="a search-toggle search-closed">search for something</span>?</p>
+    </div>
+
+</section>
+
+<section class="container mb2">
+    <div class="search-home-link">
+        <a class="nav-link brand-dark-blue bold" href="/">&larr; Head back Home</a>
+    </div>
+</section>
+
+{% endblock %}

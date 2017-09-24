@@ -1,0 +1,64 @@
+.error404 main {
+    min-height: 0px;
+}
+
+.error-page {
+    @extend .container;
+    margin-top: 2em;
+
+
+}
+
+.error-field {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 2em;
+    @include shift( 2 of 12 );
+    @include span-columns(8 of 12);
+}
+
+.title-404 {
+    position: relative;
+}
+
+.text-404 {
+    position: relative;
+}
+
+.rotated-forward {
+    position: relative;
+    text-align: center;
+    margin-bottom: -1.2em;
+    margin-top: 2em;
+}
+
+.rotated-down {
+    position: relative;
+    transform: rotate(90deg);
+    text-align: center;
+    padding-bottom: 6em;
+}
+
+.rotated-back {
+    position: relative;
+    //padding-bottom: 4em;
+    transform: rotate(180deg)translateX(0%);
+    text-align: center;
+    margin-top: -1.2em;
+}
+
+
+.error-image {
+    @include span-columns(8 of 12);
+}
+
+.image-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color: $pre-college-white;
+    opacity: .75;
+}
