@@ -2,10 +2,11 @@
     <section class="student-work-images">
         {% for image in galleries %}
             <div class="student-work-image-item" data-img-src="{{ image.url }}">
-                <img type="{{ image.mime_type }}" class="work-image" src="{{ TimberImage( image.url ) }}" alt="{{ image.alt }}" />
+                <img type="{{ image.mime_type }}" class="work-image" src="{{ image.sizes.student_work }}" alt="{{ image.alt }}" />
                 <div class="student-work-meta">
                     <p class="image-title medium brand-orange">{{ image.title }}</p>
                     <p class="image-caption">{{ image.caption }}</p>
+                    <p class="image-description tiny">{{ image.description }}</p>
                 </div>
                 <div class="loading-overlay"></div>
             </div>

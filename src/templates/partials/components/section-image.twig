@@ -4,7 +4,7 @@
     <div class="content image">
 
         <div class="full-bleed-image">
-            <img src="{{ TimberImage( section.image_field.id )}}" alt="{{ section.image_field.alt }}" />
+            <img type="{{ section.image_field.mime_type }}" src="{{ section.image_field.sizes.full_bleed }}" alt="{{ section.image_field.alt }}" />
 
         </div>
 

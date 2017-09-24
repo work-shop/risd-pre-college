@@ -16,12 +16,11 @@
 
     <ul class="slides flexslider">
         {% for slide in slides %}
-            <li data-overlay-box-color="{{ slide.overlay_box_color }}" class="slide {% if slide.image.width > slide.image.height %}landscape{% else %}portrait{% endif %}" style="background-image:url('{{ slide.image.url }}');">
+            <li data-overlay-box-color="{{ slide.overlay_box_color }}" class="slide {% if slide.image.width > slide.image.height %}landscape{% else %}portrait{% endif %}" style="background-image:url('{{ slide.image.sizes.full_bleed }}');">
                 {% if slide.caption %}
                     <!-- <div class="home-caption">{{ slide.caption }}</div> -->
                 {% endif %}
             </li>
-            <script type="text/javascript"> console.log({{ slide|json_encode }})</script>
         {% endfor %}
     </ul>
 
