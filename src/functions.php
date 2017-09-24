@@ -22,14 +22,27 @@
 
             add_action("init", array($this, "remove_comment_support"));
             add_action("init", array($this, "deactiveate_posts"));
+            add_action("init", array($this, "register_image_sizing"));
             add_action("acf/init", array($this, "add_options_pages"));
             add_action("admin_menu", array($this, "remove_menu_items"));
+            add_action("admin_init", array($this, "admin_setup"));
             add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
             add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
             add_action("wp_enqueue_scripts", array($this, "enqueue_styles"));
+
             add_filter("timber_context", array($this, "add_to_context"));
             add_filter('show_admin_bar', '__return_false');
+            add_filter('wp_get_attachment_url', array($this, 'rewrite_cdn_url') );
+            add_filter('timber_image_src', array($this, 'rewrite_timber_cdn_url') );
 
+        }
+
+        public function register_image_sizing() {
+            if ( function_exists( "add_image_size" ) ) {
+                add_image_size("student_work", 720, 405, false );
+                add_image_size("full_bleed", 1920, 1080, false);
+                add_image_size("social_card", 600, 600, array( "x_crop_position" => "center", "y_crop_position" => "center"));
+            }
         }
 
         /** add options page to the site. */
@@ -102,6 +115,83 @@
              );
             return $context;
         }
+
+        /**
+         * Admin setup registers additional settings on the global options page for us.
+         *
+         * TODO: Need to update the `register_setting` function to take an array in the third parameter – once we're able to update to 4.7.3
+         * That API is not available in 4.6.3
+         */
+        public function admin_setup() {
+            register_setting(
+                'general',
+                'cdn_url'
+                );
+
+            add_settings_field(
+                'cdn_url',
+                'CDN Address (URL)',
+                array( $this, 'render_settings_field' ),
+                'general',
+                'default',
+                array( 'cdn_url', get_option('cdn_url') )
+                );
+        }
+
+        /**
+         * Callback function to render the CDN URL field in the options.
+         *
+         * @param $args array the array of value arguments
+         *
+         */
+        public function render_settings_field( $args ) {
+            echo "<input aria-describedby='cdn-description' name='cdn_url' class='regular-text code' type='text' id='" . $args[0] . "' value='" . $args[1] . "'/>";
+            echo "<p id='cdn-description' class='description'>Input the url of the CDN to use with this site or leave this field blank to bypass the CDN.";
+        }
+
+        /**
+         * Rewrite attachment URL from the base CMS form to the desired CDN form.
+         *
+         * @filter 'wp_get_attachment_url'
+         * @param $original string the original attachment URL
+         * @return String the updated CDN url.
+         */
+        public function rewrite_cdn_url( $original ) {
+
+            $trailing_string = '/wp-content/uploads/';
+            $cms_url =  get_option( 'siteurl' );
+            $cdn_url = get_option('cdn_url');
+
+
+            if ( ! empty( $cdn_url ) ) {
+
+                return str_replace( $cms_url . $trailing_string, $cdn_url . '/', $original );
+
+            } else {
+
+                return $original;
+
+            }
+
+        }
+
+        /**
+         * Rewrite attachment URL from the base CMS form to the desired CDN form.
+         *
+         * @filter 'timber_image_src'
+         * @param $original string the original attachment URL
+         * @return String the updated CDN url.
+         */
+        public function rewrite_timber_cdn_url( $src, $ID ) {
+
+            $size = '';
+            $attachement_src = wp_get_attachment_image_src( $ID, $size )[0];
+            $fixed_src = $attachement_src ? $attachement_src : $src;
+            return $fixed_src;
+
+        }
+
+
 
     }
 
