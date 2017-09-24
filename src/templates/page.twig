@@ -4,6 +4,8 @@
 
 {% import "partials/components/sidebar.twig" as sidebar %}
 
+{% block description %}{% if post.get_field('summary') %}{{ post.summary }}{% else %}{% parent %}{% endif %}{% endblock %}
+
 {% block content %}
 
         <div class="container">

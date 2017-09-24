@@ -10,8 +10,6 @@
         return;
     }
 
-    require_once(get_template_directory() . "/routes.php");
-
     Timber::$dirname = "templates";
 
     class RISDPreCollege extends TimberSite {
