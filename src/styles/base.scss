@@ -56,3 +56,9 @@ main {
 @mixin text-shadow() {
     text-shadow: $box-shadow-depth rgba(175,175,175,0.8);
 }
+
+@mixin border-radius() {
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+}

@@ -66,6 +66,8 @@
 
 .pre-college-overlay-box {
     @include span-columns(3 of 11);
+    @include border-radius();
+
     position: relative;
     top:-10vh;
 

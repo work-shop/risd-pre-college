@@ -86,8 +86,6 @@ header {
     vertical-align: middle;
     text-align: center;
     line-height: $header-height;
-    padding-left: 2em;
-    padding-right: 2em;
 }
 
 
@@ -150,7 +148,18 @@ header {
 }
 
 
-@include md-query() {
+
+@include xl-query() {
+    header.home .logo {
+        width:20%;
+    }
+}
+
+@include lg-query() {
+    header.home .logo {
+        width:20%;
+    }
+
     .nav {
         @include span-columns(5 of 12);
         float:right;
