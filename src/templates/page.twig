@@ -4,7 +4,7 @@
 
 {% import "partials/components/sidebar.twig" as sidebar %}
 
-{% block description %}{% if post.get_field('summary') %}{{ post.summary }}{% else %}{% parent %}{% endif %}{% endblock %}
+{% block description %}{% if post.summary %}{{ post.summary }}{% else %}{{ site.description }}{% endif %}{% endblock %}
 
 {% block content %}
 

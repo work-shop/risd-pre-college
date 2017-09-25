@@ -10,16 +10,16 @@
                 {{ button.footer_apply_button( options ) }}
 
                 <div class="footer-more-info-button footer-button">
-                    <span class="more-info-button-text"><span class="hidden-sm">Need More </span>Information?</span>
+                    <a class="footer-link" href="/info/request-more-info"><span class="more-info-button-text"><span class="hidden-sm">Need More </span>Information?</span></a>
                 </div>
             </div>
             <div class="contact-column">
-                <div class="contact-telephone"><p class="uppercase small"><span class="label">Local</span> <a class="phone-number footer-link" href="tel:4014546200">401 454-6200</a></p></div>
-                    <div class="contact-telephone"><p class="uppercase small"><span class="label">International</span> <a class="phone-number footer-link" href="tel:180036474732">+1 800 364-7473  ext. 2</a></p></div>
+                <div class="contact-telephone"><p class="uppercase small"><span class="label">Local</span> <a class="phone-number footer-link" href="tel:4014546200">{{ options.local_telephone_number }}</a></p></div>
+                    <div class="contact-telephone"><p class="uppercase small"><span class="label">International</span> <a class="phone-number footer-link" href="tel:180036474732">{{ options.international_telephone_number }}</a></p></div>
                 <div class="social-media">
-                    <div class="social-link pictogram"><a class="footer-link" target="_blank" href="http://facebook.com/risdprecollege"><div class="social-icon">F</div></a></div>
+                    <div class="social-link pictogram"><a class="footer-link" target="_blank" href="{{ options.facebook_url }}"><div class="social-icon">F</div></a></div>
                     <div class="social-link pictogram hidden"><a class="footer-link" target="_blank" href=""><div class="social-icon">t</div></a></div>
-                    <div class="social-link pictogram"><a class="footer-link" target="_blank" href="https://instagram.com/risd_precollege"><div class="social-icon">A</div></a></div>
+                    <div class="social-link pictogram"><a class="footer-link" target="_blank" href="{{ options.instagram_url }}"><div class="social-icon">A</div></a></div>
                     <div class="social-link pictogram hidden"><a class="footer-link" target="_blank" href=""><div class="social-icon">m</div></a></div>
                 </div>
             </div>
