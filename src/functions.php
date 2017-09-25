@@ -109,7 +109,11 @@
                 "applications_are_open" => get_field("applications_are_open", "option"),
                 "application_link" => get_field("application_link", "option"),
                 "open_applications_footer_text" => get_field("open_applications_footer_text", "option"),
-                "closed_applications_footer_text" => get_field("closed_applications_footer_text", "option")
+                "closed_applications_footer_text" => get_field("closed_applications_footer_text", "option"),
+                "local_telephone_number" => get_field("local_telephone_number", "option"),
+                "international_telephone_number" => get_field("international_telephone_number", "option"),
+                "instagram_url" => get_field("instagram_url", "option"),
+                "facebook_url" => get_field("facebook_url", "option")
              );
             return $context;
         }
