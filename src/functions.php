@@ -10,6 +10,9 @@
         return;
     }
 
+    $editor_role = get_role("editor");
+    $editor_role->add_cap( 'edit_theme_options' );
+
     Timber::$dirname = "templates";
 
     class RISDPreCollege extends TimberSite {
@@ -24,14 +27,17 @@
             add_action("acf/init", array($this, "add_options_pages"));
             add_action("admin_menu", array($this, "remove_menu_items"));
             add_action("admin_init", array($this, "admin_setup"));
+            add_action("wp_dashboard_setup", array($this, "remove_dashboard_widgets") );
             add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
             add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
             add_action("wp_enqueue_scripts", array($this, "enqueue_styles"));
+            add_action('admin_menu', array($this, 'remove_screen_options'));
 
             add_filter("timber_context", array($this, "add_to_context"));
             add_filter('show_admin_bar', '__return_false');
             add_filter('wp_get_attachment_url', array($this, 'rewrite_cdn_url') );
             add_filter('timber_image_src', array($this, 'rewrite_timber_cdn_url') );
+
 
         }
 
@@ -78,6 +84,17 @@
         public function remove_dashboard_widgets () {
             remove_meta_box("dashboard_primary", "dashboard", "side");   // WordPress.com blog
             remove_meta_box("dashboard_secondary", "dashboard", "side"); // Other WordPress news
+
+            global $wp_meta_boxes;
+
+            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
         }
 
         /** enqueue styles for the front-end */
@@ -116,6 +133,30 @@
                 "facebook_url" => get_field("facebook_url", "option")
              );
             return $context;
+        }
+
+        /**
+         * Add a custom role without administrative capabilities, but with appearance capabilities.
+         *
+         *
+         */
+        public function remove_screen_options() {
+
+            global $submenu;
+
+            $user = wp_get_current_user();
+
+            if ( !in_array( 'administrator', $user->roles ) && isset( $submenu['themes.php'] ) ) {
+                foreach ($submenu['themes.php'] as $key => $menu_item ) {
+                    if ( in_array('Customize', $menu_item ) ) {
+                        unset( $submenu['themes.php'][$key] );
+                    }
+                    if ( in_array('Themes', $menu_item ) ) {
+                        unset( $submenu['themes.php'][$key] );
+                    }
+                }
+            }
+
         }
 
         /**
