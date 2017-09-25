@@ -7,16 +7,33 @@ function toggleState( config ) {
     config.closedCallback = config.closedCallback || function() {};
 
 
-    function namespaceClassName( transitionLabel ) {
-        return [config.namespace, "-", transitionLabel ].join("");
+    function namespaceClassName( transitionLabel, namespace ) {
+        return [namespace || config.namespace, "-", transitionLabel ].join("");
     }
 
-    function namespaceClassSelector( transitionLabel ) {
-        return [".", namespaceClassName( transitionLabel ) ].join("");
+    function namespaceClassSelector( transitionLabel, namespace ) {
+        return [".", namespaceClassName( transitionLabel, namespace ) ].join("");
     }
 
     $(document).ready( function() {
+        $( namespaceClassSelector("toggle-target") ).addClass('toggle-target').attr('data-toggle-namespace', config.namespace );
+        $( namespaceClassSelector("toggle") ).addClass('toggle').attr('data-toggle-namespace', config.namespace );
+
         $( namespaceClassSelector("toggle") ).on("click", function() {
+
+            $('.toggle-target').filter(':not('+namespaceClassSelector("toggle-target")+')').each(
+                function() {
+                    config.closedCallback( $(this) );
+                    $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                    $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+                });
+
+            $('.toggle').filter(':not('+namespaceClassSelector("toggle")+')').each(
+                function() {
+                    $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                    $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+                });
+
             $( namespaceClassSelector("toggle-target") + ", " + namespaceClassSelector("toggle") )
                 .toggleClass( namespaceClassName("closed") )
                 .toggleClass( namespaceClassName("open") );
