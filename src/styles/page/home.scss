@@ -84,7 +84,7 @@
     @include span-columns( 10 of 12 );
 
     position: absolute;
-    bottom:10%;
+    bottom:12.5%;
     z-index: 150;
     vertical-align: middle;
     @include transform( translateY(51%) );
