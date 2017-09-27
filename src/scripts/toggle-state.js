@@ -16,23 +16,27 @@ function toggleState( config ) {
     }
 
     $(document).ready( function() {
-        $( namespaceClassSelector("toggle-target") ).addClass('toggle-target').attr('data-toggle-namespace', config.namespace );
-        $( namespaceClassSelector("toggle") ).addClass('toggle').attr('data-toggle-namespace', config.namespace );
+        if ( config.clearAllOthers ) {
+            $( namespaceClassSelector("toggle-target") ).addClass('toggle-target').attr('data-toggle-namespace', config.namespace );
+            $( namespaceClassSelector("toggle") ).addClass('toggle').attr('data-toggle-namespace', config.namespace );
+        }
 
         $( namespaceClassSelector("toggle") ).on("click", function() {
 
-            $('.toggle-target').filter(':not('+namespaceClassSelector("toggle-target")+')').each(
-                function() {
-                    config.closedCallback( $(this) );
-                    $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
-                    $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
-                });
+            if ( config.clearAllOthers ) {
+                $('.toggle-target').filter(':not('+namespaceClassSelector("toggle-target")+')').each(
+                    function() {
+                        config.closedCallback( $(this), $(this)  );
+                        $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                        $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+                    });
 
-            $('.toggle').filter(':not('+namespaceClassSelector("toggle")+')').each(
-                function() {
-                    $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
-                    $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
-                });
+                $('.toggle').filter(':not('+namespaceClassSelector("toggle")+')').each(
+                    function() {
+                        $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                        $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+                    });
+            }
 
             $( namespaceClassSelector("toggle-target") + ", " + namespaceClassSelector("toggle") )
                 .toggleClass( namespaceClassName("closed") )

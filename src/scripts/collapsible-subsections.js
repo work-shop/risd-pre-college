@@ -8,6 +8,7 @@ function collapsibleSubsections( config ) {
 
             toggleState({
                 namespace: $(this).data('toggle-namespace'),
+                clearAllOthers: config.clearAllOthers || false,
                 openCallback: function( elements, buttons ) {
                     elements.slideDown( config.transitionDuration );
                     buttons.addClass("subsection-open");

@@ -14,11 +14,11 @@ footer {
     @include span-columns( 8 of 12 );
     @include shift( 2 of 12 );
     @include omega();
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 
 .header-row {
-    padding-bottom: 1em;
+    padding-bottom: .5em;
 }
 
 .buttons-column {
@@ -91,23 +91,18 @@ footer {
 
     .contact-telephone {
         @include span-columns(4 of 4);
-        margin-bottom: 1em;
 
         .label {
             @extend .bold;
-            @include span-columns(2 of 4);
-
+            padding-right: 1em;
         }
 
-        .phone-number {
-            @include span-columns(2 of 4);
-        }
 
     }
 
     .social-media {
         @include span-columns( 4 of 4 );
-        padding-top:1em;
+        padding-bottom: 1em;
 
         .social-link {
             @include span-columns( 1 of 4 );
@@ -118,12 +113,12 @@ footer {
             text-align: center;
             background-color: $pre-college-dark-blue;
             width:60px;
+            font-weight: 250;
 
 
             .social-icon {
                 cursor: pointer;
                 color:$pre-college-white;
-                font-size: 1.5em;
             }
 
             &:hover {
@@ -158,5 +153,9 @@ footer {
 
     .affiliates-row {
         display: none;
+    }
+
+    .contact-column {
+        text-align: center;
     }
 }

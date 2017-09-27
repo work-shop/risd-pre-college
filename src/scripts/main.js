@@ -44,6 +44,7 @@ var config = {
     toggleStateSearch: {
         namespace: "search",
         transitionDuration: global_config.transitionDuration,
+        clearAllOthers: true,
         openCallback: function( elements ) {
             elements.fadeIn( global_config.transitionDuration );
         },
@@ -53,10 +54,12 @@ var config = {
     },
     toggleStateSidebar: {
         namespace: "sidebar",
-        transitionDuration: global_config.transitionDuration
+        transitionDuration: global_config.transitionDuration,
+        clearAllOthers: false
     },
     collapsibleSubsections: {
-        transitionDuration: global_config.transitionDuration
+        transitionDuration: global_config.transitionDuration,
+        clearAllOthers: false
     },
     slideshow: {
         transitionDuration: 1500,
