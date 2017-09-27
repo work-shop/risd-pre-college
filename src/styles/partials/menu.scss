@@ -23,6 +23,7 @@ body.menu-open {
 
 .info-submenu {
     padding: 3em;
+    border-left:1px solid $pre-college-medium-gray;
     @include span-columns( 4 of 12 );
     background-color: $pre-college-light-gray;
 }
@@ -30,6 +31,7 @@ body.menu-open {
 .submenu-header {
     @extend .bold;
     margin-bottom: 3em;
+    text-transform: uppercase;
 }
 
 .submenu-item {

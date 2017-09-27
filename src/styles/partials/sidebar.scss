@@ -85,7 +85,6 @@
         display:block;
         position: fixed;
         height: calc(100vh - #{$header-height});
-        background-color: transparent;
         cursor: pointer;
         z-index:550;
         transition: all $transition-duration;
@@ -102,7 +101,7 @@
 
             z-index:750;
 
-            transition: all $transition-duration;
+            transition: transform $transition-duration;
 
         }
 
@@ -116,6 +115,21 @@
 
         .sidebar-state-indicator {
             background-color: $pre-college-dark-blue;
+            opacity: 1;
+
+            .sidebar-open-text {
+                display:none;
+            }
+
+            .sidebar-closed-text {
+                text-transform: uppercase;
+                display:block;
+                color: $pre-college-light-blue;
+                -webkit-transform: translateY(75%)translateX(10%)rotate(-135deg);
+                transform: translateY(75%)translateX(10%)rotate(-135deg);
+                font-size: 1.2em;
+            }
+
         }
 
     }
@@ -125,11 +139,24 @@
 
         top:$header-height;
         left:75.5%;
+        background-color: rgba(255,255,255,.75);
 
         .sidebar-state-indicator {
             background-color: $pre-college-white;
             -webkit-transform: translateX(-50%)translateY(-50%)rotate(135deg);
             transform: translateX(-50%)translateY(-50%)rotate(135deg);
+
+            .sidebar-open-text {
+                display:block;
+                font-size: 2em;
+                color: $pre-college-dark-gray;
+                -webkit-transform: translateY(-30%)translateX(-20%)rotate(45deg);
+                transform: translateY(-30%)translateX(-20%)rotate(45deg);
+            }
+
+            .sidebar-closed-text {
+                display:none;
+            }
         }
 
     }

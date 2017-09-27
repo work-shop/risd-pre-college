@@ -92,10 +92,15 @@ header {
 .menu-button {
     width:50%;
     height: $header-height;
-    background-color: $pre-college-light-gray;
+    background-color: $pre-college-medium-gray;
 
-    &:hover, &.menu-open  {
-        background-color: $pre-college-light-gray-active;
+    &:hover {
+        background-color: $pre-college-medium-gray-active;
+    }
+
+    &.menu-open  {
+        background-color: $pre-college-light-gray;
+        border-left:1px solid $pre-college-medium-gray;
     }
 
 }
@@ -115,10 +120,15 @@ header {
 .search-button {
     width:50%;
     height: $header-height;
-    background-color: $pre-college-light-gray;
+    background-color: $pre-college-medium-gray;
 
     &:hover {
-        background-color: $pre-college-light-gray-active;
+        background-color: $pre-college-medium-gray-active;
+    }
+
+    &.search-open {
+        background-color: $pre-college-dark-blue;
+        color:$pre-college-white;
     }
 }
 
@@ -214,6 +224,12 @@ header {
 
     .menu-button {
         width:50%;
+
+        &.menu-open {
+            background-color: $pre-college-dark-blue;
+            color:$pre-college-white;
+            border:0;
+        }
     }
 
     .menu-button.applications_are_open {

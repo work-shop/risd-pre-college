@@ -6,17 +6,19 @@ $pre-college-dark-blue: #3593D0;
 $pre-college-orange: #E65129;
 $pre-college-green: #D1DE57;
 $pre-college-dark-gray: #414143;
+$pre-college-medium-gray: #D6D8DB;
 $pre-college-light-gray: #E7E8EA;
 $pre-college-white: white;
 
 $active-hover-darkening-factor: 10%;
 
-$pre-college-light-blue-active: darken( #A7DCE8, $active-hover-darkening-factor);
-$pre-college-dark-blue-active: darken( #3593D0, $active-hover-darkening-factor);
-$pre-college-orange-active: darken( #E65129, $active-hover-darkening-factor);
-$pre-college-green-active: darken( #D1DE57, $active-hover-darkening-factor);
-$pre-college-dark-gray-active: darken( #414143, $active-hover-darkening-factor);
-$pre-college-light-gray-active: darken( #E7E8EA, $active-hover-darkening-factor);
+$pre-college-light-blue-active: darken( $pre-college-light-blue, $active-hover-darkening-factor);
+$pre-college-dark-blue-active: darken( $pre-college-dark-blue, $active-hover-darkening-factor);
+$pre-college-orange-active: darken( $pre-college-orange, $active-hover-darkening-factor);
+$pre-college-green-active: darken( $pre-college-green, $active-hover-darkening-factor);
+$pre-college-dark-gray-active: darken( $pre-college-dark-gray, $active-hover-darkening-factor);
+$pre-college-medium-gray-active: darken( $pre-college-medium-gray, $active-hover-darkening-factor);
+$pre-college-light-gray-active: darken( $pre-college-light-gray, $active-hover-darkening-factor);
 $pre-college-white-active: darken( white, $active-hover-darkening-factor);
 
 
@@ -31,7 +33,7 @@ $norm-medium-italic: CabritoSans-NorMedIt;
 $header-height: 60px;
 $header-padding: 4em; // sorry, it's got to be in ems.
 $sidebar-max-width: 250px;
-$section-margin-bottom: 3em;
+$section-margin-bottom: 4em;
 $section-divider-size: 3px;
 $home-slideshow-height: 60vh; // should be in viewport units.
 $home-slideshow-max-height:800px;
