@@ -6,6 +6,7 @@ function toggleState( config ) {
     /** add sensible no-op defaults to the callbacks */
     config.openCallback = config.openCallback || function() {};
     config.closedCallback = config.closedCallback || function() {};
+    config.condition = config.condition || function() { return true; }
 
     /**
      * Builds a sensible namespaced transitionlabel out of a specified namespace.
@@ -32,37 +33,40 @@ function toggleState( config ) {
         }
 
         $( namespaceClassSelector("toggle") ).on("click", function() {
+            if ( config.condition() ) {
 
-            if ( config.clearAllOthers ) {
-                $('.toggle-target').filter(':not('+namespaceClassSelector("toggle-target")+')').each(
-                    function() {
-                        config.closedCallback( $(this), $(this)  );
-                        $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
-                        $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+                if ( config.clearAllOthers ) {
+                    $('.toggle-target').filter(':not('+namespaceClassSelector("toggle-target")+')').each(
+                        function() {
+                            config.closedCallback( $(this), $(this)  );
+                            $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                            $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
 
-                        $("html,body").removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
-                        $("html,body").addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+                            $("html,body").removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                            $("html,body").addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
 
-                    });
+                        });
 
-                $('.toggle').filter(':not('+namespaceClassSelector("toggle")+')').each(
-                    function() {
-                        $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
-                        $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
-                    });
+                    $('.toggle').filter(':not('+namespaceClassSelector("toggle")+')').each(
+                        function() {
+                            $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                            $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+                        });
+                }
+
+                $( namespaceClassSelector("toggle-target") + ", " + namespaceClassSelector("toggle") )
+                    .toggleClass( namespaceClassName("closed") )
+                    .toggleClass( namespaceClassName("open") );
+
+                config.openCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("open") ).filter( ":not(html,body)" ), $( namespaceClassSelector("toggle")+namespaceClassSelector("open") ).filter( ":not(html,body)" ) );
+
+                config.closedCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("closed") ).filter( ":not(html,body)" ), $( namespaceClassSelector("toggle")+namespaceClassSelector("closed") ).filter( ":not(html,body)" ) );
+
+                $( "html,body" )
+                    .toggleClass( namespaceClassName("closed") )
+                    .toggleClass( namespaceClassName("open") );
+
             }
-
-            $( namespaceClassSelector("toggle-target") + ", " + namespaceClassSelector("toggle") )
-                .toggleClass( namespaceClassName("closed") )
-                .toggleClass( namespaceClassName("open") );
-
-            config.openCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("open") ).filter( ":not(html,body)" ), $( namespaceClassSelector("toggle")+namespaceClassSelector("open") ).filter( ":not(html,body)" ) );
-
-            config.closedCallback( $( namespaceClassSelector("toggle-target")+namespaceClassSelector("closed") ).filter( ":not(html,body)" ), $( namespaceClassSelector("toggle")+namespaceClassSelector("closed") ).filter( ":not(html,body)" ) );
-
-            $( "html,body" )
-                .toggleClass( namespaceClassName("closed") )
-                .toggleClass( namespaceClassName("open") );
 
         });
     });
