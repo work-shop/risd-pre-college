@@ -29,7 +29,7 @@
 
 .details-column {
     @include span-columns( 5 of 8 );
-    border-left:1px solid $pre-college-dark-gray;
+    border-left:1px solid $pre-college-light-gray;
     padding-bottom:3.25em;
     padding-left:1em;
 }
@@ -44,14 +44,18 @@
 }
 
 .subitem-label {
-    @include span-columns( 2 of 5 );
+    display: inline-block;
+    //@include span-columns( 2 of 5 );
+    margin-right: .75em;
+    float: left;
 }
 
 .subitem-text {
-    @include span-columns( 3 of 5 );
+    @include span-columns( 3.5 of 5 );
+    display: inline-block;
 
     &.no-label {
-        @include shift( 2 of 5 );
+        //@include shift( 2 of 5 );
     }
 }
 
