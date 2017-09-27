@@ -97,6 +97,11 @@ footer {
             padding-right: 1em;
         }
 
+        p {
+            margin-top: .5em;
+            margin-bottom: .25em;
+        }
+
 
     }
 
@@ -134,9 +139,25 @@ footer {
 .affiliates-list {
     @include span-columns( 8 of 8 );
 
-    .footer-link {
-        @include span-columns(1.6 of 8);
+    text-align: center;
 
+    .footer-link {
+        display: inline-block;
+        @extend .bold;
+        font-size: .9em;
+
+    }
+
+    .footer-divider {
+        display: inline-block;
+        background-image: url('../images/favicon-32x32.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-left: 1em;
+        margin-right: 1em;
+        width: 16px;
+        height: 16px;
     }
 
 }
@@ -157,5 +178,11 @@ footer {
 
     .contact-column {
         text-align: center;
+    }
+
+    .social-link {
+        &:first-child {
+            @include shift( 1 of 4 );
+        }
     }
 }
