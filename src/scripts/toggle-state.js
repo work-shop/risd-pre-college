@@ -3,14 +3,24 @@
 function toggleState( config ) {
     console.log('toggle-state.js loaded');
 
+    /** add sensible no-op defaults to the callbacks */
     config.openCallback = config.openCallback || function() {};
     config.closedCallback = config.closedCallback || function() {};
 
-
+    /**
+     * Builds a sensible namespaced transitionlabel out of a specified namespace.
+     *
+     * @param transitionLabel a label for the state that this class represents.
+     * @param namespace override the speicified namespace in config, if need be.
+     * @return String a classname for a given namespace.
+     */
     function namespaceClassName( transitionLabel, namespace ) {
         return [namespace || config.namespace, "-", transitionLabel ].join("");
     }
 
+    /**
+     * uses namespaceClassName to build a valid class name for a selector.
+     */
     function namespaceClassSelector( transitionLabel, namespace ) {
         return [".", namespaceClassName( transitionLabel, namespace ) ].join("");
     }
@@ -29,6 +39,10 @@ function toggleState( config ) {
                         config.closedCallback( $(this), $(this)  );
                         $(this).removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
                         $(this).addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+
+                        $("html,body").removeClass( namespaceClassName( 'open', $(this).data('toggle-namespace') ) );
+                        $("html,body").addClass( namespaceClassName( 'closed', $(this).data('toggle-namespace') ) );
+
                     });
 
                 $('.toggle').filter(':not('+namespaceClassSelector("toggle")+')').each(

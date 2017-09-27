@@ -33,6 +33,7 @@ var config = {
     },
     toggleStateMenu: {
         namespace: "menu",
+        clearAllOthers: true,
         transitionDuration: global_config.transitionDuration,
         openCallback: function( elements ) {
             elements.fadeIn( global_config.transitionDuration );
