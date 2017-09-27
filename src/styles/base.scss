@@ -69,3 +69,22 @@ main {
     -moz-border-radius: $border-radius;
     border-radius: $border-radius;
 }
+
+$base-font-size: 16px;
+$base-line-height: 1.8em;
+$line-height-scale: 1;
+$rhythm: $base-line-height / $line-height-scale;
+$font-cap-height: 0.7em;
+
+
+@mixin baseline-sized( $font-size ) {
+    $lines: ceil(($font-size + 0.001em) / $rhythm );
+    $line-height: $lines * $rhythm;
+    $baseline-distance: ($line-height - $font-cap-height) / 2;
+
+    font-size: $font-size;
+    line-height: $line-height;
+    padding-top: $baseline-distance;
+    margin-bottom: $base-line-height - $baseline-distance;
+
+}

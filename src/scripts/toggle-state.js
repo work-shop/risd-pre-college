@@ -33,6 +33,7 @@ function toggleState( config ) {
         }
 
         $( namespaceClassSelector("toggle") ).on("click", function() {
+
             if ( config.condition() ) {
 
                 if ( config.clearAllOthers ) {

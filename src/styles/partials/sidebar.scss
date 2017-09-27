@@ -37,6 +37,8 @@
     @extend .book;
     font-size: .95em;
 
+    transition: all $transition-duration;
+
     &:hover {
         @extend .bold;
     }

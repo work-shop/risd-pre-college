@@ -1,5 +1,4 @@
 .section-content {
-    margin-bottom: $section-margin-bottom;
 
     &:last-child {
         margin-bottom: 0;
@@ -10,4 +9,11 @@
     @include shift( 1 of 9 );
     @include span-columns( 7 of 9 );
     color: $pre-college-dark-gray;
+}
+
+hr.section-divider {
+    width:75px;
+    border:$section-divider-size solid $pre-college-dark-gray;
+    margin-top: $section-margin-bottom / 2;
+    margin-bottom: $section-margin-bottom;
 }

@@ -1,0 +1,11 @@
+/* --------------------------------------------------------
+A list of breakpoints
+-------------------------------------------------------- */
+$breakpoints: (
+  base: 0px,
+  small: $xs,
+  medium: $sm,
+  large: $md,
+  huge: $lg,
+  massive: 1800px
+);

@@ -18,14 +18,14 @@
     h2 {
         @extend .h5;
         @extend .brand-dark-gray;
-        // margin-top: 2em;
+        padding-top: 1em;
         // margin-bottom:2em;
     }
 
     h3 {
         @extend .h6;
         @extend .brand-dark-gray;
-        // margin-top: 1em;
+        padding-top: 1em;
         // margin-bottom:1em;
         text-transform: uppercase;
     }
@@ -39,6 +39,18 @@
     p {
         //margin-bottom: 1.35em;
     }
+
+    // h1 + p {
+    //     background-color: red;
+    // }
+    //
+    // h2 + p {
+    //     background-color: yellow;
+    // }
+    //
+    // h3 + p {
+    //     background-color: blue;
+    // }
 
     strong, b {
         @extend .bold;

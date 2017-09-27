@@ -3,15 +3,12 @@ html, body {
     color: $pre-college-dark-gray;
     font-size: 18px;
     letter-spacing: .025em;
+    line-height: 1.5;
 }
 
-.uppercase {
-    text-transform: uppercase;
-}
+.uppercase { text-transform: uppercase; }
 
-.lowercase {
-    text-transform: lowercase;
-}
+.lowercase { text-transform: lowercase; }
 
 .bold {
     font-family: $norm-bold, sans-serif;
@@ -47,12 +44,16 @@ html, body {
 }
 
 
+
 h1, .h1 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 2.25em;
-    margin-bottom: 1.35em;
+    // small regular medium large huge massive
+
+//    @include baseline-sized( 2.4888em );
+
+    font-size: 2.4888em;
     margin-bottom: 1em;
 }
 
@@ -60,51 +61,59 @@ h2, .h2 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 1.75em;
+    //@include baseline-sized( 2.074em );
+
+
+    font-size: 2.074em;
     margin-bottom: 1.35em;
-    line-height: 1.25em;
 }
 
 h3, .h3 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 1.5em;
-    margin-bottom: 1.35em;
-    line-height: 1.15em;
+    //@include baseline-sized( 1.728em );
+
+    font-size: 1.728em;
+    margin-bottom: .55em;
 }
 
 h4, .h4 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 1.35em;
-    margin-bottom: 1em;
-    line-height: 1.15em;
+    //@include baseline-sized( 1.44em );
+    //
+    font-size: 1.44em;
+    margin-bottom: .55em;
 }
 
 h5, .h5 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 1.15em;
-    margin-bottom: 1.35em;
-    line-height: 1.15em;
+    // @include baseline-sized( 1.2em );
+
+    font-size: 1.2em;
+    margin-bottom: .55em;
 }
 
 h6, .h6 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 1.05em;
-    margin-bottom: 1.35em;
-    line-height: 1.15em;
+    //@include baseline-sized( 1em );
+
+    font-size: 1em;
+    margin-bottom: .55em;
 }
 
 p {
+
+//    @include baseline-sized( 1em );
+
     font-size: 1em;
-    margin-bottom: 1.30em;
-    line-height: 1.675em;
+    margin-bottom: 1.25em;
 }
 
 .nav-type {

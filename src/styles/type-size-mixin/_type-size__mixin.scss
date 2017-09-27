@@ -1,0 +1,40 @@
+@import "strip-units__helper.scss";
+@import "responsive-breakpoints__list.scss";
+@import "responsive-query__mixin.scss";
+@import "type-size__list.scss";
+
+/* --------------------------------------------------------
+The mixin
+Takes in the name of a variable list with 2 px values. The default value is $regular.
+If non-existent variables are used as arguments, the mixin will throw an error.
+-------------------------------------------------------- */
+
+@mixin text-size($fs-map: $regular, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $keyNumber in $fs-map {
+
+    @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+    } @else {
+      @warn "Breakpoints have not been defined correctly";
+    }
+
+    // @debug $fs-breakpoint;
+    // @debug $keyNumber;
+
+    $fontSize: nth($keyNumber, 1);
+    $fontSize-number: strip-unit($fontSize);
+    $leading: nth($keyNumber, 2);
+    $leading-number: strip-unit($leading);
+    $leading-unitless: #{$fontSize-number/$leading-number};
+
+    // @debug $fontSize;
+    // @debug $fontSize-number;
+    // @debug $leading;
+    // @debug $leading-number;
+    // @debug $leading-unitless;
+
+    @include respond-above($fs-breakpoint) {
+      font-size: $fontSize;
+      line-height: $leading-unitless;
+    };
+  }
+}
