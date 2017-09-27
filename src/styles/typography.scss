@@ -51,7 +51,8 @@ h1, .h1 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 3.15em;
+    font-size: 2.25em;
+    margin-bottom: 1.35em;
     margin-bottom: 1em;
 }
 
@@ -59,8 +60,8 @@ h2, .h2 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 2.25em;
-    margin-bottom: 1em;
+    font-size: 1.75em;
+    margin-bottom: 1.35em;
     line-height: 1.25em;
 }
 
@@ -68,8 +69,8 @@ h3, .h3 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 1.75em;
-    margin-bottom: 1em;
+    font-size: 1.5em;
+    margin-bottom: 1.35em;
     line-height: 1.15em;
 }
 
@@ -77,7 +78,7 @@ h4, .h4 {
     @extend .bold;
     @extend .brand-orange;
 
-    font-size: 1.5em;
+    font-size: 1.35em;
     margin-bottom: 1em;
     line-height: 1.15em;
 }
@@ -87,7 +88,7 @@ h5, .h5 {
     @extend .brand-orange;
 
     font-size: 1.15em;
-    margin-bottom: 1.25em;
+    margin-bottom: 1.35em;
     line-height: 1.15em;
 }
 
@@ -96,14 +97,14 @@ h6, .h6 {
     @extend .brand-orange;
 
     font-size: 1.05em;
-    margin-bottom: 1.25em;
+    margin-bottom: 1.35em;
     line-height: 1.15em;
 }
 
 p {
     font-size: 1em;
-    margin-bottom: 1em;
-    line-height: 1.45em;
+    margin-bottom: 1.30em;
+    line-height: 1.675em;
 }
 
 .nav-type {

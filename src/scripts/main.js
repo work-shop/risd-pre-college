@@ -67,22 +67,23 @@ var config = {
         slideDuration: 7000,
         namespace: "home-page-"
     },
-    student_work_grid: {
+    studentWordGrid: {
 
     }
 };
 
 
-toggleClass( config.toggleClass );
+//toggleClass( config.toggleClass );
 
 toggleState( config.toggleStateMenu );
 toggleState( config.toggleStateSearch );
 toggleState( config.toggleStateSidebar );
+
 jumpLinks( config.jumpLinks );
 overlay( config.overlay );
 
 slideshow( config.slideshow );
-student_work_grid( config.student_work_grid );
+student_work_grid( config.studentWordGrid );
 
 collapsibleSubsections( config.collapsibleSubsections );
 

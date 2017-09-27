@@ -2,8 +2,9 @@
 
     padding-top: $header-padding;
 
-    @include shift(3 of 12);
-    @include span-columns( 9 of 12 );
+    width: calc( 100% - #{$sidebar-max-width} );
+    margin-left: $sidebar-max-width;
+
     background-color: $pre-college-white;
 }
 

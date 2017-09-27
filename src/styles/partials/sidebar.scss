@@ -1,10 +1,14 @@
+#sidebar-small-scrim {
+    display: none;
+}
+
 #sidebar {
-    @include span-columns( 3 of 12 );
 
     position: fixed;
-    height: calc( 100vh - 60px );
+    height: calc( 100vh - #{$header-height} );
     font-size: 16px;
     z-index:500;
+    width: $sidebar-max-width;
 
     padding: (1em+$header-padding) 2em 2em 2em;
 
@@ -23,6 +27,7 @@
         .sidebar-type {
 
             color:$pre-college-dark-gray;
+
         }
 
     }
@@ -30,19 +35,36 @@
 
 .sidebar-type {
     @extend .book;
+    font-size: .95em;
+
+    &:hover {
+        @extend .bold;
+    }
+}
+
+
+.sidebar-type.active {
+    margin-bottom: 1.5em;
 }
 
 .sidebar-parent-type {
     text-transform: uppercase;
+    margin-bottom: 3em;
 }
 
 .sidebar-child-type {
+    margin-bottom: 1.5em;
+}
 
+
+.sidebar-parent-type.active, .sidebar-child-type.active {
+    @extend .bold;
 }
 
 
 .nav-item-submenu {
     margin-left: 2em;
+    margin-bottom: 3em;
 
     .sidebar-type {
         @extend .medium;
@@ -55,13 +77,64 @@
 }
 
 
-
-
-.nav-type.active {
-    font-family: $norm-bold;
-}
-
 @include sm-and-below-query() {
+
+    #sidebar-small-scrim {
+        display:block;
+        position: fixed;
+        height: calc(100vh - #{$header-height});
+        background-color: transparent;
+        cursor: pointer;
+        z-index:550;
+        transition: all $transition-duration;
+
+        .sidebar-state-indicator {
+            width: 25px;
+            height: 25px;
+            position: relative;
+            top:50%;
+            left:0;
+
+            -webkit-transform: translateX(-50%)translateY(-50%)rotate(45deg);
+            transform: translateX(-50%)translateY(-50%)rotate(45deg);
+
+            z-index:750;
+
+            transition: all $transition-duration;
+
+        }
+
+    }
+
+    #sidebar-small-scrim.sidebar-closed {
+        width:5%;
+
+        top:$header-height;
+        left:7.55%;
+
+        .sidebar-state-indicator {
+            background-color: $pre-college-dark-blue;
+        }
+
+    }
+
+    #sidebar-small-scrim.sidebar-open {
+        width: 24.5%;
+
+        top:$header-height;
+        left:75.5%;
+
+        .sidebar-state-indicator {
+            background-color: $pre-college-white;
+            -webkit-transform: translateX(-50%)translateY(-50%)rotate(135deg);
+            transform: translateX(-50%)translateY(-50%)rotate(135deg);
+        }
+
+    }
+
+
+
+
     #sidebar {
         width:75.5%;
 
@@ -72,7 +145,7 @@
         transform: translateX(-90%);
         transition: transform $transition-duration;
 
-        &.open {
+        &.sidebar-open {
             -webkit-transform: translateX(0%);
             transform: translateX(0%);
             transition: transform $transition-duration;

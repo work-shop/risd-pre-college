@@ -37,7 +37,7 @@
     }
 
     p {
-        margin-bottom: 1.25em;
+        //margin-bottom: 1.35em;
     }
 
     strong, b {
@@ -48,9 +48,11 @@
         @extend .italic;
     }
 
+
     h1, h2, h3, h4, h5, h6, p {
-        // margin-bottom: .5em;
+
     }
+
 
     ul {
 
