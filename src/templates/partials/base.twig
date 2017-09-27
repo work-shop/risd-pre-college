@@ -6,7 +6,7 @@
     <head>
         <meta charset="{{ site.charset }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="description" content="{% block meta_description %}{{ site.description }}{% endblock %}">
 
         <title>{% spaceless %}
@@ -28,9 +28,8 @@
         <!-- Twitter Card data -->
         <meta name="twitter:card" value="">
 
-        <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/public/images/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
         <link rel="apple-touch-icon" href="/public/images/apple-icon.png">
 
         {{ wp_head }}
@@ -43,7 +42,6 @@
         {% include "partials/header.twig" %}
         {% include "partials/menu.twig" %}
         {% include "partials/search-menu.twig" %}
-
 
         <main>
             {% block content %}{% endblock %}
