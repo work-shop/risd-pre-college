@@ -1,4 +1,11 @@
-
+::selection {
+  background: $pre-college-orange;
+  color:$pre-college-white;
+}
+::-moz-selection {
+  background: $pre-college-orange;
+  color:$pre-college-white;
+}
 
 body {
     padding-top: $header-height;
