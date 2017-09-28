@@ -33,14 +33,19 @@ $norm-medium-italic: CabritoSans-NorMedIt;
 $header-height: 60px;
 $header-mobile-height: 40px;
 $header-padding: 3em; // sorry, it's got to be in ems.
+
 $sidebar-max-width: 250px; // desktop
 $sidebar-mobile-width: 90%; // mobile, should be in %
+
 $section-margin-bottom: 4em;
 $section-divider-size: 3px;
+$section-text-max-width: 700px;
+
 $home-slideshow-height: 60vh; // should be in viewport units.
 $home-slideshow-max-height:800px;
 $home-page-pre-college-type-viewport-factor:5; // should be unitless
 $home-page-pre-college-type-aperture-factor:9.5; // should be unitless
+
 $transition-duration: 0.35s;
 
 // breakpoints

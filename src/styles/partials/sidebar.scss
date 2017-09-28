@@ -85,7 +85,7 @@
     #sidebar-small-scrim {
         display:block;
         position: fixed;
-        height: calc(100vh - #{$header-height});
+        height: calc(100vh - #{$header-mobile-height});
         cursor: pointer;
         z-index:550;
         transition: all $transition-duration;
@@ -111,7 +111,7 @@
     #sidebar-small-scrim.sidebar-closed {
         width:5%;
 
-        top:$header-height;
+        top:$header-mobile-height;
         left:7.55%;
 
         .sidebar-state-indicator {
