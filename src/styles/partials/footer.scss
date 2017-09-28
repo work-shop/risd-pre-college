@@ -33,7 +33,6 @@ footer {
 
     .footer-apply-button {
         @include border-radius();
-        @include box-shadow();
 
         background-color: $pre-college-light-gray;
 
@@ -62,7 +61,6 @@ footer {
 
     .footer-more-info-button {
         @include border-radius();
-        @include box-shadow();
 
         background-color: $pre-college-green;
 
@@ -112,7 +110,6 @@ footer {
         .social-link {
             @include span-columns( 1 of 4 );
             @include border-radius();
-            @include box-shadow();
 
             padding: 1em;
             text-align: center;

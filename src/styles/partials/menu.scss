@@ -2,17 +2,16 @@ body.menu-open {
     overflow: hidden;
 }
 
-
-
 #menu {
     display: none;
     position: fixed;
     top: $header-height;
     left: 0;
+    max-height: 100vh;
     width: 100%;
     background-color: $pre-college-dark-blue;
     z-index:1000;
-
+    overflow: scroll;
 }
 
 .program-submenu {
@@ -41,6 +40,10 @@ body.menu-open {
 
 
 @include sm-and-below-query() {
+    #menu {
+        top: $header-mobile-height;
+    }
+
     .program-submenu {
         @include span-columns( 12 of 12 );
     }

@@ -137,6 +137,10 @@
 }
 
 @include sm-and-below-query() {
+    .home-page-slideshow {
+        padding-top: $header-mobile-height;
+    }
+
     .slides {
         height: $home-slideshow-height / 1.5;
     }

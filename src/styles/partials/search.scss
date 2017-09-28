@@ -74,3 +74,14 @@ body.search-open {
         }
     }
 }
+
+@include xs-query() {
+    #search {
+        top: $header-mobile-height;
+    }
+
+    .search-input-text {
+        font-size: .5em;
+        @include border-radius(0px);
+    }
+}

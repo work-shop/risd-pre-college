@@ -31,8 +31,10 @@ $norm-medium: CabritoSans-NorMed;
 $norm-medium-italic: CabritoSans-NorMedIt;
 
 $header-height: 60px;
-$header-padding: 4em; // sorry, it's got to be in ems.
-$sidebar-max-width: 250px;
+$header-mobile-height: 40px;
+$header-padding: 3em; // sorry, it's got to be in ems.
+$sidebar-max-width: 250px; // desktop
+$sidebar-mobile-width: 90%; // mobile, should be in %
 $section-margin-bottom: 4em;
 $section-divider-size: 3px;
 $home-slideshow-height: 60vh; // should be in viewport units.

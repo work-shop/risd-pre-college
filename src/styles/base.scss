@@ -54,6 +54,12 @@ main {
     //filter: progid.DXImageTransform.Microsoft.gradient( startColorstr='#{$start}', endColorStr='#{$end}', GradientType="#{$rot}" );
 }
 
+@mixin steep-dropoff( $rot, $start, $end ) {
+    background: -webkit-linear-gradient( $rot, $start 0%, $start 50.25%, $end 50.5%, $end 100% );
+    background: -moz-linear-gradient( $rot, $start 0%, $start 50.25%, $end 50.5%, $end 100% );
+    background: linear-gradient( $rot, $start 0%, $start 50.25%, $end 50.5%, $end 100% );
+}
+
 @mixin box-shadow() {
     -webkit-box-shadow: $box-shadow-depth rgba(175,175,175,0.8);
     -moz-box-shadow: $box-shadow-depth rgba(175,175,175,0.8);
@@ -64,10 +70,10 @@ main {
     text-shadow: $box-shadow-depth rgba(175,175,175,0.8);
 }
 
-@mixin border-radius() {
-    -webkit-border-radius: $border-radius;
-    -moz-border-radius: $border-radius;
-    border-radius: $border-radius;
+@mixin border-radius( $rad: $border-radius ) {
+    -webkit-border-radius: $rad;
+    -moz-border-radius: $rad;
+    border-radius: $rad;
 }
 
 $base-font-size: 16px;
