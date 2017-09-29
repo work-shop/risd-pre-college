@@ -43,7 +43,7 @@
 
         public function register_image_sizing() {
             if ( function_exists( "add_image_size" ) ) {
-                add_image_size("student_work", 720, 405, false );
+                add_image_size("student_work", 1000, 560, false );
                 add_image_size("full_bleed", 1920, 1080, false);
                 add_image_size("social_card", 600, 600, array( "x_crop_position" => "center", "y_crop_position" => "center"));
             }
