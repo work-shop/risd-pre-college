@@ -69,6 +69,12 @@ var config = {
             lg: 991,
             xl: 1199
         }
+    },
+    sidebar: {
+        selector: "#sidebar > ul",
+        sidebarSelector: "#sidebar",
+        footerSelector: "footer",
+        footerTopPadding: 50
     }
 };
 

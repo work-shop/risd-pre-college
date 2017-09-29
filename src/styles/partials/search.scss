@@ -82,6 +82,13 @@ body.search-open {
 
     .search-input-text {
         font-size: .5em;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        -webkit-appearance: none;
         @include border-radius(0px);
+    }
+
+    input[type=submit] {
+        -webkit-appearance: none;
     }
 }

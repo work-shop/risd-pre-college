@@ -9,6 +9,7 @@ import { orientation } from "./orientation.js";
 import { slideshow } from "./slideshow.js";
 import { student_work_grid } from "./student-work-grid.js";
 import { breakpoints } from "./breakpoints.js";
+import { sidebar } from "./sidebar.js";
 import { config } from "./config.js";
 
 console.log('main.js loaded');
@@ -23,6 +24,7 @@ jumpLinks( config.jumpLinks );
 overlay( config.overlay );
 
 slideshow( config.slideshow );
+//sidebar( config.sidebar );
 student_work_grid( config.studentWorkGrid );
 
 collapsibleSubsections( config.collapsibleSubsections );

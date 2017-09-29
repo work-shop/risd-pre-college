@@ -1,9 +1,11 @@
 footer {
     position: relative;
-    padding-top: 2em;
+    padding-top: 4em;
     padding-bottom: 2em;
     z-index: 650;
-    background-color: $pre-college-white;
+    background-color: $pre-college-light-gray;
+    clip-path: polygon(0% 0%, 100% $footer-skew, 100% 100%, 0% 100%);
+    transition: all $transition-duration;
 }
 
 .header-row h5 {
@@ -12,8 +14,11 @@ footer {
 
 .header-row, .content-row, .affiliates-row, .copyright-row {
     @include span-columns( 8 of 12 );
-    @include shift( 2 of 12 );
+    //@include shift( 1 of 12 );
     @include omega();
+
+    margin-left: $sidebar-max-width + 25px;
+
     padding-bottom: 1em;
 }
 
@@ -161,6 +166,22 @@ footer {
 
 
 @include sm-and-below-query() {
+    footer {
+        clip-path: polygon(0% 0%, 100% $footer-mobile-skew, 100% 100%, 0% 100%);
+    }
+
+    .header-row {
+        margin-top: 2em;
+    }
+
+    .header-row, .content-row, .affiliates-row, .copyright-row {
+        @include span-columns( 8 of 12 );
+        @include shift( 2 of 12 );
+        @include omega();
+        padding-bottom: 1em;
+    }
+
+
     .contact-column, .buttons-column {
         @include span-columns(8 of 8);
     }
