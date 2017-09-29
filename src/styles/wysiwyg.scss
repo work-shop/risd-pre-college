@@ -80,10 +80,9 @@
             vertical-align: middle;
             position: absolute;
             left:-1.4em;
-            top:0;
+            top:-5px;
 
             font-size: 1.5em;
-            //margin-right: -2em;
 
             transition: transform $transition-duration;
         }
@@ -93,10 +92,8 @@
 
             position: relative;
             margin-left: 2em;
-            //margin-bottom: 1em;
         }
 
-        // margin-bottom: 2em;
     }
 
     ol {
