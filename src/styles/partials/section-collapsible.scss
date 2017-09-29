@@ -45,7 +45,7 @@
 
     position:relative;
     left:-50px;
-    top:29px;
+    top:34px;
     margin-top: -2em;
 
     font-size: 2em;
@@ -68,7 +68,6 @@
 @include sm-and-below-query() {
     .subsection-header::before {
 
-        top:26px;
         left:-25px;
 
     }

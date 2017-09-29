@@ -1,6 +1,7 @@
 .section-content.image {
     @include span-columns( 9 of 9 );
 
+    margin-top:$section-margin-bottom;
     margin-bottom: $section-margin-bottom;
 
 }
