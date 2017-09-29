@@ -1,8 +1,3 @@
-
-.subsection-header {
-    cursor: pointer;
-}
-
 .section-content.collapsible-subsections {
     @include shift(1 of 9);
     @include span-columns( 7 of 9 );
@@ -11,6 +6,7 @@
 
 .subsection-content {
     display: none;
+    font-size: .85em;
 }
 
 
@@ -36,19 +32,43 @@
     }
 }
 
+
+.subsection-header {
+    cursor: pointer;
+    position: relative;
+
+    &:hover .subsection-header-text {
+        color: $pre-college-orange-active;
+
+        &::before {
+            color: $pre-college-orange-active;    
+        }
+    }
+
+
+
+}
+
+.subsection-header-text {
+    @extend .brand-orange;
+    font-size: 1em;
+    display: inline-block;
+    @extend .medium;
+    margin-left: 1em;
+}
+
+
 .subsection-header::before {
     @extend .pictogram;
+    @extend .brand-orange;
 
     display: inline-block;
+    position: absolute;
+    top:-8px;
 
     content: "‹";
 
-    position:relative;
-    left:-50px;
-    top:34px;
-    margin-top: -2em;
-
-    font-size: 2em;
+    font-size: 1.5em;
 
     transition: transform $transition-duration;
 }
@@ -64,11 +84,22 @@
 
 }
 
+@include md-query() {
+    .subsection-header::before {
+        top:-6px;
+    }
+    //
+    // .subsection-header-text {
+    //     font-size: .9em;
+    // }
+}
 
 @include sm-and-below-query() {
     .subsection-header::before {
+        top:-6px;
+    }
 
-        left:-25px;
-
+    .subsection-header-text {
+        font-size: .85em;
     }
 }
