@@ -1,180 +1,294 @@
-.home-page-slideshow {
-    padding-top: $header-height;
-}
-
-.home-page-quicklinks {
+.home-spread-section {
     position: relative;
-    z-index:100;
 }
 
-.slides {
-    width: 100vw;
-    height: $home-slideshow-height;
-    max-height: $home-slideshow-max-height;
-    overflow: hidden;
+.logo-image-spread {
+    margin-top: $header-height;
     position: relative;
 
-    .slide {
-        width: 100vw;
-        height: $home-slideshow-height;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+}
 
-        &.landscape {
-            //background-size: 100% auto;
-            //height: $home-slideshow-height;
-        }
+.home-page-image {
+    width:100%;
+    display:block;
+}
 
-        &.portrait {
-            //background-size: auto 100%;
-            //height: $home-slideshow-height / 1.5;
-        }
+.home-page-image-mask {
+    position: absolute;
 
-    }
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
 
-    .slide .alignment-overlay {
-        position: relative;
-        top:50%;
-        left:50%;
-        @include transform( translateX(-50%)translateY(-50%) );
-    }
+    background-color: rgba( 0,0,0,.20 );
+}
 
-    .slide-overlay {
-        width: 75%;
-        height:100%;
-        position: relative;
-        top:0;
-        left:0;
-        @include linear-gradient( 90deg, $pre-college-white, transparent );
+.home-page-logo {
+    position: absolute;
+    left:50%;
+    top:40%;
+    width: 250px;
+    @include transform( translateX(-50%)translateY(-50%) );
+
+    svg {
+        @include transform( scale(120%) );
     }
 
 }
 
-
-
-
-.program-overview-box {
-    @include shift( 1 of 11 );
-    @include span-columns(3 of 11);
-    z-index: 100;
-}
-
-.info-box {
-    @include span-columns(3 of 12);
-}
-
-.pre-college-overlay-box {
-    @include span-columns(3 of 11);
-    @include border-radius();
-
-    position: relative;
-    top:-10vh;
-
-    background-color:$pre-college-dark-blue;
-    padding:2em;
-
-    h3 {
-        color:$pre-college-white;
-    }
-}
-
-.home-page-direction-nav {
-    @include shift( 1 of 12 );
-    @include span-columns( 10 of 12 );
+.home-page-buttons {
+    @include span-columns( 6 of 12 );
+    @include transform( translateX(-50%)translateY(-50%) );
 
     position: absolute;
-    bottom:12.5%;
-    z-index: 150;
-    vertical-align: middle;
-    @include transform( translateY(51%) );
+    left:50%;
+    bottom:5%;
+    z-index: 350;
 
-    .home-page-nav-prev {
-        @extend .pictogram;
-        @extend .h1;
-        margin: 0;
-
-        position: relative;
-        left: -2vw;
-        float: left;
-
-        a {
-            border:0;
-            @include text-shadow();
-
-            &:hover {
-                color:$pre-college-white;
-            }
-        }
-
+    &.applications-open {
+        @include span-columns( 8 of 12 );
     }
 
-    .home-page-nav-next {
-        @extend .pictogram;
-        @extend .h1;
-        margin: 0;
+}
 
-        position: relative;
-        right: -2vw;
-        float:right;
+.home-page-button {
+    @extend .medium;
 
-        a {
-            border:0;
-            @include text-shadow();
+    @include span-columns( 3 of 6 );
 
-            &:hover {
-                color:$pre-college-white;
-            }
-        }
+    background-color:$pre-college-light-gray;
+    text-align: center;
+    padding:.5em;
+    border:0;
+
+    &:hover {
+        @extend .bold;
+        background-color:$pre-college-light-gray-active;
+        color:inherit;
+    }
+
+    &.applications-open {
+        @include span-columns( 2 of 6 );
     }
 }
 
+
+.text-section {
+    overflow: auto;
+    padding: 4em;
+    padding-top: 5em;
+}
+
+.text-block-big {
+    @include span-columns( 10 of 12 );
+    @include shift( 1 of 12 );
+    background-color: transparent;
+    display: block;
+
+    .home-page-big-header-text {
+        @include span-columns( 6 of 10 );
+
+    }
+
+    .home-wysiwyg {
+        @include span-columns( 5 of 10 );
+
+    }
+
+}
+
+.text-block-small {
+    @include span-columns( 8 of 12 );
+    @include shift( 2 of 12 );
+    display: block;
+
+    .home-page-small-header-text {
+        @include span-columns( 7 of 10 );
+    }
+
+    .home-wysiwyg {
+        @include span-columns( 7 of 10 );
+    }
+
+}
+
+.home-wysiwyg {
+    color:$pre-college-white;
+
+    strong, b {
+        @extend .bold;
+    }
+
+}
+
+
+
+.home-page-big-header-text {
+    font-size: 3em;
+    color: $pre-college-white;
+    margin-bottom: .45em;
+    line-height: 1.25;
+}
+
+.home-page-small-header-text {
+    @extend .book;
+    font-size: 2.25em;
+    color: $pre-college-white;
+    margin-bottom: .45em;
+    line-height: 1.25;
+}
+
+
+.home-footer-padding {
+    height:8em;
+    width: 100%;
+    position: absolute;
+    bottom:-8em;
+    left:0;
+
+}
 
 @include md-query() {
-    // .home-page-direction-nav {
-    //     bottom:27%;
-    // }
+    .text-block-big {
+        @include span-columns( 10 of 12 );
+        @include shift( 1 of 12 );
+        background-color: transparent;
+        display: block;
+
+        .home-page-big-header-text {
+            @include span-columns( 8 of 10 );
+            font-size:2.25em;
+            line-height: 1.5;
+
+        }
+
+        .home-wysiwyg {
+            @include span-columns( 8 of 12 );
+        }
+
+    }
+
+    .text-block-small {
+        @include span-columns( 8 of 12 );
+        @include shift( 2 of 12 );
+        display: block;
+
+        .home-page-small-header-text {
+            @include span-columns( 8 of 12 );
+            font-size:1.8em;
+            line-height: 1.5;
+        }
+
+        .home-wysiwyg {
+            @include span-columns( 8 of 12 );
+        }
+
+    }
 }
 
-@include sm-and-below-query() {
-    .home-page-slideshow {
-        padding-top: $header-mobile-height;
-    }
+@include sm-query() {
 
-    .slides {
-        height: $home-slideshow-height / 1.5;
-    }
 
-    .slides .slide {
-        height: $home-slideshow-height / 1.5;
-    }
-
-    // .home-page-direction-nav {
-    //     bottom:40%;
-    // }
-
-    .pre-college-overlay-box {
-        @include shift(1 of 12);
+    .text-block-big {
         @include span-columns( 10 of 12 );
-        @include box-shadow();
-
-        position: static;
-        margin-top: 2em;
-    }
-
-    .program-overview-box {
         @include shift( 1 of 12 );
-        @include span-columns(5 of 12);
+        background-color: transparent;
+        display: block;
+
+        .home-page-big-header-text {
+            @include span-columns( 8 of 10 );
+            font-size:1.8em;
+            line-height: 1.45;
+        }
+
+        .home-wysiwyg {
+            @include span-columns( 8 of 10 );
+        }
+
     }
 
-    .info-box {
-        @include span-columns(5 of 12);
+    .text-block-small {
+        @include span-columns( 8 of 12 );
+        @include shift( 2 of 12 );
+        display: block;
+
+        .home-page-small-header-text {
+            @include span-columns( 8 of 10 );
+            font-size:1.3em;
+            line-height: 1.45;
+        }
+
+        .home-wysiwyg {
+            @include span-columns( 8 of 10 );
+        }
 
     }
 }
 
 @include xs-query() {
-    // .home-page-direction-nav {
-    //     bottom:45%;
-    // }
+
+    .text-block-big {
+        @include span-columns( 12 of 12 );
+        @include shift( 0 of 12 );
+        background-color: transparent;
+        display: block;
+
+        .home-page-big-header-text {
+            @include span-columns( 12 of 12 );
+            font-size:1.8em;
+            line-height: 1.45;
+
+        }
+
+        .home-wysiwyg {
+            @include span-columns( 12 of 12 );
+        }
+
+    }
+
+    .text-block-small {
+        @include span-columns( 12 of 12 );
+        @include shift( 0 of 12 );
+        display: block;
+
+        .home-page-small-header-text {
+            @include span-columns( 12 of 12 );
+            font-size:1.3em;
+            line-height: 1.45;
+        }
+
+        .home-wysiwyg {
+            @include span-columns( 12 of 12 );
+        }
+
+    }
+}
+
+
+@include sm-and-below-query() {
+    .logo-image-spread {
+        margin-top: $header-mobile-height;
+    }
+
+    .home-page-logo {
+        position: absolute;
+        left:50%;
+        top:50%;
+        width: 100px;
+        @include transform( translateX(-50%)translateY(-50%) );
+
+        svg {
+            @include transform( scale(60%) );
+        }
+
+    }
+
+    .home-page-buttons {
+        @include transform( translateX(-50%)translateY(50%) );
+
+        position: absolute;
+        left:50%;
+        bottom:0%;
+    }
 }

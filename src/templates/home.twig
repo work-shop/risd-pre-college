@@ -1,15 +1,37 @@
 {% extends "partials/base.twig" %}
 
-{% import "home/home-macros.twig" as home_macros %}
+{% import "home/home-spread.twig" as spread %}
 
 {% block content %}
 
-<section class="home-page-slideshow">
-    {{ home_macros.slideshow( options.home_page_slideshow ) }}
-</section>
+<section class="home-spread">
+    {% set text = 0 %}
+    {% set image = 0 %}
 
-<section class="home-page-quicklinks container pt2">
-    {{ home_macros.quicklinks( options.home_page_program_overview_text, options.home_page_info_text, options.home_page_callout_text  ) }}
+    {% for slide in options.home_page_slideshow %}
+        {% if slide.slide_type == "image" %}{% set image = image + 1 %}{% else %}{% set text = text + 1 %}{% endif %}
+        {% set last = loop.index == options.home_page_slideshow|length %}
+
+        {% if slide.slide_type == "image" and image == 1 %}
+
+            {{ spread.logo_image_spread( slide, last, options ) }}
+
+        {% elseif slide.slide_type == "text" and (text is divisible by( 2 )) %}
+
+            {{ spread.small_header_spread( slide, last ) }}
+
+        {% elseif slide.slide_type == "text" %}
+
+            {{ spread.big_header_spread( slide, last ) }}
+
+        {% elseif slide.slide_type == "image" %}
+
+            {{ spread.image_spread( slide, last ) }}
+
+        {% endif %}
+
+    {% endfor %}
+
 </section>
 
 {% endblock %}

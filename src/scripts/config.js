@@ -75,6 +75,11 @@ var config = {
         sidebarSelector: "#sidebar",
         footerSelector: "footer",
         footerTopPadding: 50
+    },
+    home_page_wysiwyg: {
+        darken: 27,
+        lighten: 35,
+        selector: '.home-wysiwyg'
     }
 };
 

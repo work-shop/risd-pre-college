@@ -1,6 +1,6 @@
 {% import "partials/components/application-button.twig" as button %}
 
-<header class="{% if not post and post.slug != "search" %}home{% elseif post.slug != search %}page{% elseif post.slug == search %}search{% endif %}">
+<header class="page">
 
     <div class="logo"><a class="nav-link" href="/">
         {% include "partials/components/logo.twig" %}

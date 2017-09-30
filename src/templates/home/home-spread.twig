@@ -1,0 +1,72 @@
+{% macro logo_image_spread( slide, last, options ) %}
+
+    <div class="home-spread-section logo-image-spread {% if last %}last-slide{% endif %}">
+
+        <img class="home-page-image" src="{{ slide.image.url }}" />
+
+        <div class="home-page-image-mask"></div>
+
+        <div class="home-page-logo">
+            {% include "partials/components/home-page-logo.twig" %}
+        </div>
+
+        <div class="home-page-buttons button-set {% if options.applications_are_open %}applications-open{% endif %}">
+            <a class="home-page-button program-button {% if options.applications_are_open %}applications-open{% endif %}" href="/program/about-pre-college">
+                <span class="button-text">Program<span class="hidden-xs"> Overview</span></span>
+            </a>
+            <a class="home-page-button info-button {% if options.applications_are_open %}applications-open{% endif %}" href="/info/application-requirements">
+                <span class="button-text"><span class="hidden-xs">Important </span>Info</span>
+            </a>
+            {% if options.applications_are_open %}
+            <a class="home-page-button home-apply-button applications-open" href="{{ options.application_link }}">
+                <span class="button-text">Apply<span class="hidden-xs"> Now</span></span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% if last %}
+    <div class="home-footer-padding home-spread-section " style="background-color:{{slide.overlay_box_color}};">&nbsp;</div>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro image_spread( slide, last  ) %}
+
+    <div class="home-spread-section image-spread {% if last %}last-slide{% endif %}">
+        <img class="home-page-image" src="{{ slide.image.url }}" />
+    </div>
+    {% if last %}
+    <div class="home-footer-padding home-spread-section " style="background-color:{{slide.overlay_box_color}};">&nbsp;</div>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro big_header_spread( slide, last ) %}
+
+    <div class="text-section home-spread-section big-header-spread {% if last %}last-slide{% endif %}" style="background-color:{{slide.overlay_box_color}};">
+        <span class="text-block-big">
+            <h2 class="home-page-big-header-text">{{ slide.header_text }}</h2>
+            <div data-text-color="{{slide.overlay_box_color}}" class="home-page-body-text home-wysiwyg">{{ slide.body_text }}</div>
+        </span>
+    </div>
+    {% if last %}
+        <div class="home-footer-padding home-spread-section " style="background-color:{{slide.overlay_box_color}};">&nbsp;</div>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro small_header_spread( slide, last ) %}
+
+    <div class="text-section home-spread-section small-header-spread {% if last %}last-slide{% endif %}" style="background-color:{{slide.overlay_box_color}};">
+        <span class="text-block-small">
+            <h2 class="home-page-small-header-text">{{ slide.header_text }}</h2>
+            <div data-text-color="{{slide.overlay_box_color}}" class="home-page-body-text home-wysiwyg">{{ slide.body_text }}</div>
+        </span>
+
+    </div>
+    {% if last %}
+    <div class="home-footer-padding home-spread-section " style="background-color:{{slide.overlay_box_color}};">&nbsp;</div>
+    {% endif %}
+
+
+{% endmacro %}

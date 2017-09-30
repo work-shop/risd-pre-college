@@ -94,3 +94,9 @@ $font-cap-height: 0.7em;
     margin-bottom: $base-line-height - $baseline-distance;
 
 }
+
+@include xs-query() {
+    .hidden-xs {
+        display: none;
+    }
+}

@@ -39,10 +39,11 @@ footer {
     .footer-apply-button {
         @include border-radius();
 
-        background-color: $pre-college-light-gray;
+        background-color: $pre-college-medium-gray;
 
         span {
             @extend .bold;
+            font-size: .9em;
             color:$pre-college-dark-gray;
         }
 

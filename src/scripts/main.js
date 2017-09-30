@@ -10,6 +10,7 @@ import { slideshow } from "./slideshow.js";
 import { student_work_grid } from "./student-work-grid.js";
 import { breakpoints } from "./breakpoints.js";
 import { sidebar } from "./sidebar-second.js";
+import { wysiwyg_color } from "./wysiwyg-color.js";
 import { config } from "./config.js";
 
 console.log('main.js loaded');
@@ -23,8 +24,10 @@ toggleState( config.toggleStateSidebar );
 jumpLinks( config.jumpLinks );
 overlay( config.overlay );
 
+wysiwyg_color( config.home_page_wysiwyg );
 slideshow( config.slideshow );
 //sidebar( config.sidebar );
+student_work_grid( config.studentWorkGrid );
 student_work_grid( config.studentWorkGrid );
 
 collapsibleSubsections( config.collapsibleSubsections );
