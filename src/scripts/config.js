@@ -71,7 +71,7 @@ var config = {
         }
     },
     sidebar: {
-        selector: "#sidebar > ul",
+        sidebarContentSelector: ".sidebar-content",
         sidebarSelector: "#sidebar",
         footerSelector: "footer",
         footerTopPadding: 50

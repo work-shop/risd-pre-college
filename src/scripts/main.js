@@ -9,7 +9,7 @@ import { orientation } from "./orientation.js";
 import { slideshow } from "./slideshow.js";
 import { student_work_grid } from "./student-work-grid.js";
 import { breakpoints } from "./breakpoints.js";
-import { sidebar } from "./sidebar.js";
+import { sidebar } from "./sidebar-second.js";
 import { config } from "./config.js";
 
 console.log('main.js loaded');
