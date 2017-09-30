@@ -41,13 +41,11 @@
         color: $pre-college-orange-active;
 
         &::before {
-            color: $pre-college-orange-active;    
+            color: $pre-college-orange-active;
         }
     }
-
-
-
 }
+
 
 .subsection-header-text {
     @extend .brand-orange;

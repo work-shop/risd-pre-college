@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const FaviconsPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 
 const paths = {
@@ -127,6 +128,24 @@ const plugins = [
         port: 3000,
         ui: {
             port: 3001
+        }
+    }),
+    new FaviconsPlugin({
+        logo: "./aperture.png",
+        prefix: 'icons/',
+        emitStates: false,
+        inject: false,
+        icons: {
+            android: false,
+            appleIcon: false,
+            appleStartup: false,
+            coast: false,
+            favicons: true,
+            firefox: true,
+            opengraph: false,
+            twitter: false,
+            yandex: false,
+            windows: false
         }
     })
 ];

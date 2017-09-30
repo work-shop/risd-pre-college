@@ -28,8 +28,8 @@
         <!-- Twitter Card data -->
         <meta name="twitter:card" value="">
 
-        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ theme.uri }}/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ theme.uri }}/icons/favicon-32x32.png">
         <link rel="apple-touch-icon" href="/public/images/apple-icon.png">
 
         {{ wp_head }}
@@ -52,6 +52,7 @@
         {{ wp_footer }}
     </body>
     <script>
+        console.log({{ theme|json_encode }});
         console.log({{ options|json_encode }});
         console.log({{ menu|json_encode }});
         console.log({{ post|json_encode }});
