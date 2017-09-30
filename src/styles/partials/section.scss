@@ -1,4 +1,13 @@
+
 .section-content {
+
+
+    &.section-text {
+        margin-bottom: $section-margin-bottom;
+        overflow-y: auto;
+    }
+
+
     &:last-child {
         margin-bottom: 0;
     }

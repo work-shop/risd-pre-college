@@ -2,16 +2,6 @@
 <section id="{% include "partials/components/section-id.twig" %}" class="section-content schedule">
 
     <div class="content schedule">
-        <div class="schedule-row hidden-xs">
-            <div class="header-column">
-                <h2 class="brand-orange h5 schedule-start uppercase hidden-xs">Start</h2>
-            </div>
-            <div class="details-column"><ol>
-                <li class="schedule-subitem">
-                    <div class="no-label subitem-text wysiwyg">Program Starts</div>
-                </li>
-            </ol></div>
-        </div>
 
         {% for item in section.schedule_items %}
             <div class="schedule-row">
@@ -33,17 +23,6 @@
                 </ol></div>
             </div>
         {% endfor %}
-
-        <div class="schedule-row hidden-xs">
-            <div class="header-column schedule-end">
-                <h2 class="brand-orange h5 schedule-end uppercase hidden-xs">End</h2>
-            </div>
-            <div class="details-column schedule-end"><ol>
-                <li class="schedule-subitem">
-                    <div class="no-label subitem-text wysiwyg">Program Ends</div>
-                </li>
-            </ol></div>
-        </div>
 
     </div>
     <br/>

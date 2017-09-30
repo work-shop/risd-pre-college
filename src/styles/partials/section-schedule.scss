@@ -1,5 +1,7 @@
-.content {
-    @include span-columns( 8 of 8 );
+.content.schedule {
+    @include shift(1 of 12);
+    @include span-columns( 11 of 12 );
+    max-width: $section-text-max-width;
 }
 
 .schedule-row {
@@ -12,6 +14,10 @@
     text-align: right;
 }
 
+.header-column h2 {
+    font-size: 1.2em;
+}
+
 .header-column h2::after {
     @extend .pictogram;
 
@@ -19,7 +25,7 @@
 
     position: relative;
     top:0;
-    left:12.2%;
+    left:13%;
 
     width:2px;
     height:2px;
@@ -65,11 +71,24 @@
     margin-bottom:.25em;
 }
 
+@include md-query() {
+    .header-column h2 {
+        font-size: 1em;
+    }
+}
+
 @include sm-query() {
-        .header-column h2::after { left:12.4%; }
+        .header-column h2::after { left:13.5%; }
+        .header-column h2 {
+            font-size: 1em;
+        }
 }
 
 @include xs-query() {
+    .header-column h2 {
+        font-size: 1em;
+    }
+
     .schedule-row {
         margin-bottom: 2em;
     }

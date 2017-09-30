@@ -1,7 +1,7 @@
 var global_config = {
     headerHeight: 60,
     transitionDuration: 400,
-    headerPadding: 30
+    headerPadding: 24
 };
 
 var config = {

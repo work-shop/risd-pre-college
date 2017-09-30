@@ -47,12 +47,20 @@
 }
 
 
+.subsection {
+    margin-bottom: 1.5em;
+}
+
 .subsection-header-text {
     @extend .brand-orange;
     font-size: 1em;
     display: inline-block;
     @extend .medium;
     margin-left: 1em;
+}
+
+.subsection-header.subsection-open {
+    margin-bottom: 1em;
 }
 
 

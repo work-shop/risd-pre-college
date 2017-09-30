@@ -1,5 +1,5 @@
 {% spaceless %}
-    {% if section.section_title %}
-        {{ section.section_title|lower|replace({' ' : '-', "." : "-", "," : "-", '+': '-'}) }}
+    {% if section.section_title and section.show_in_menu %}
+        {{ section.section_title|lower|replace({' ' : '-', "." : "-", "," : "-", '+': '-', '?': ''}) }}
     {% endif %}
 {% endspaceless %}
