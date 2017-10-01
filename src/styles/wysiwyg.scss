@@ -36,21 +36,6 @@
         // margin-top:1em;
     }
 
-    p {
-        //margin-bottom: 1.35em;
-    }
-
-    // h1 + p {
-    //     background-color: red;
-    // }
-    //
-    // h2 + p {
-    //     background-color: yellow;
-    // }
-    //
-    // h3 + p {
-    //     background-color: blue;
-    // }
 
     strong, b {
         @extend .bold;

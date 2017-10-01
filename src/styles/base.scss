@@ -95,6 +95,18 @@ $font-cap-height: 0.7em;
 
 }
 
+@include md-query() {
+    .hidden-md {
+        display: none;
+    }
+}
+
+@include sm-query() {
+    .hidden-sm {
+        display: none;
+    }
+}
+
 @include xs-query() {
     .hidden-xs {
         display: none;

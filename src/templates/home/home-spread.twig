@@ -12,14 +12,14 @@
 
         <div class="home-page-buttons button-set {% if options.applications_are_open %}applications-open{% endif %}">
             <a class="home-page-button program-button {% if options.applications_are_open %}applications-open{% endif %}" href="/program/about-pre-college">
-                <span class="button-text">Program<span class="hidden-xs"> Overview</span></span>
+                <span class="button-text">Program<span class="hidden-xs hidden-sm"> Overview</span></span>
             </a>
             <a class="home-page-button info-button {% if options.applications_are_open %}applications-open{% endif %}" href="/info/application-requirements">
-                <span class="button-text"><span class="hidden-xs">Important </span>Info</span>
+                <span class="button-text"><span class="hidden-xs hidden-sm">Important </span>Info</span>
             </a>
             {% if options.applications_are_open %}
             <a class="home-page-button home-apply-button applications-open" href="{{ options.application_link }}">
-                <span class="button-text">Apply<span class="hidden-xs"> Now</span></span>
+                <span class="button-text">Apply<span class="hidden-xs hidden-sm"> Now</span></span>
             </a>
             {% endif %}
         </div>
