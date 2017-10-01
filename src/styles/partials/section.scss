@@ -1,5 +1,6 @@
 #content {
-    overflow-y: auto;
+    overflow-y: visible;
+    overflow-x: visible;
 }
 
 .section-content {
@@ -29,5 +30,7 @@ hr.section-divider {
 }
 
 .section-content.divider {
-    @include span-columns(9 of 9);
+    @include shift( 1 of 9 );
+    @include span-columns( 7 of 9 );
+    max-width: $section-text-max-width;
 }
