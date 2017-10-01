@@ -37,6 +37,8 @@
             add_filter('show_admin_bar', '__return_false');
             add_filter('wp_get_attachment_url', array($this, 'rewrite_cdn_url') );
             add_filter('timber_image_src', array($this, 'rewrite_timber_cdn_url') );
+            add_action('pre_get_posts', array($this, 'search_filter'));
+            add_filter('request', array($this, 'request_empty_search_filter'));
 
 
         }
@@ -133,6 +135,26 @@
                 "facebook_url" => get_field("facebook_url", "option")
              );
             return $context;
+        }
+
+
+        public function request_empty_search_filter( $query_vars ) {
+            if ( isset( $_GET['s'] ) && empty( $_GET['s'] ) ) {
+                $query_vars['s'] = " ";
+            }
+            return $query_vars;
+        }
+
+
+        public function search_filter( $query ) {
+
+            $excluded_pages = array(276, 14, 20, 47, 277);
+
+            if ( $query->is_search ) {
+
+                $query->set('post__not_in', $excluded_pages);
+
+            }
         }
 
         /**

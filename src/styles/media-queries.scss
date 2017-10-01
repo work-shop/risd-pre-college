@@ -16,6 +16,12 @@
     }
 }
 
+@mixin lg-and-above-query() {
+    @media screen and (min-width: $md) {
+            @content;
+    }
+}
+
 @mixin md-query() {
     @media screen and (min-width: $sm) and (max-width: $md) {
             @content;

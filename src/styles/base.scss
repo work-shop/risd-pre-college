@@ -95,6 +95,11 @@ $font-cap-height: 0.7em;
 
 }
 
+@mixin clip-path( $top, $left, $bottom, $right ) {
+    clip-path: polygon($top $left $bottom $right);
+    clip-path: polygon($top, $left, $bottom, $right);
+}
+
 @include md-query() {
     .hidden-md {
         display: none;

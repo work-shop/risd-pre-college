@@ -26,20 +26,29 @@
                 <li class="search-result">
                     <a class="search-link" href="{{ result.link }}">
                         <h4 class="result-title">{{ result.title }}</h4>
-                        <p class="result-excerpt">{{ result.get_field('summary') }}
-                        {% set sections = result.get_field('sections') %}
-                        {% if sections|length > 0 %}
-                            <p class="result-sections">
-                                {% for section in sections %}
-                                    {% if section.show_in_menu %}
 
-                                    <a class="search-subsection-link" href="{{ result.link }}#{% include "partials/components/section-id.twig" %}">{{ section.section_title }}</a>{% if loop.index != sections|length %}, {% if loop.index == sections|length - 1 %}and{% endif %}{% endif %}
+                        {% set sections = result.get_field('sections') %}
+                        {% set visible = 0 %}
+                        {% for section in sections %}{% if section.show_in_menu and section.section_title %}{% set visible = visible + 1 %}{% endif %}{% endfor %}
+                        {% if visible > 0 %}
+                            <p class="result-sections">
+                                {% set count = visible - 1 %}
+                                <ul>
+                                {% for section in sections %}
+                                    {% if section.show_in_menu and section.section_title %}
+
+                                    <li><a class="search-subsection-link" href="{{ result.link }}#{% include "partials/components/section-id.twig" %}">{{ section.section_title }}</a>{% if count > 0 %}, {% if count == 1 %}and{% endif %}{% endif %}{% if count == 0 %}.{% endif %}</li>
+
+                                    {% set count = count - 1 %}
 
                                     {% endif %}
-                                {% endfor %}
+                                {% endfor %}</ul>
                             </p>
                         {% endif %}
-                        <a class="nav-link brand-dark-blue bold" href="{{ result.link }}">Read More &rarr;</a>
+
+                        <p class="result-excerpt">{{ result.get_field('summary') }}</p>
+
+                        <a class="nav-link brand-dark-blue bold centered" href="{{ result.link }}">Read More &rarr;</a>
                     </a>
                 </li>
 

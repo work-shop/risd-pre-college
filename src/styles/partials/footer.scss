@@ -4,7 +4,7 @@ footer {
     padding-bottom: 2em;
     z-index: 650;
     background-color: $pre-college-light-gray;
-    clip-path: polygon(0% 0%, 100% $footer-skew, 100% 100%, 0% 100%);
+    @include clip-path(0% 0%, 100% $footer-skew, 100% 100%, 0% 100%);
     transition: all $transition-duration;
 }
 
@@ -168,7 +168,7 @@ footer {
 
 @include sm-and-below-query() {
     footer {
-        clip-path: polygon(0% 0%, 100% $footer-mobile-skew, 100% 100%, 0% 100%);
+        @include clip-path(0% 0%, 100% $footer-mobile-skew, 100% 100%, 0% 100%);
     }
 
     .header-row {

@@ -39,13 +39,6 @@ a.search-link {
 }
 
 a.search-subsection-link {
-    background-color: $pre-college-light-blue;
-    padding:3px;
-    color:$pre-college-dark-gray;
-    border:0;
-    border-radius: 2px;
-
-    &:hover {
-        background-color: $pre-college-light-blue-active;
-    }
+    @extend .medium;
+    border-bottom: none;
 }

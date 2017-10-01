@@ -57,9 +57,6 @@
 }
 
 .search-result {
-    @include span-columns( 5 of 10 );
-    @include omega(2n);
-
     margin-bottom: 2em;
 }
 
@@ -71,6 +68,20 @@
 .search-home-link {
     @include span-columns(10 of 10);
     text-align: center;
+}
+
+@include lg-and-above-query() {
+    .search-result {
+        @include span-columns( 3.33 of 10 );
+        @include omega(3n);
+    }
+}
+
+@include md-query() {
+    .search-result {
+        @include span-columns( 5 of 10 );
+        @include omega(2n);
+    }
 }
 
 @include sm-and-below-query() {
