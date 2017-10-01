@@ -7,7 +7,7 @@
         <meta charset="{{ site.charset }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="description" content="{% block meta_description %}{{ site.description }}{% endblock %}">
+        <meta name="description" content="{% block meta_description %}{% if post.summary %}{{ post.summary }}{% else %}{{ site.description }}{% endif %}{% endblock %}">
 
         <title>{% spaceless %}
             {% if wp_title %}
@@ -17,16 +17,19 @@
             {% endif %}
         {% endspaceless %}</title>
 
-
         <!-- Facebook Open Graph data -->
         <meta property="og:title" content="{% spaceless %}{% if wp_title %}{{ wp_title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}{% endspaceless %}" />
-        <meta property="og:description" content="{% block og_description %}{{ site.description }}{% endblock %}" />
-        <meta property="og:image" content="" />
-        <meta property="og:url" content="{{ site.url }}" />
+        <meta property="og:description" content="{% block og_description %}{% if post.summary %}{{ post.summary }}{% else %}{{ site.description }}{% endif %}{% endblock %}" />
+        <meta property="og:image" content="{% include "partials/components/featured-image.twig" %}" />
+        <meta property="og:url" content="{% if post.link %}{{ post.link }}{% else %}{{ site.url }}{% endif %}" />
         <meta property="og:type" content="website" />
 
         <!-- Twitter Card data -->
-        <meta name="twitter:card" value="">
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@risd_precollege" />
+        <meta name="twitter:title" content="{% if wp_title %}{{ wp_title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}" />
+        <meta name="twitter:description" content="{% if post.summary %}{{ post.summary }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="twitter:image" content="{% include "partials/components/featured-image.twig" %}" />
 
         <link rel="icon" type="image/png" sizes="16x16" href="{{ theme.uri }}/icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ theme.uri }}/icons/favicon-32x32.png">

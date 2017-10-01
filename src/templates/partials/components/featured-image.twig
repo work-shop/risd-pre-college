@@ -1,0 +1,9 @@
+{% spaceless %}
+{% set seen = false %}
+{% for slide in options.home_page_slideshow if slide.slide_type == "image" %}
+    {% if not seen %}
+        {{ slide.image.url }}
+        {% set seen = true %}
+    {% endif %}
+{% endfor %}
+{% endspaceless %}
