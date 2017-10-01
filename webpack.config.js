@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const FaviconsPlugin = require('favicons-webpack-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 const webpack = require('webpack');
 
 const paths = {
@@ -53,7 +54,8 @@ const style = {
                 loader: "css-loader",
                 options: {
                     sourceMap: true,
-                    importLoaders: 1
+                    importLoaders: 1,
+                    minimize: true
                 }
             },
             { loader: "resolve-url-loader" },
@@ -147,7 +149,8 @@ const plugins = [
             yandex: false,
             windows: false
         }
-    })
+    }),
+    new MinifyPlugin({}, {})
 ];
 
 const config = {
