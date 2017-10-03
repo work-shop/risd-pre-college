@@ -2,7 +2,9 @@
 
     <div class="home-spread-section logo-image-spread {% if last %}last-slide{% endif %}">
 
-        <img class="home-page-image" src="{{ slide.image.url }}" />
+        <div class="home-page-image-bounds">
+            <img class="home-page-image" src="{{ slide.image.url }}" />
+        </div>
 
         <div class="home-page-image-mask"></div>
 
