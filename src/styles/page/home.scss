@@ -36,22 +36,24 @@
     left:50%;
     top:40%;
     width: 250px;
-    @include transform( translateX(-50%)translateY(-50%) );
+    transform: translateX(-50%)translateY(-50%);
 
     svg {
-        @include transform( scale(120%) );
+        transform: scale(120%);
     }
 
 }
 
 .home-page-buttons {
     @include span-columns( 6 of 12 );
-    @include transform( translateX(-50%)translateY(-50%) );
+
+    transform: translateX(-50%)translateY(-50%);
 
     position: absolute;
     left:50%;
     bottom:5%;
     z-index: 350;
+    text-align: center;
 
     &.applications-open {
         @include span-columns( 8 of 12 );
@@ -60,13 +62,17 @@
 }
 
 .home-page-button {
-    @extend .medium;
+    @extend .bold;
 
-    @include span-columns( 3 of 6 );
+    width: auto;
 
-    background-color:$pre-college-light-gray;
+    background-color:transparentize($pre-college-light-gray, $home-button-transparency);
     text-align: center;
-    padding:.5em;
+    padding:.75em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: .5em;
+    margin-right: .5em;
     border:0;
 
     &:hover {
@@ -76,7 +82,7 @@
     }
 
     &.applications-open {
-        @include span-columns( 2 of 6 );
+
     }
 }
 
@@ -198,6 +204,38 @@
     }
 }
 
+@include sm-and-below-query() {
+    .logo-image-spread {
+        margin-top: $header-mobile-height;
+    }
+
+    .home-page-logo {
+        position: absolute;
+        left:50%;
+        top:50%;
+        width: 100px;
+        @include transform( translateX(-50%)translateY(-50%) );
+
+        svg {
+            @include transform( scale(60%) );
+        }
+
+    }
+
+    .home-page-buttons {
+        @include transform( translateX(-50%)translateY(50%) );
+
+
+        position: absolute;
+        left:50%;
+        bottom:0%;
+    }
+}
+
+@include xs-query() {
+
+}
+
 @include sm-query() {
 
 
@@ -278,32 +316,9 @@
         }
 
     }
-}
-
-
-@include sm-and-below-query() {
-    .logo-image-spread {
-        margin-top: $header-mobile-height;
-    }
-
-    .home-page-logo {
-        position: absolute;
-        left:50%;
-        top:50%;
-        width: 100px;
-        @include transform( translateX(-50%)translateY(-50%) );
-
-        svg {
-            @include transform( scale(60%) );
-        }
-
-    }
 
     .home-page-buttons {
-        @include transform( translateX(-50%)translateY(50%) );
-
-        position: absolute;
-        left:50%;
-        bottom:0%;
+        @include span-columns(10 of 12);
+        font-size: .8em;
     }
 }

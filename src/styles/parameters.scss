@@ -45,6 +45,7 @@ $home-slideshow-height: 50vh; // should be in viewport units.
 $home-slideshow-max-height:800px;
 $home-page-pre-college-type-viewport-factor:5; // should be unitless
 $home-page-pre-college-type-aperture-factor:9.5; // should be unitless
+$home-button-transparency: .2; // should be in the range [0,1].
 
 $footer-skew: 20%;
 $footer-mobile-skew: 10%;
