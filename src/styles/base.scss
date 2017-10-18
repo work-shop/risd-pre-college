@@ -100,6 +100,18 @@ $font-cap-height: 0.7em;
     clip-path: polygon($top, $left, $bottom, $right);
 }
 
+@include xl-query() {
+    .hidden-xl {
+        display: none;
+    }
+}
+
+@include lg-query() {
+    .hidden-lg {
+        display: none;
+    }
+}
+
 @include md-query() {
     .hidden-md {
         display: none;
