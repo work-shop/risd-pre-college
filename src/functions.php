@@ -103,9 +103,12 @@
         public function enqueue_styles() {
             $main = "/styles/bundle.css";
 
+            $magnific_src = "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css";
+            wp_enqueue_style("magnific-popup-style", $magnific_src, array());
+
             $main_src = get_template_directory_uri() . $main;
             $main_ver = filemtime(get_template_directory() . $main);
-            wp_enqueue_style("main", $main_src, array(), $main_ver);
+            wp_enqueue_style("main", $main_src, array("magnific-popup-style"), $main_ver);
 
         }
 
@@ -113,9 +116,13 @@
         public function enqueue_scripts() {
             wp_enqueue_script("jquery");
 
+            $magnific_src = "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js";
+            wp_enqueue_script("magnific-popup", $magnific_src, array("jquery"), "1.1.0", true );
+
             $bundle_src = get_template_directory_uri() . "/scripts/bundle.js";
             $bundle_ver = filemtime(get_template_directory() . "/scripts/bundle.js");
-            wp_enqueue_script("bundle", $bundle_src, array("jquery"), $bundle_ver, true);
+            wp_enqueue_script("bundle", $bundle_src, array("magnific-popup"), $bundle_ver, true);
+
         }
 
         public function add_to_context($context) {

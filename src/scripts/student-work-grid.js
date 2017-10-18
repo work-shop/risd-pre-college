@@ -15,17 +15,15 @@ function student_work_grid( config ) {
     $( document ).ready( function() {
 
         $('.student-work-images').imagesLoaded( function() {
+
+            $('.student-work-image-item').magnificPopup({type:"image", title:"title"});
+
             $('.student-work-images').packery({
                 itemSelector: student_work_selector,
                 gutter:0
             });
 
-            $( student_work_selector ).on('click', function() {
-                var meta = $(this).find('.student-work-meta')
-                meta.fadeIn( 450 );
-                meta.on('click', function( e ) { e.stopPropagation(); meta.fadeOut( 250 ); });
 
-            });
         });
 
     });

@@ -1,7 +1,7 @@
 {% macro student_work( galleries ) %}
     <section class="student-work-images">
         {% for image in galleries %}
-            <div class="student-work-image-item" data-img-src="{{ image.url }}">
+            <div class="student-work-image-item" data-img-src="{{ image.url }}" href="{{ image.sizes.full_bleed }}" title="{{ image.title }}">
                 <img type="{{ image.mime_type }}" class="work-image" src="{{ image.sizes.student_work }}" alt="{{ image.alt }}" />
                 <div class="student-work-meta">
                     <p class="image-title medium brand-orange">{{ image.title }}</p>
