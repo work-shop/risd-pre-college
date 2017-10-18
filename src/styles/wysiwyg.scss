@@ -57,17 +57,18 @@
         li::before {
             @extend .brand-orange;
             @extend .bold;
+            @extend .pictogram;
 
             display: inline-block;
 
-            content: "–";
+            content: "…";
 
             vertical-align: middle;
             position: absolute;
-            left:-1.4em;
-            top:-5px;
+            left:-1em;
+            top:.2em;
 
-            font-size: 1.5em;
+            font-size: .8em;
 
             transition: transform $transition-duration;
         }
