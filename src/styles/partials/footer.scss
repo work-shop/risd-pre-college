@@ -102,8 +102,8 @@ footer {
         }
 
         p {
-            margin-top: .5em;
-            margin-bottom: .25em;
+            margin-top: 0em;
+            margin-bottom: .2em;
         }
 
 
@@ -122,11 +122,36 @@ footer {
             background-color: $pre-college-dark-blue;
             width:60px;
             font-weight: 250;
+            position: relative;
 
 
             .social-icon {
                 cursor: pointer;
                 color:$pre-college-white;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top:0;
+                left:0;
+
+                background-position:center center;
+                background-size:30px 30px;
+                background-repeat: no-repeat;
+                display: block;
+
+                &.facebook {
+
+                    background-image: url('../images/facebook-logo.png');
+
+                }
+
+                &.instagram {
+
+                    background-image: url('../images/instagram-white.png');
+
+                }
+
             }
 
             &:hover {
@@ -140,9 +165,9 @@ footer {
 }
 
 .affiliates-list {
-    @include span-columns( 8 of 8 );
+    @include span-columns( 9 of 8 );
 
-    text-align: center;
+    text-align: left;
 
     .footer-link {
         display: inline-block;
@@ -165,6 +190,14 @@ footer {
 
 }
 
+@include md-query() {
+    .header-row, .content-row, .affiliates-row, .copyright-row {
+        @include span-columns( 8 of 12 );
+        @include shift( 2 of 12 );
+        @include omega();
+        padding-bottom: 1em;
+    }
+}
 
 @include sm-and-below-query() {
     footer {
@@ -181,6 +214,8 @@ footer {
         @include omega();
         padding-bottom: 1em;
     }
+
+
 
 
     .contact-column, .buttons-column {
