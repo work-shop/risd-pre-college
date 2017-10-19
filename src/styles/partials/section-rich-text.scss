@@ -1,5 +1,10 @@
+.content.wysiwyg {
+    //
+}
+
 .section-content.rich-text {
     @include shift(1 of 9);
     @include span-columns( 7 of 9 );
     max-width: $section-text-max-width;
+    margin-right: 100%;
 }

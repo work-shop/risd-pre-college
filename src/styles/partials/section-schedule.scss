@@ -2,6 +2,8 @@
     @include shift(1 of 12);
     @include span-columns( 11 of 12 );
     max-width: $section-text-max-width;
+    margin-right: 100%;
+    margin-bottom: 2em;
 }
 
 .schedule-row {
