@@ -2,7 +2,7 @@
 
     <div class="footer-apply-button footer-button {% if options.applications_are_open %}applications_are_open{% endif %}">
         {% if options.applications_are_open %}
-            <a target="_blank" class="footer-link" href="{{ options.application_link }}"><span class="apply-button-text">{{ options.open_applications_footer_text }}</span></a>
+            <a onclick="ga('send', 'event', 'Apply Now Button', 'Click', 'Footer');" target="_blank" class="footer-link" href="{{ options.application_link }}"><span class="apply-button-text">{{ options.open_applications_footer_text }}</span></a>
         {% else %}
             <span class="apply-button-text">{{ options.closed_applications_footer_text }}</span>
         {% endif %}
@@ -14,7 +14,7 @@
 {% macro header_apply_button( options ) %}
 
 {% if options.applications_are_open %}
-    <a target="_blank" class="apply-button nav-button nav-type nav-link applications_are_open" href="{{ options.application_link }}">
+    <a onclick="ga('send', 'event', 'Apply Now Button', 'Click', 'Header');"  target="_blank" class="apply-button nav-button nav-type nav-link applications_are_open" href="{{ options.application_link }}">
         <span class="apply-button-text brand-white">Apply</span>
     </a>
 {% else %}
