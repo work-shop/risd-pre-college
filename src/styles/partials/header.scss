@@ -136,6 +136,17 @@ header {
     }
 }
 
+.info-button {
+    width:30%;
+
+    height: $header-height;
+    background-color: $pre-college-green;
+
+    &:hover {
+        background-color: $pre-college-green-active;
+    }
+}
+
 .apply-button-text {
     @extend .bold;
 }
@@ -154,7 +165,7 @@ header {
 
 
 @include sm-and-below-query() {
-    header, .nav-button, .menu-button, .search-button, .apply-button {
+    header, .nav-button, .menu-button, .search-button, .apply-button, .info-button {
         height: $header-mobile-height;
         line-height: $header-mobile-height + 1px;
         font-size: 1em;
