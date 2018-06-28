@@ -173,7 +173,6 @@ const config = {
             image
         ]
     },
-    devtool: "source-map",
     context: path.resolve(__dirname, paths.src),
     externals: {
         jquery: "jQuery"
