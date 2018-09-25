@@ -22,13 +22,31 @@ $pre-college-light-gray-active: darken( $pre-college-light-gray, $active-hover-d
 $pre-college-white-active: darken( white, $active-hover-darkening-factor);
 
 
+
+// updated brand colors
+
+$pre-college-primary-yellow: #fff200;
+$pre-college-primary-teal: #91d3ca;
+
+$pre-college-secondary-black: #000;
+$pre-college-secondary-teal: #57c1a5;
+$pre-college-secondary-green: #97ca3e;
+
+
 // brand typefaces.
-$norm-book: CabritoSans-NorBoo;
-$norm-book-italic: CabritoSans-NorBooIt;
-$norm-bold: CabritoSans-NorBol;
-$norm-bold-italic: CabritoSans-NorBolIt;
-$norm-medium: CabritoSans-NorMed;
-$norm-medium-italic: CabritoSans-NorMedIt;
+
+$norm: "Mercury SSm A", "Mercury SSm B";
+$heading: "Gotham A", "Gotham B";
+
+$norm-book: $norm;
+$norm-book-italic: $norm;
+$norm-bold: $norm;
+$norm-bold-italic: $norm;
+$norm-medium: $norm;
+$norm-medium-italic: $norm;
+
+
+
 
 $header-height: 60px;
 $header-mobile-height: 40px;

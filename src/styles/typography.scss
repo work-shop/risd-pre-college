@@ -12,14 +12,17 @@ html, body {
 
 .bold {
     font-family: $norm-bold, sans-serif;
+    font-weight: 900;
 }
 
 .medium {
     font-family: $norm-medium, sans-serif;
+    font-weight: 700;
 }
 
 .book {
     font-family: $norm-book, sans-serif;
+    font-weight: 400;
 }
 
 
