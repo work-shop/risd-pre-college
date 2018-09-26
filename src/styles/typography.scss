@@ -1,9 +1,17 @@
 html, body {
     font-family: $norm-book, sans-serif;
-    color: $pre-college-dark-gray;
+    color: $pre-college-secondary-black;
     font-size: 16px;
     letter-spacing: .025em;
     line-height: 1.5;
+}
+
+.norm {
+    font-family: $norm;
+}
+
+.heading {
+    font-family: $heading;
 }
 
 .uppercase { text-transform: uppercase; }
@@ -11,50 +19,25 @@ html, body {
 .lowercase { text-transform: lowercase; }
 
 .bold {
-    font-family: $norm-bold, sans-serif;
     font-weight: 900;
 }
 
 .medium {
-    font-family: $norm-medium, sans-serif;
     font-weight: 700;
 }
 
 .book {
-    font-family: $norm-book, sans-serif;
     font-weight: 400;
 }
 
 
 .italic {
-    font-family: $norm-book-italic, sans-serif;
     font-style: italic;
 }
-
-.bold.italic {
-    font-family: $norm-bold-italic, sans-serif;
-    font-style: italic;
-}
-
-.medium.italic {
-    font-family: $norm-medium-italic, sans-serif;
-    font-style: italic;
-}
-
-.book.italic {
-    font-family: $norm-book-italic, sans-serif;
-    font-style: italic;
-}
-
-
 
 h1, .h1 {
     @extend .bold;
-    @extend .brand-orange;
-
-    // small regular medium large huge massive
-
-//    @include baseline-sized( 2.4888em );
+    @extend .heading;
 
     font-size: 2.4888em;
     margin-bottom: 1em;
@@ -63,10 +46,7 @@ h1, .h1 {
 
 h2, .h2 {
     @extend .bold;
-    @extend .brand-orange;
-
-    //@include baseline-sized( 2.074em );
-
+    @extend .heading;
 
     font-size: 2.074em;
     margin-bottom: 1.35em;
@@ -75,9 +55,7 @@ h2, .h2 {
 
 h3, .h3 {
     @extend .bold;
-    @extend .brand-orange;
-
-    //@include baseline-sized( 1.728em );
+    @extend .heading;
 
     font-size: 1.728em;
     margin-bottom: .55em;
@@ -86,10 +64,8 @@ h3, .h3 {
 
 h4, .h4 {
     @extend .bold;
-    @extend .brand-orange;
+    @extend .heading;
 
-    //@include baseline-sized( 1.44em );
-    //
     font-size: 1.44em;
     margin-bottom: .55em;
 }
@@ -97,8 +73,6 @@ h4, .h4 {
 h5, .h5 {
     @extend .bold;
     @extend .brand-orange;
-
-    // @include baseline-sized( 1.2em );
 
     font-size: 1.2em;
     margin-bottom: .55em;
@@ -108,19 +82,16 @@ h6, .h6 {
     @extend .bold;
     @extend .brand-orange;
 
-    //@include baseline-sized( 1em );
-
     font-size: 1em;
     margin-bottom: .55em;
 }
 
-p {
-
-//    @include baseline-sized( 1em );
-
+p, .p {
     font-size: 1em;
     margin-bottom: 1.25em;
 }
+
+
 
 .nav-type {
     @extend .medium;
@@ -139,18 +110,25 @@ p {
     font-family: "Modern Pictograms Pro";
 }
 
-@include md-query() {
-    html, body {
-        font-size: 16px;
-    }
-}
-
 .small {
     font-size: .8em;
 }
 
 .tiny {
     font-size: .6em;
+}
+
+.giant {
+    font-size: 7vw;
+}
+
+
+@include md-query() {
+    html, body {
+        font-size: 16px;
+    }
+
+
 }
 
 @include sm-query() {
@@ -162,6 +140,10 @@ p {
     .nav-type {
         font-size: 1.25em;
     }
+
+    .giant {
+        font-size: 7vw;
+    }
 }
 
 @include xs-query() {
@@ -172,5 +154,9 @@ p {
 
     .nav-type {
         font-size: 1.25em;
+    }
+
+    .giant {
+        font-size: 7vw;
     }
 }

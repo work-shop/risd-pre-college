@@ -10,7 +10,7 @@ source ./.env
 #docker exec $DOCKER_DATABASE_CONTAINER mysqldump -u$WORDPRESS_DB_USER -p$WORDPRESS_DB_PASSWORD $WORDPRESS_DB_NAME | sed -e "$SED_REPLACE" > ./dist/migration.sql
 
 scp -r ./dist/wp-content/themes/custom root@$DROPLET_IP:/var/www/html/wp-content/themes
-scp -r ./dist/wp-content/plugins root@$DROPLET_IP:/var/www/html/wp-content/
+#scp -r ./dist/wp-content/plugins root@$DROPLET_IP:/var/www/html/wp-content/
 #scp -r ./dist/wp-content/uploads root@$DROPLET_IP:/var/www/html/wp-content/
 #scp ./dist/migration.sql root@$DROPLET_IP:/root
 #scp ./.remote.deploy.sh root@$DROPLET_IP:/root

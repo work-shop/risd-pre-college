@@ -33,9 +33,10 @@
 
 .home-page-logo {
     position: absolute;
+    text-align: center;
     left:50%;
     top:40%;
-    width: 250px;
+    width: 80vw;
     transform: translateX(-50%)translateY(-50%);
 
     svg {
@@ -63,21 +64,22 @@
 
 .home-page-button {
     @extend .bold;
+    @extend .heading;
 
     width: auto;
 
-    background-color:transparentize($pre-college-light-gray, $home-button-transparency);
+    background-color: $pre-college-primary-yellow;
     text-align: center;
     padding:.75em;
     padding-left: 1em;
     padding-right: 1em;
     margin-left: .5em;
     margin-right: .5em;
-    border:0;
+    border:2px solid $pre-college-primary-yellow;
 
     &:hover {
         @extend .bold;
-        background-color:$pre-college-light-gray-active;
+        background-color:white;
         color:inherit;
     }
 
@@ -147,7 +149,6 @@
 }
 
 .home-page-small-header-text {
-    @extend .book;
     font-size: 2.25em;
     color: $pre-college-white;
     margin-bottom: .45em;
@@ -213,7 +214,6 @@
         position: absolute;
         left:50%;
         top:50%;
-        width: 100px;
         @include transform( translateX(-50%)translateY(-50%) );
 
         svg {
