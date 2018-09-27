@@ -28,6 +28,5 @@ overlay( config.overlay );
 slideshow( config.slideshow );
 //sidebar( config.sidebar );
 student_work_grid( config.studentWorkGrid );
-student_work_grid( config.studentWorkGrid );
 
 collapsibleSubsections( config.collapsibleSubsections );
