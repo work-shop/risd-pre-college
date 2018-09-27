@@ -130,7 +130,7 @@
 }
 
 .home-wysiwyg {
-    font-size: 1.5em;
+    font-size: 1.2em;
 
     strong, b {
         @extend .bold;
@@ -178,14 +178,14 @@
 
         .home-wysiwyg {
             @include span-columns( 8 of 12 );
-            font-size:1.2em;
+            font-size:1em;
         }
 
     }
 
     .text-block-small {
         @include span-columns( 8 of 12 );
-        @include shift( 2 of 12 );
+        @include shift( 1 of 12 );
         display: block;
 
         .home-page-small-header-text {
@@ -196,7 +196,7 @@
 
         .home-wysiwyg {
             @include span-columns( 8 of 12 );
-            font-size:1.2em;
+            font-size:1em;
         }
 
     }
@@ -253,7 +253,7 @@
 
     .text-block-small {
         @include span-columns( 8 of 12 );
-        @include shift( 2 of 12 );
+        @include shift( 1 of 12 );
         display: block;
 
         .home-page-small-header-text {
