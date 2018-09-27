@@ -79,12 +79,13 @@ header {
     background-color: $pre-college-medium-gray;
 
     &:hover {
-        background-color: $pre-college-medium-gray-active;
+        background-color: $pre-college-secondary-black;
+        color: $pre-college-primary-teal;
     }
 
     &.menu-open  {
-        background-color: $pre-college-light-gray;
-        border-left:1px solid $pre-college-medium-gray;
+        background-color: $pre-college-secondary-black;
+        color: $pre-college-primary-teal;
     }
 
 }
@@ -112,8 +113,8 @@ header {
     }
 
     &.search-open {
-        background-color: $pre-college-dark-blue;
-        color:$pre-college-white;
+        background-color: $pre-college-secondary-black;
+        color:$pre-college-primary-teal;
     }
 }
 

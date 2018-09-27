@@ -9,28 +9,30 @@ body.menu-open {
     left: 0;
     max-height: 100vh;
     width: 100%;
-    background-color: $pre-college-dark-blue;
+    background-color: $pre-college-secondary-black;
     z-index:1000;
     overflow: scroll;
 }
 
 .program-submenu {
+    position: relative;
     padding: 3em;
-    @include span-columns( 8 of 12 );
-    background-color: $pre-college-dark-blue;
+    @include span-columns( 6 of 12 );
+    background-color: $pre-college-primary-teal;
 }
 
 .info-submenu {
     padding: 3em;
-    border-left:1px solid $pre-college-medium-gray;
-    @include span-columns( 4 of 12 );
-    background-color: $pre-college-light-gray;
+    @include span-columns( 6 of 12 );
+    background-color: $pre-college-secondary-black;
+    color: $pre-college-primary-teal;
 }
 
 .submenu-header {
     @extend .bold;
+    @extend .heading;
     margin-bottom: 3em;
-    text-transform: uppercase;
+    max-width: 50%;
 }
 
 .submenu-item {
