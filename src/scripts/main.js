@@ -24,7 +24,7 @@ toggleState( config.toggleStateSidebar );
 jumpLinks( config.jumpLinks );
 overlay( config.overlay );
 
-wysiwyg_color( config.home_page_wysiwyg );
+//wysiwyg_color( config.home_page_wysiwyg );
 slideshow( config.slideshow );
 //sidebar( config.sidebar );
 student_work_grid( config.studentWorkGrid );

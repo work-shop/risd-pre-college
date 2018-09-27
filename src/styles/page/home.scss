@@ -102,12 +102,12 @@
     display: block;
 
     .home-page-big-header-text {
-        @include span-columns( 6 of 10 );
+        @include span-columns( 8 of 10 );
 
     }
 
     .home-wysiwyg {
-        @include span-columns( 5 of 10 );
+        @include span-columns( 6 of 10 );
 
 
     }
@@ -115,8 +115,8 @@
 }
 
 .text-block-small {
-    @include span-columns( 8 of 12 );
-    @include shift( 2 of 12 );
+    @include span-columns( 10 of 12 );
+    @include shift( 1 of 12 );
     display: block;
 
     .home-page-small-header-text {
@@ -130,7 +130,6 @@
 }
 
 .home-wysiwyg {
-    color:$pre-college-white;
     font-size: 1.5em;
 
     strong, b {
@@ -143,15 +142,13 @@
 
 .home-page-big-header-text {
     font-size: 3em;
-    color: $pre-college-white;
-    margin-bottom: .45em;
+    margin-bottom: .8em;
     line-height: 1.25;
 }
 
 .home-page-small-header-text {
     font-size: 2.25em;
-    color: $pre-college-white;
-    margin-bottom: .45em;
+    margin-bottom: .8em;
     line-height: 1.25;
 }
 

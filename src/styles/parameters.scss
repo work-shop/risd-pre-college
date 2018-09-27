@@ -25,7 +25,9 @@ $pre-college-white-active: darken( white, $active-hover-darkening-factor);
 
 // updated brand colors
 
-$pre-college-primary-yellow: #fff200;
+$pre-college-primary-yellow-active: #fff200;
+$pre-college-primary-yellow-field: #fff659; //#fff200;
+$pre-college-primary-yellow: $pre-college-primary-yellow-active; //#
 $pre-college-primary-teal: #91d3ca;
 
 $pre-college-secondary-black: #000;
