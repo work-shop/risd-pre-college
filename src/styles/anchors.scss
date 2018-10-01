@@ -3,13 +3,18 @@ a, .a, .body-link {
     border-bottom: 2px solid $pre-college-secondary-black;
 
     &:hover {
-        color:$pre-college-primary-yellow;
+        color:$pre-college-primary-teal;
+        border-color: $pre-college-primary-teal;
     }
 
 }
 
 a.nav-link {
     border-bottom: none;
+
+    &:hover {
+        color:$pre-college-primary-yellow;
+    }
 
 }
 
@@ -18,7 +23,7 @@ a.sidebar-link {
 
     &:hover {
         color:inherit;
-        font-family: $norm-bold;
+        color:$pre-college-primary-yellow;
     }
 
 }

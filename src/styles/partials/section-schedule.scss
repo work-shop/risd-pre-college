@@ -31,7 +31,7 @@
 
     width:2px;
     height:2px;
-    color: $pre-college-orange;
+    color: $pre-college-primary-yellow;
 }
 
 .details-column {
@@ -69,8 +69,8 @@
 
 .schedule-item-label {
     @extend .h5;
-    @extend .brand-dark-gray;
     margin-bottom:.25em;
+    color:$pre-college-secondary-black;
 }
 
 @include md-query() {

@@ -4,7 +4,7 @@
         @extend .h4;
         @extend .bold;
         @extend .italic;
-        color:$pre-college-dark-blue;
+        color:$pre-college-primary-teal;
         width: 100%;
         // margin-top:.75em;
         // margin-bottom:.75em;
@@ -12,19 +12,19 @@
 
     h1 {
         @extend .h3;
+        color:$pre-college-primary-teal;
         // margin-bottom:1em;
     }
 
     h2 {
         @extend .h5;
-        @extend .brand-dark-gray;
         padding-top: 1em;
+        color:$pre-college-primary-teal;
         // margin-bottom:2em;
     }
 
     h3 {
         @extend .h6;
-        @extend .brand-dark-gray;
         padding-top: 1em;
         // margin-bottom:1em;
         text-transform: uppercase;
@@ -32,7 +32,6 @@
 
     h4, h5, h6 {
         @extend .h6;
-        @extend .brand-dark-gray;
         // margin-top:1em;
     }
 
@@ -55,7 +54,6 @@
 
 
         li::before {
-            @extend .brand-orange;
             @extend .bold;
             @extend .pictogram;
 
@@ -86,7 +84,6 @@
         counter-reset: list;
 
         li::before {
-            @extend .brand-orange;
             @extend .bold;
 
             display: inline-block;

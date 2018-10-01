@@ -14,25 +14,44 @@
     padding: (1em+$header-padding) 2em 2em 2em;
 
     &.sidebar-program {
-        background-color: $pre-college-dark-blue;
+        background-color: $pre-college-primary-teal;
 
-        .sidebar-type {
-            color:$pre-college-white;
+        .sidebar-type, .sidebar-type a {
+            color:$pre-college-secondary-black;
+
+            &:hover {
+                color: $pre-college-primary-yellow;
+            }
+
         }
+
+        .sidebar-type.active {
+            color: $pre-college-primary-yellow;
+        }
+
     }
 
     &.sidebar-info {
-        background-color: $pre-college-medium-gray;
-        color:$pre-college-dark-gray;
+        background-color: $pre-college-secondary-black;
+        color:$pre-college-primary-teal;
 
-        .sidebar-type {
+        .sidebar-type, .sidebar-type a  {
 
-            color:$pre-college-dark-gray;
+            color:$pre-college-primary-teal;
 
+            &:hover {
+                color: $pre-college-primary-yellow;
+            }
+
+        }
+
+        .sidebar-type.active {
+            color: $pre-college-primary-yellow;
         }
 
     }
 }
+
 
 .sidebar-content {
     position: relative;
@@ -44,28 +63,29 @@
 
 
 .sidebar-type {
-    @extend .book;
-    font-size: .9em;
-
-    transition: all $transition-duration;
+    @extend .heading;
+    font-size: 1.2em;
 
     &:hover {
-        @extend .bold;
+        color: $pre-college-primary-yellow;
     }
 }
 
 
 .sidebar-type.active {
-    margin-bottom: 1.25em;
+    @extend .heading;
+    margin-bottom: .25em;
+    color:$pre-college-primary-yellow;
 }
 
-.sidebar-parent-type {
-    text-transform: uppercase;
-    margin-bottom: 1em;
+
+.sidebar-parent-type, .sidebar-type.active.no-children {
+    margin-bottom: 1.5em;
 }
 
 .sidebar-child-type {
-    margin-bottom: .5em;
+    @extend .norm;
+    margin-bottom: .75em;
 }
 
 
@@ -75,14 +95,19 @@
 
 
 .nav-item-submenu {
-    margin-left: 1.5em;
-    margin-bottom: 1.25em;
+    margin-bottom: 2.5em;
+    border-left: 3px solid $pre-college-primary-yellow;
+    padding-left: 2em;
+    padding-top: .75em;
+    padding-bottom: .05em;
+    font-size: .8em;
 
     .sidebar-type {
-        @extend .medium;
+        @extend .norm;
 
         &:hover {
-            @extend .bold;
+            @extend .norm;
+            color: $pre-college-primary-yellow;
         }
 
     }
@@ -124,7 +149,7 @@
         left:7.55%;
 
         .sidebar-state-indicator {
-            background-color: $pre-college-dark-blue;
+            background-color: $pre-college-primary-teal;
             opacity: 1;
 
             .sidebar-open-text {
@@ -135,7 +160,7 @@
                 text-transform: uppercase;
                 font-family: $norm-medium, sans-serif;
                 display:block;
-                color: $pre-college-white;
+                color: $pre-college-secondary-black;
                 -webkit-transform: translateY(98%)translateX(-17%)rotate(-135deg);
                 transform: translateY(98%)translateX(-17%)rotate(-135deg);
                 font-size: .9em;
@@ -173,11 +198,11 @@
     }
 
     #sidebar-small-scrim.sidebar-info.sidebar-closed .sidebar-state-indicator {
-        background-color: $pre-college-medium-gray;
+        background-color: $pre-college-secondary-black;
 
         .sidebar-closed-text {
             font-family: $norm-medium, sans-serif;
-            color: $pre-college-dark-gray;
+            color: $pre-college-primary-teal;
         }
 
     }

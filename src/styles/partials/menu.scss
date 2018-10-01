@@ -19,6 +19,10 @@ body.menu-open {
     padding: 3em;
     @include span-columns( 6 of 12 );
     background-color: $pre-college-primary-teal;
+
+    .menu-link:hover {
+        color: $pre-college-primary-yellow;
+    }
 }
 
 .info-submenu {
@@ -26,6 +30,10 @@ body.menu-open {
     @include span-columns( 6 of 12 );
     background-color: $pre-college-secondary-black;
     color: $pre-college-primary-teal;
+
+    .menu-link:hover {
+        color: $pre-college-primary-yellow;
+    }
 }
 
 .submenu-header {

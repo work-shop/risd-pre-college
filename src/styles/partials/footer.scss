@@ -68,19 +68,21 @@ footer {
     .footer-more-info-button {
         @include border-radius();
 
-        background-color: $pre-college-green;
+        background-color: $pre-college-primary-yellow;
+        border: 2px solid $pre-college-primary-yellow;
 
         span {
             @extend .bold;
-            color: $pre-college-dark-gray;
         }
 
-        &:hover {
+        &:hover, &:hover span {
+
             cursor: pointer;
-            background-color: $pre-college-green-active;
+            background-color: white;
+            color:$pre-college-secondary-black;
+
         }
     }
-
 
 }
 
@@ -119,7 +121,7 @@ footer {
 
             padding: 1em;
             text-align: center;
-            background-color: $pre-college-dark-blue;
+            background-color: $pre-college-secondary-black;
             width:60px;
             font-weight: 250;
             position: relative;
@@ -156,7 +158,7 @@ footer {
             }
 
             &:hover {
-                background-color:$pre-college-dark-blue-active;
+                background-color:$pre-college-secondary-black;
             }
 
         }
@@ -179,7 +181,6 @@ footer {
 
     .footer-divider {
         display: inline-block;
-        background-image: url('../images/favicon-32x32.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

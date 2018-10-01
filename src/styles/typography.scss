@@ -72,7 +72,6 @@ h4, .h4 {
 
 h5, .h5 {
     @extend .bold;
-    @extend .brand-orange;
 
     font-size: 1.2em;
     margin-bottom: .55em;
@@ -80,7 +79,6 @@ h5, .h5 {
 
 h6, .h6 {
     @extend .bold;
-    @extend .brand-orange;
 
     font-size: 1em;
     margin-bottom: .55em;

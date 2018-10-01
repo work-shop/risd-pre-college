@@ -10,20 +10,25 @@
             {% if item.slug == parent.slug %}
 
                 {% for child in item.get_children %}
+                {% set sections = page.get_field("sections") %}
+
                     <li class="nav-item sidebar-parent-nav-item">
-                        <a class="sidebar-link" href="{{ child.link }}"><h5 class="{% if child.slug == page.slug %}active{% endif %} sidebar-type sidebar-parent-type">{{ child.title }}</h5></a>
+                        <a class="sidebar-link" href="{{ child.link }}"><h5 class="{% if child.slug == page.slug %}active{% endif %} {% if sections|length == 0 %}no-children{% endif %} sidebar-type sidebar-parent-type">{{ child.title }}</h5></a>
                         {% if child.slug == page.slug %}
 
-                        <ul class="nav-item-submenu">
-                            {% for section in page.get_field("sections") %}
-                                {% if section.show_in_menu %}
-                                    <li class="sidebar-child-nav-item">
-                                        <h6 class="sidebar-child-type sidebar-type "><a class="sidebar-link" href="#{% include "partials/components/section-id.twig" %}">{{ section.section_title }}</a></h6>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
+                        {% if sections|length > 0 %}
 
+                            <ul class="nav-item-submenu">
+                                {% for section in sections %}
+                                    {% if section.show_in_menu %}
+                                        <li class="sidebar-child-nav-item">
+                                            <h6 class="sidebar-child-type sidebar-type "><a class="sidebar-link" href="#{% include "partials/components/section-id.twig" %}">{{ section.section_title }}</a></h6>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+
+                        {% endif %}
                         {% endif %}
                     </li>
                 {% endfor %}
