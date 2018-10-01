@@ -1,10 +1,7 @@
 {% import "partials/components/application-button.twig" as button %}
 
 <footer class="container">
-        <div class="header-row">
-            <h5 class="footer-type uppercase bold">RISD Pre-College</h5>
-        </div>
-        <div class="content-row">
+        <div class="content-row mt2">
             <div class="buttons-column">
 
                 {{ button.footer_apply_button( options ) }}
@@ -33,10 +30,6 @@
                 <div class="footer-divider hidden-md hidden-lg"></div>
                 <br class="hidden-xl">
                 <div class="footer-link"><a class="footer-link" target="_blank" href="http://summer.risd.edu">Summer Programs</a></div>
-                <div class="footer-divider"></div>
-                <div class="footer-link"><a class="footer-link" target="_blank" href="http://exed.risd.edu">Executive Education</a></div>
-                <div class="footer-divider"></div>
-                <div class="footer-link"><a class="footer-link" target="_blank" href="http://gpp.risd.edu">RISD Global</a></div>
             </div>
         </div>
         <div class="copyright-row"><p class="tiny">Copyright {{ "now"|date("Y") }} – The Rhode Island School of Design Pre-College Program</p></div>
