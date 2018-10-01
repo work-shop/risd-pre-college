@@ -1,6 +1,6 @@
 {% macro query( q, r ) %}
 
-    <div class="query">
+    <div class="query mb4">
         <form role="search" method="get" id="page-searchform" action="/">
             <h6 class="brand-dark-gray">You searched for</h2>
             <div class="page-search-input-text">
@@ -15,15 +15,12 @@
 {% endmacro %}
 
 {% macro results( q, r ) %}
-
-<script type="text/javascript">console.log({{ r|json_encode }})</script>
-
 <div class="results mb2">
     {% if r|length > 0 %}
         <ul class="results-list">
             {% for result in r %}
 
-                <li class="search-result">
+                <li class="search-result mb4">
                     <a class="search-link" href="{{ result.link }}">
                         <h4 class="result-title">{{ result.title }}</h4>
 
@@ -42,13 +39,14 @@
                                     {% set count = count - 1 %}
 
                                     {% endif %}
-                                {% endfor %}</ul>
+                                {% endfor %}
+                            </ul>
                             </p>
                         {% endif %}
 
                         <p class="result-excerpt">{{ result.get_field('summary') }}</p>
 
-                        <a class="nav-link brand-dark-blue bold centered" href="{{ result.link }}">Read More &rarr;</a>
+                        <a class="bold centered" href="{{ result.link }}">Read More &rarr;</a>
                     </a>
                 </li>
 
@@ -60,8 +58,5 @@
         </div>
     {% endif %}
 
-</div>
-<div class="search-home-link">
-    <a class="nav-link brand-dark-blue bold" href="/">&larr; Head back Home</a>
 </div>
 {% endmacro %}

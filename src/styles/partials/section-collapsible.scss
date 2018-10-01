@@ -39,10 +39,10 @@
     position: relative;
 
     &:hover .subsection-header-text {
-        color: $pre-college-primary-teal;
+        color: $pre-college-secondary-text-teal;
 
         &::before {
-            color: $pre-college-primary-teal;
+            color: $pre-college-secondary-text-teal;
         }
     }
 }
@@ -53,7 +53,7 @@
 }
 
 .subsection-header-text {
-    color:$pre-college-primary-teal;
+    color:$pre-college-secondary-text-teal;
     font-size: 1em;
     display: inline-block;
     @extend .medium;
@@ -67,7 +67,7 @@
 
 .subsection-header::before {
     @extend .pictogram;
-    color: $pre-college-primary-teal;
+    color: $pre-college-secondary-text-teal;
 
     display: inline-block;
     position: absolute;

@@ -4,7 +4,7 @@
         @extend .h4;
         @extend .bold;
         @extend .italic;
-        color:$pre-college-primary-teal;
+        color:$pre-college-secondary-text-teal;
         width: 100%;
         // margin-top:.75em;
         // margin-bottom:.75em;
@@ -12,14 +12,14 @@
 
     h1 {
         @extend .h3;
-        color:$pre-college-primary-teal;
+        color:$pre-college-secondary-text-teal;
         // margin-bottom:1em;
     }
 
     h2 {
         @extend .h5;
         padding-top: 1em;
-        color:$pre-college-primary-teal;
+        color:$pre-college-secondary-text-teal;
         // margin-bottom:2em;
     }
 

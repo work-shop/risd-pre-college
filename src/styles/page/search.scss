@@ -9,8 +9,9 @@
 
     input {
         @extend .h3;
-        @extend .brand-dark-gray;
         @include span-columns(9 of 9);
+
+        color:$pre-college-secondary-text-teal;
 
         outline:0;
         padding-top:1em;
@@ -39,7 +40,7 @@
         vertical-align: baseline;
 
         background-color: $pre-college-white;
-        color:$pre-college-light-gray;
+        color:$pre-college-secondary-text-teal;
 
         &:hover {
             color:$pre-college-dark-gray;
@@ -54,10 +55,6 @@
     .results-list {
         @include span-columns(10 of 10);
     }
-}
-
-.search-result {
-    margin-bottom: 2em;
 }
 
 .no-results {

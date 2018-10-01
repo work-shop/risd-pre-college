@@ -61,9 +61,9 @@
 
 {% macro small_header_spread( slide, last ) %}
 
-    <div class="text-section home-spread-section small-header-spread {% if last %}last-slide{% endif %}" style="background-color:{{slide.overlay_box_color}};">
+    <div class="text-section home-spread-section big-header-spread {% if last %}last-slide{% endif %}" style="background-color:{{slide.overlay_box_color}};">
         <span class="text-block-small">
-            <h2 class="home-page-small-header-text" style="color:{{ slide.text_color }};">{{ slide.header_text }}</h2>
+            <h2 class="home-page-big-header-text" style="color:{{ slide.text_color }};">{{ slide.header_text }}</h2>
             <div data-text-color="{{slide.text_color}}" style="color:{{ slide.text_color }};" class="home-page-body-text home-wysiwyg">{{ slide.body_text }}</div>
         </span>
 
