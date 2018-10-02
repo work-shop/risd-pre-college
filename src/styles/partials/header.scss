@@ -109,7 +109,8 @@ header {
     text-transform: lowercase;
 
     &:hover {
-        background-color: $pre-college-medium-gray-active;
+        background-color: $pre-college-secondary-black;
+        color:$pre-college-primary-teal;
     }
 
     &.search-open {
