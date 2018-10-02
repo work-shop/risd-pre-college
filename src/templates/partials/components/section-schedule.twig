@@ -15,7 +15,7 @@
                     {% for subitem in item.schedule_item_subitems %}
                         <li class="schedule-subitem">
                             {% if subitem.schedule_subitem_label %}
-                                <div class="subitem-label"><p class="brand-teal">{{ subitem.schedule_subitem_label }}</p></div>
+                                <div class="subitem-label"><p class="brand-secondary-teal">{{ subitem.schedule_subitem_label }}</p></div>
                             {% endif %}
                             <div class="{% if not subitem.schedule_subitem_label %}no-label{% endif %} subitem-text wysiwyg">{{ subitem.schedule_subitem_text }}</div>
                         </li>
