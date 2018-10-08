@@ -2,9 +2,17 @@
 
     <div class="home-spread-section logo-image-spread {% if last %}last-slide{% endif %}">
 
-        <div class="home-page-image-bounds">
-            <img class="home-page-image" src="{{ slide.image.url }}" />
-        </div>
+        {% if slide.slide_type == 'image' %}
+            <div class="home-page-image-bounds">
+                <img class="home-page-image" src="{{ slide.image.url }}" />
+            </div>
+        {% else %}
+            <div class="home-page-image-bounds">
+                <video class="home-page-image" autoplay loop>
+                    <source src="{{ slide.video.url }}" type="{{ slide.video.mime_type }}">
+                </video>
+            </div>
+        {% endif %}
 
         <div class="home-page-image-mask"></div>
 
