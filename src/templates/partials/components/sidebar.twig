@@ -10,13 +10,16 @@
             {% if item.slug == parent.slug %}
 
                 {% for child in item.get_children %}
-                {% set sections = page.get_field("sections") %}
+                    {% set sections = page.get_field("sections") %}
+                    {% set named_sections = 0 %}
+
+                    {% for section in sections %}{% if section.show_in_menu %}{% set named_sections = named_sections + 1 %}{% endif %}{% endfor %}
 
                     <li class="nav-item sidebar-parent-nav-item">
                         <a class="sidebar-link" href="{{ child.link }}"><h5 class="{% if child.slug == page.slug %}active{% endif %} {% if sections|length == 0 %}no-children{% endif %} sidebar-type sidebar-parent-type">{{ child.title }}</h5></a>
                         {% if child.slug == page.slug %}
 
-                        {% if sections|length > 0 %}
+                        {% if named_sections > 0 %}
 
                             <ul class="nav-item-submenu">
                                 {% for section in sections %}
