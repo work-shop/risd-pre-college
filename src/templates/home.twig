@@ -11,9 +11,6 @@
 
 
     {% for slide in options.home_page_slideshow %}
-        <script type="text/javascript">
-            console.log( {{ slide|json_encode }} );
-        </script>
         {% if slide.slide_type == "image" or slide.slide_type == "video" %}{% set image = image + 1 %}{% else %}{% set text = text + 1 %}{% endif %}
         {% set last = loop.index == options.home_page_slideshow|length %}
 
