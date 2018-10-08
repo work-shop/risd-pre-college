@@ -133,7 +133,7 @@ const plugins = [
         }
     }),
     new FaviconsPlugin({
-        logo: "./aperture.png",
+        logo: "./RISD_Pre-College_LogoVert.png",
         prefix: 'icons/',
         emitStates: false,
         inject: false,
