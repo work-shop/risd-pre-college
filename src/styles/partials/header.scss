@@ -215,9 +215,14 @@ header {
     .menu-button {
         width:50%;
 
+        &:hover {
+            background-color: $pre-college-primary-teal;
+            color:$pre-college-secondary-black;
+        }
+
         &.menu-open {
-            background-color: $pre-college-dark-blue;
-            color:$pre-college-white;
+            background-color: $pre-college-primary-teal;
+            color:$pre-college-secondary-black;
             border:0;
         }
     }
