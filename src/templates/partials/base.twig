@@ -11,7 +11,7 @@
 
         <title>{% spaceless %}
             {% if wp_title %}
-                {{ wp_title }} | {{ site.name }}
+                {{ wp_title }}
             {% else %}
                 {{ site.name }}
             {% endif %}
@@ -21,7 +21,7 @@
         <meta name="google-site-verification" content="l_8CpdIICEjgMG2P8CYCRatNWN5dwIatiY7xFDT-hFY" />
 
         <!-- Facebook Open Graph data -->
-        <meta property="og:title" content="{% spaceless %}{% if wp_title %}{{ wp_title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}{% endspaceless %}" />
+        <meta property="og:title" content="{% spaceless %}{% if wp_title %}{{ wp_title }}{% else %}{{ site.name }}{% endif %}{% endspaceless %}" />
         <meta property="og:description" content="{% block og_description %}{% if post.summary %}{{ post.summary }}{% else %}{{ site.description }}{% endif %}{% endblock %}" />
         <meta property="og:image" content="{% include "partials/components/featured-image.twig" %}" />
         <meta property="og:url" content="{% if post.link %}{{ post.link }}{% else %}{{ site.url }}{% endif %}" />
