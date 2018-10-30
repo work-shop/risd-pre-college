@@ -39,12 +39,12 @@ footer {
     .footer-apply-button {
         @include border-radius();
 
-        background-color: $pre-college-medium-gray;
+        background-color: $pre-college-light-gray;
 
         span {
             @extend .bold;
             font-size: .9em;
-            color:$pre-college-dark-gray;
+            color: $pre-college-secondary-black;
         }
 
         &:hover {
@@ -53,15 +53,13 @@ footer {
     }
 
     .footer-apply-button.applications_are_open {
-        background-color: $pre-college-orange;
+        background-color: $pre-college-primary-yellow;
 
-        span {
-            color:$pre-college-white;
-        }
 
         &:hover {
             cursor: pointer;
-            background-color: $pre-college-orange-active;
+            background-color: $pre-college-secondary-black;
+            color: $pre-college-primary-teal;
         }
     }
 
