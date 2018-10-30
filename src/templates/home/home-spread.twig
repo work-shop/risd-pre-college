@@ -8,7 +8,7 @@
             </div>
         {% else %}
             <div class="home-page-image-bounds">
-                <video class="home-page-image" playinline autoplay loop muted>
+                <video class="home-page-image" playinline autoplay loop muted {% if slide.image %}poster="{{ slide.image.url }}"{% endif %}>
                     <source src="{{ slide.video.url }}" type="{{ slide.video.mime_type }}">
                 </video>
             </div>
@@ -23,17 +23,12 @@
         </div>
 
         <div class="home-page-buttons button-set {% if options.applications_are_open %}applications-open{% endif %}">
-            <a class="home-page-button program-button {% if options.applications_are_open %} hidden-xs applications-open{% endif %}" href="/program/about-pre-college">
+            <a class="home-page-button program-button {% if options.applications_are_open %} applications-open{% endif %}" href="/program/about-pre-college">
                 <span class="button-text">Learn More</span>
             </a>
             <a class="home-page-button info-button {% if options.applications_are_open %}applications-open{% endif %}" href="/program/join-our-mailing-list">
                 <span class="button-text"><span class="hidden-xs hidden-sm">Join our Mailing List</span><span class="hidden-lg hidden-md hidden-xl">Get Mail</span></span>
             </a>
-            {% if options.applications_are_open %}
-            <a class="home-page-button home-apply-button applications-open" href="{{ options.application_link }}">
-                <span class="button-text">Apply<span class="hidden-xs hidden-sm"> Now</span></span>
-            </a>
-            {% endif %}
         </div>
     </div>
     {% if last %}
