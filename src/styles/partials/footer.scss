@@ -44,7 +44,6 @@ footer {
         span {
             @extend .bold;
             font-size: .9em;
-            color: $pre-college-secondary-black;
         }
 
         &:hover {
@@ -55,11 +54,10 @@ footer {
     .footer-apply-button.applications_are_open {
         background-color: $pre-college-primary-yellow;
 
-
-        &:hover {
+        &:hover, &:hover span {
             cursor: pointer;
             background-color: $pre-college-secondary-black;
-            color: $pre-college-primary-teal;
+            color: $pre-college-primary-yellow;
         }
     }
 
