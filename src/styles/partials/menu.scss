@@ -52,6 +52,7 @@ body.menu-open {
 @include sm-and-below-query() {
     #menu {
         top: $header-mobile-height;
+        padding-bottom:33vh;
     }
 
     .program-submenu {
