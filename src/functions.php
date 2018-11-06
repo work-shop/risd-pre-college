@@ -24,6 +24,7 @@
             add_action("init", array($this, "remove_comment_support"));
             add_action("init", array($this, "deactiveate_posts"));
             add_action("init", array($this, "register_image_sizing"));
+            add_action("init", array($this, "register_pages_categories"));
             add_action("acf/init", array($this, "add_options_pages"));
             add_action("admin_menu", array($this, "remove_menu_items"));
             add_action("admin_init", array($this, "admin_setup"));
@@ -40,7 +41,10 @@
             add_action('pre_get_posts', array($this, 'search_filter'));
             add_filter('request', array($this, 'request_empty_search_filter'));
 
+        }
 
+        public function register_pages_categories() {
+            register_taxonomy_for_object_type( 'category', 'page' );
         }
 
         public function register_image_sizing() {
