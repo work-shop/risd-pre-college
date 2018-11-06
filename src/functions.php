@@ -1,5 +1,20 @@
 <?php
 
+    function map_category_name( $slug ) {
+        if ( $slug == 'admitted-students' ) { return 'info'; }
+        else if ( $slug == 'program-overview' ) { return 'program'; }
+        else { return ''; }
+    }
+
+    function get_post_parent() {
+        $categories = get_the_category( get_the_ID() );
+        return array(
+            'slug' => map_category_name( $categories[0]->slug ),
+            'new_slug' => $categories[0]->slug,
+            'name' => $categories[0]->name
+        );
+    }
+
     if (!class_exists("Timber")) {
         add_action("admin_notices", function () {
             echo "<div class='error'><p>Timber is not activated.

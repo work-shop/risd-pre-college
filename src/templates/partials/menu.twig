@@ -5,10 +5,14 @@
 
     <div class="program-submenu">
         {% for item in menu.get_items %}
-            {% if item.slug == "program" %}
+            <script type="text/javascript">
+                console.log( {{item|json_encode}} );
+            </script>
+            {% if item.name == "Program Overview" %}
             <ul class="program-submenu-list submenu-list">
                 <li class="submenu-header"><h1 class="nav-type brand-black bold">{{ item.name }}</h2></li>
                 {% for menu_item in item.get_children %}
+
                     <li class="submenu-item"><a class="menu-link brand-black" href="{{ menu_item.link }}">{{ menu_item.name }}</a></li>
                 {% endfor %}
             </ul>
@@ -18,7 +22,7 @@
 
     <div class="info-submenu">
         {% for item in menu.get_items %}
-            {% if item.slug == "info" %}
+            {% if item.name == "Admitted Students" %}
             <ul class="info-submenu-list submenu-list">
                 <li class="submenu-header"><h1 class="nav-type brand-black bold">{{ item.name }}</h2></li>
                 {% for menu_item in item.get_children %}

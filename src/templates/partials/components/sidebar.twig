@@ -7,16 +7,16 @@
 <div id="sidebar" class="top-element sidebar-{{ parent.slug }} sidebar-toggle-target sidebar-toggle sidebar-closed">
     <ul class="sidebar-content">
         {% for item in menu.get_items %}
-            {% if item.slug == parent.slug %}
+            {% if item.name == parent.name %}
 
                 {% for child in item.get_children %}
                     {% set sections = page.get_field("sections") %}
                     {% set named_sections = 0 %}
 
-                    {% for section in sections %}{% if section.show_in_menu %}{% set named_sections = named_sections + 1 %}{% endif %}{% endfor %}
+                    {% for section in sections %}{% if section.show_in_menu and section.section_title != '' %}{% set named_sections = named_sections + 1 %}{% endif %}{% endfor %}
 
                     <li class="nav-item sidebar-parent-nav-item">
-                        <a class="sidebar-link" href="{{ child.link }}"><h5 class="{% if child.slug == page.slug %}active{% endif %} {% if sections|length == 0 %}no-children{% endif %} sidebar-type sidebar-parent-type">{{ child.title }}</h5></a>
+                        <a class="sidebar-link" href="{{ child.link }}"><h5 class="{% if child.slug == page.slug %}active{% endif %} {% if named_sections == 0 %}no-children{% endif %} sidebar-type sidebar-parent-type">{{ child.title }}</h5></a>
                         {% if child.slug == page.slug %}
 
                         {% if named_sections > 0 %}
