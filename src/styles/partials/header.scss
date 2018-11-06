@@ -108,12 +108,17 @@ header {
     background-color: $pre-college-medium-gray;
     text-transform: lowercase;
 
-    &:hover {
+    &.search-open {
         background-color: $pre-college-secondary-black;
         color:$pre-college-primary-teal;
     }
 
-    &.search-open {
+    &.search-closed {
+        background-color: $pre-college-medium-gray;
+        color: $pre-college-secondary-black;
+    }
+
+    &:hover {
         background-color: $pre-college-secondary-black;
         color:$pre-college-primary-teal;
     }
@@ -226,6 +231,11 @@ header {
             background-color: $pre-college-primary-teal;
             color:$pre-college-secondary-black;
             border:0;
+        }
+
+        &.menu-closed {
+            background-color: $pre-college-light-gray;
+            color:$pre-college-secondary-black;
         }
     }
 
