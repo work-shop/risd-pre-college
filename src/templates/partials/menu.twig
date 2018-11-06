@@ -5,9 +5,6 @@
 
     <div class="program-submenu">
         {% for item in menu.get_items %}
-            <script type="text/javascript">
-                console.log( {{item|json_encode}} );
-            </script>
             {% if item.name == "Program Overview" %}
             <ul class="program-submenu-list submenu-list">
                 <li class="submenu-header"><h1 class="nav-type brand-black bold">{{ item.name }}</h2></li>
