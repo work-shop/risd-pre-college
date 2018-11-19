@@ -12,6 +12,8 @@ body.menu-open {
     background-color: $pre-college-secondary-black;
     z-index:1000;
     overflow: scroll;
+    -wekbkit-overflow-scrolling:touch;
+    overflow-scrolling:touch;
 }
 
 .program-submenu {
