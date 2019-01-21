@@ -3,10 +3,10 @@ version: "2"
 volumes:
   database:
   wordpress:
-  composer_vendor:
 
 services:
   database:
+    container_name: ${DOCKER_DATABASE_CONTAINER}
     image: mariadb
     ports:
       - 3306:3306
@@ -21,7 +21,8 @@ services:
   wordpress:
     depends_on:
       - database
-    image: wordpress
+    container_name: ${DOCKER_WORDPRESS_CONTAINER}
+    image: wordpress:latest
     ports:
       - 8080:80
     environment:
@@ -30,16 +31,7 @@ services:
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
     volumes:
-      - ${VOLUME_BASE_PATH}/dist/wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
-      - ${VOLUME_BASE_PATH}/dist/wp-content/plugins:/var/www/html/wp-content/plugins
-      - ${VOLUME_BASE_PATH}/dist/wp-content/themes:/var/www/html/wp-content/themes
+      - ${VOLUME_BASE_PATH}/wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ${VOLUME_BASE_PATH}/wp-content/plugins:/var/www/html/wp-content/plugins
+      - ${VOLUME_BASE_PATH}/wp-content/themes:/var/www/html/wp-content/themes
       - wordpress:/var/www/html
-
-  composer:
-    depends_on:
-      - wordpress
-    image: composer
-    volumes:
-      - ${VOLUME_BASE_PATH}:/app
-      - composer_vendor:/app/vendor
-    command: install

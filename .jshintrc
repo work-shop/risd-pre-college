@@ -5,17 +5,21 @@
     "camelcase": false,
     "curly": true,
     "eqeqeq": true,
-    "esnext": true,
     "immed": true,
     "indent": 2,
     "latedef": false,
     "newcap": true,
     "noarg": true,
     "node": true,
-    "quotmark": "double",
+    "quotmark": "single",
     "strict": true,
     "trailing": true,
     "undef": true,
     "unused": true,
-    "sub": true
+    "sub": true,
+    "globals": {
+        "$": true,
+        "jQuery": true,
+        "document": true
+    }
 }
