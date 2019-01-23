@@ -10,11 +10,15 @@
 body {
     padding-top: $header-height;
     @include transition(all, $transition-duration, linear );
+
+    @media screen and (max-width: $sm) {
+        padding-top: $header-mobile-height;
+    }
 }
 
-body.home {
-    padding-top: 0;
-}
+// body.home {
+//     padding-top: 0;
+// }
 
 main {
     position: relative;

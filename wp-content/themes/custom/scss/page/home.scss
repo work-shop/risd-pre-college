@@ -3,14 +3,12 @@
 }
 
 .logo-image-spread {
-    margin-top: $header-height;
+    //margin-top: $header-height;
     position: relative;
-
 }
 
 .home-page-image {
     width:100%;
-
     display:block;
 }
 
@@ -209,7 +207,7 @@
 
 @include sm-and-below-query() {
     .logo-image-spread {
-        margin-top: $header-mobile-height;
+       // margin-top: $header-mobile-height;
     }
 
     .home-page-logo {

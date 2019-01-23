@@ -23,7 +23,7 @@
   },
   "browserify": {
     "transform": [
-        "browserify-shim"
+      "browserify-shim"
     ]
   },
   "browserify-shim": {

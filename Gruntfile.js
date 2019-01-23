@@ -25,6 +25,7 @@ const js_watch_src = path.join( js_main_dir, '**', '*.js');
 const js_main_dest = path.join( output_dir, 'bundle.js' );
 
 const php_watch_dest = path.join( theme_root, '**', '*.php');
+const twig_watch_dest = path.join( theme_root, '**', '*.twig');
 
 
 
@@ -101,7 +102,7 @@ module.exports = function(grunt) {
                         debug: true // sourcemaps
                     },
                     transform: [
-                        ['babelify', {presets: 'env'}]
+                    ['babelify', {presets: 'env'}]
                     ]
                 }
             },
@@ -110,8 +111,8 @@ module.exports = function(grunt) {
                 dest: js_main_dest,
                 options: {
                     transform: [
-                        ['babelify', {presets: 'env'}],
-                        ['uglifyify', {global: true}]
+                    ['babelify', {presets: 'env'}],
+                    ['uglifyify', {global: true}]
                     ]
                 }
             }
@@ -147,6 +148,10 @@ module.exports = function(grunt) {
             php: {
                 files: [ php_watch_dest ],
                 tasks: []
+            },
+            twig: {
+                files: [ twig_watch_dest ],
+                tasks: []
             }
         },
     });
@@ -156,9 +161,9 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-browserify');
     // grunt.loadNpmTasks('grunt-extract-sourcemap');
 
-  grunt.registerTask('default', ['sass:dev', 'browserify:dev', 'extract_sourcemap:dev', 'watch']);
-  grunt.registerTask('dev', ['browserify:dev','sass:dev', 'sass:adminDev', 'extract_sourcemap:dev']);
-  grunt.registerTask('dist', ['browserify:dist','sass:dist', 'sass:adminDist']);
+    grunt.registerTask('default', ['sass:dev', 'browserify:dev', 'extract_sourcemap:dev', 'watch']);
+    grunt.registerTask('dev', ['browserify:dev','sass:dev', 'sass:adminDev', 'extract_sourcemap:dev']);
+    grunt.registerTask('dist', ['browserify:dist','sass:dist', 'sass:adminDist']);
 
 
 };

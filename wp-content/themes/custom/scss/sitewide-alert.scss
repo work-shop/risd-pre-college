@@ -1,0 +1,129 @@
+
+#sitewide-alert{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $sitewide-alert-height;
+	z-index: 1001;
+	background: #374f4b;
+	overflow: hidden;
+
+	a{
+		display: block;
+		height:  $sitewide-alert-height;
+		border: none;
+	}
+
+	.sitewide-alert-inner{
+		padding: 0 30px;
+
+		@media screen and (max-width: $md) {
+			padding: 0 20px;
+		}
+
+		@media screen and (max-width: $sm) {
+			padding: 0 10px;
+		}
+	}
+}
+
+
+
+.sitewide-alert-message{
+	color: white;
+	font-family: "Gotham A", "Gotham B";
+	font-weight: 600;
+	display: block;
+	height: $sitewide-alert-height;
+	text-align: center;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 2px;
+
+	@media screen and (max-width: $lg) {
+		font-size: 15px;
+	}
+
+	@media screen and (max-width: $md) {
+		font-size: 13px;
+	}
+
+	@media screen and (max-width: $sm) {
+		font-size: 11px;
+		line-height: 1.1;
+	}
+
+	&:before{
+		content: '';
+		display: inline-block;
+		width: $sitewide-alert-height;
+		height: $sitewide-alert-height;
+		margin-right: .5em;
+		background-image: url('../images/alert.png');
+		background-size: 25px 25px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		position: relative;
+		top: -2px;
+
+		@media screen and (max-width: $md) {
+			width: 55px;
+			margin-right: .5em;
+			background-size: 15px 15px;
+		}
+
+	}
+}
+
+
+#sitewide-alert-close{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: block;
+	width: $sitewide-alert-height;
+	height: $sitewide-alert-height;
+	padding-top: 5px;
+	outline: 1px solid red;
+
+	.icon:before{
+		color: white;
+		font-size: 42px;
+		top: 0px;
+		left: 10px;
+
+		@media screen and (max-width: $sm) {
+			font-size: 30px;
+			top: 6px;
+			left: 15px;
+		}
+	}
+}
+
+body.sitewide-alert-on{
+
+	padding-top: $sitewide-alert-height + $header-height;
+
+	header.page{
+		top: $sitewide-alert-height;
+	}
+
+	#search,#menu,#sidebar{
+		top: $sitewide-alert-height + $header-height;
+	}
+
+	@media screen and (max-width: $sm) {
+		padding-top: $sitewide-alert-height + $header-mobile-height;
+
+		#search,#menu,#sidebar{
+			top: $sitewide-alert-height + $header-mobile-height;
+		}
+	}
+
+}
+
+

@@ -1,0 +1,17 @@
+
+{% if options.show_sitewide_alert %}
+	<div id="sitewide-alert" class="">
+		<div class="sitewide-alert-inner">
+			{% if options.sitewide_alert_link %}
+				<a href="{{options.sitewide_alert_link.url}}">
+				{% endif %}
+				<span class="sitewide-alert-message">
+					{{options.sitewide_alert_message}}
+				</span>
+				{% if options.sitewide_alert_link %}
+				</a>
+			{% endif %}
+		</div>
+		{# <a href="#" id="sitewide-alert-close"><span class="icon" data-icon="’"></span></a> #}
+	</div>
+{% endif %}

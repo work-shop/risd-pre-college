@@ -1,108 +1,108 @@
 <?php
 
-    function map_category_name( $slug ) {
-        if ( $slug == 'admitted-students' ) { return 'info'; }
-        else if ( $slug == 'program-overview' ) { return 'program'; }
-        else { return ''; }
+function map_category_name( $slug ) {
+    if ( $slug == 'admitted-students' ) { return 'info'; }
+    else if ( $slug == 'program-overview' ) { return 'program'; }
+    else { return ''; }
+}
+
+function get_post_parent() {
+    $categories = get_the_category( get_the_ID() );
+    return array(
+        'slug' => map_category_name( $categories[0]->slug ),
+        'new_slug' => $categories[0]->slug,
+        'name' => $categories[0]->name
+    );
+}
+
+if (!class_exists("Timber")) {
+    add_action("admin_notices", function () {
+        echo "<div class='error'><p>Timber is not activated.
+        Make sure you activate the plugin in <a href='" .
+        esc_url(admin_url("plugins.php#timber")) . "'>" .
+        esc_url(admin_url("plugins.php")) . "</a>.</p></div>";
+    });
+    return;
+}
+
+$editor_role = get_role("editor");
+$editor_role->add_cap( 'edit_theme_options' );
+
+Timber::$dirname = "templates";
+
+class RISDPreCollege extends TimberSite {
+
+    function __construct() {
+        add_theme_support("post-formats");
+        add_theme_support("menus");
+
+        add_action("init", array($this, "remove_comment_support"));
+        add_action("init", array($this, "deactiveate_posts"));
+        add_action("init", array($this, "register_image_sizing"));
+        add_action("init", array($this, "register_pages_categories"));
+        add_action("acf/init", array($this, "add_options_pages"));
+        add_action("admin_menu", array($this, "remove_menu_items"));
+        add_action("admin_init", array($this, "admin_setup"));
+        add_action("wp_dashboard_setup", array($this, "remove_dashboard_widgets") );
+        add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
+        add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
+        add_action("wp_enqueue_scripts", array($this, "enqueue_styles"));
+        add_action('admin_menu', array($this, 'remove_screen_options'));
+
+        add_filter("timber_context", array($this, "add_to_context"));
+        add_filter('show_admin_bar', '__return_false');
+        add_filter('wp_get_attachment_url', array($this, 'rewrite_cdn_url') );
+        add_filter('timber_image_src', array($this, 'rewrite_timber_cdn_url') );
+        add_action('pre_get_posts', array($this, 'search_filter'));
+        add_filter('request', array($this, 'request_empty_search_filter'));
+
     }
 
-    function get_post_parent() {
-        $categories = get_the_category( get_the_ID() );
-        return array(
-            'slug' => map_category_name( $categories[0]->slug ),
-            'new_slug' => $categories[0]->slug,
-            'name' => $categories[0]->name
-        );
+    public function register_pages_categories() {
+        register_taxonomy_for_object_type( 'category', 'page' );
     }
 
-    if (!class_exists("Timber")) {
-        add_action("admin_notices", function () {
-            echo "<div class='error'><p>Timber is not activated.
-            Make sure you activate the plugin in <a href='" .
-            esc_url(admin_url("plugins.php#timber")) . "'>" .
-            esc_url(admin_url("plugins.php")) . "</a>.</p></div>";
-        });
-        return;
+    public function register_image_sizing() {
+        if ( function_exists( "add_image_size" ) ) {
+            add_image_size("student_work", 1000, 560, false );
+            add_image_size("full_bleed", 1920, 1080, false);
+            add_image_size("social_card", 600, 600, array( "x_crop_position" => "center", "y_crop_position" => "center"));
+        }
     }
 
-    $editor_role = get_role("editor");
-    $editor_role->add_cap( 'edit_theme_options' );
-
-    Timber::$dirname = "templates";
-
-    class RISDPreCollege extends TimberSite {
-
-        function __construct() {
-            add_theme_support("post-formats");
-            add_theme_support("menus");
-
-            add_action("init", array($this, "remove_comment_support"));
-            add_action("init", array($this, "deactiveate_posts"));
-            add_action("init", array($this, "register_image_sizing"));
-            add_action("init", array($this, "register_pages_categories"));
-            add_action("acf/init", array($this, "add_options_pages"));
-            add_action("admin_menu", array($this, "remove_menu_items"));
-            add_action("admin_init", array($this, "admin_setup"));
-            add_action("wp_dashboard_setup", array($this, "remove_dashboard_widgets") );
-            add_action("wp_before_admin_bar_render", array($this, "remove_admin_bar_items"));
-            add_action("wp_enqueue_scripts", array($this, "enqueue_scripts"));
-            add_action("wp_enqueue_scripts", array($this, "enqueue_styles"));
-            add_action('admin_menu', array($this, 'remove_screen_options'));
-
-            add_filter("timber_context", array($this, "add_to_context"));
-            add_filter('show_admin_bar', '__return_false');
-            add_filter('wp_get_attachment_url', array($this, 'rewrite_cdn_url') );
-            add_filter('timber_image_src', array($this, 'rewrite_timber_cdn_url') );
-            add_action('pre_get_posts', array($this, 'search_filter'));
-            add_filter('request', array($this, 'request_empty_search_filter'));
-
+    /** add options page to the site. */
+    public function add_options_pages() {
+        if ( function_exists('acf_add_options_page') ) {
+            acf_add_options_page(array(
+                "page_title" => "Home Page",
+                "capability" => "edit_posts",
+                "position" => 5,
+                "icon_url" => "dashicons-admin-home"
+            ));
         }
+    }
 
-        public function register_pages_categories() {
-            register_taxonomy_for_object_type( 'category', 'page' );
-        }
-
-        public function register_image_sizing() {
-            if ( function_exists( "add_image_size" ) ) {
-                add_image_size("student_work", 1000, 560, false );
-                add_image_size("full_bleed", 1920, 1080, false);
-                add_image_size("social_card", 600, 600, array( "x_crop_position" => "center", "y_crop_position" => "center"));
-            }
-        }
-
-        /** add options page to the site. */
-        public function add_options_pages() {
-            if ( function_exists('acf_add_options_page') ) {
-                acf_add_options_page(array(
-                    "page_title" => "Home Page",
-                    "capability" => "edit_posts",
-                    "position" => 5,
-                    "icon_url" => "dashicons-admin-home"
-                ));
-            }
-        }
-
-        /** remove comment support for pages and posts. */
-        public function remove_comment_support() {
-            remove_post_type_support("post", "comments");
-            remove_post_type_support("page", "comments");
-        }
+    /** remove comment support for pages and posts. */
+    public function remove_comment_support() {
+        remove_post_type_support("post", "comments");
+        remove_post_type_support("page", "comments");
+    }
 
 
         // Remove comments link from menu
-        public function remove_menu_items() {
-            remove_menu_page("edit-comments.php");
-            remove_menu_page("edit.php");
-        }
+    public function remove_menu_items() {
+        remove_menu_page("edit-comments.php");
+        remove_menu_page("edit.php");
+    }
 
         // Remove comments link from admin bar
-        public function remove_admin_bar_items() {
-            global $wp_admin_bar;
-            $wp_admin_bar->remove_menu("comments");
-        }
+    public function remove_admin_bar_items() {
+        global $wp_admin_bar;
+        $wp_admin_bar->remove_menu("comments");
+    }
 
-        /** remove admin menu home page widgets */
-        public function remove_dashboard_widgets () {
+    /** remove admin menu home page widgets */
+    public function remove_dashboard_widgets () {
             remove_meta_box("dashboard_primary", "dashboard", "side");   // WordPress.com blog
             remove_meta_box("dashboard_secondary", "dashboard", "side"); // Other WordPress news
 
@@ -160,8 +160,11 @@
                 "local_telephone_number" => get_field("local_telephone_number", "option"),
                 "international_telephone_number" => get_field("international_telephone_number", "option"),
                 "instagram_url" => get_field("instagram_url", "option"),
-                "facebook_url" => get_field("facebook_url", "option")
-             );
+                "facebook_url" => get_field("facebook_url", "option"),
+                "show_sitewide_alert" => get_field("show_sitewide_alert", "option"),
+                "sitewide_alert_message" => get_field("sitewide_alert_message", "option"),
+                "sitewide_alert_link" => get_field("sitewide_alert_link", "option")
+            );
             return $context;
         }
 
@@ -219,7 +222,7 @@
             register_setting(
                 'general',
                 'cdn_url'
-                );
+            );
 
             add_settings_field(
                 'cdn_url',
@@ -228,7 +231,7 @@
                 'general',
                 'default',
                 array( 'cdn_url', get_option('cdn_url') )
-                );
+            );
         }
 
         /**

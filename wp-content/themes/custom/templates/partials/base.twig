@@ -46,7 +46,9 @@
         {% include "partials/components/facebook-pixel-code.twig" %}
 
     </head>
-    <body class="{{ body_class }} menu-closed">
+    <body class="{{ body_class }} {% if options.show_sitewide_alert %} sitewide-alert-on {% endif %} menu-closed">
+
+        {% include "partials/sitewide_alert.twig" %}
 
         {% include "partials/overlay.twig" %}
         {% include "partials/ie.twig" %}
