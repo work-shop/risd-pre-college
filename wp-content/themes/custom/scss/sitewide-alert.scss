@@ -6,7 +6,10 @@
 	width: 100%;
 	height: $sitewide-alert-height;
 	z-index: 1001;
-	background: #374f4b;
+	//background: #374f4b;
+	//background: $pre-college-primary-yellow;
+	background: #db0a0a;
+	border-bottom: 1px solid #fff;
 	overflow: hidden;
 
 	a{
@@ -32,9 +35,9 @@
 
 .sitewide-alert-message{
 	color: white;
+	//color: #222;
 	font-family: "Gotham A", "Gotham B";
 	font-weight: 600;
-	display: block;
 	height: $sitewide-alert-height;
 	text-align: center;
 	font-size: 16px;
@@ -57,23 +60,22 @@
 		line-height: 1.1;
 	}
 
-	&:before{
-		content: '';
-		display: inline-block;
-		width: $sitewide-alert-height;
-		height: $sitewide-alert-height;
-		margin-right: .5em;
-		background-image: url('../images/alert.png');
-		background-size: 25px 25px;
-		background-position: center center;
-		background-repeat: no-repeat;
+	.sitewide-alert-icon{
+		//display: block;
+		width: 28px;
+		flex: 0 0 28px;
+		height: 28px;
+		margin-right: 15px;
+		border-radius: 100%;
+		border: 2px solid #fff;
+		font-size: 17px;
+		line-height: 24px;
+		text-indent: 2px;
 		position: relative;
 		top: -2px;
 
 		@media screen and (max-width: $md) {
-			width: 55px;
-			margin-right: .5em;
-			background-size: 15px 15px;
+
 		}
 
 	}
