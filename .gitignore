@@ -141,7 +141,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+# .env
 
 # migrations directory for databases pulled into the local environment.
 migrations
